@@ -13,7 +13,7 @@ def MainProcess(request):
         tmpFile = request.form.get(key)
         strIo = StringIO(tmpFile)
         df = pd.read_csv(strIo, header=None)
-        df.to_csv("E:/" + key + ".csv", index=False, header=False)
+        # df.to_csv("E:/" + key + ".csv", index=False, header=False)
     if not Validation():
         return "Not Valid"
     return "processed data"

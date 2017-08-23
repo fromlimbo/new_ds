@@ -1,5 +1,6 @@
-
+import time
 
 def optimization(dataProcessed):
-    print "algorithm running"
+    print "heavy task is running now"
+    time.sleep(3600)
     return "algorithm result"
