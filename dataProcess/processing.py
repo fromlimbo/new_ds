@@ -14,8 +14,19 @@ def GAVRP_Validation(request):
     return True
 
 
+<<<<<<< HEAD
 def GAVRP_Process(request):
     if not GAVRP_Validation(request):
+=======
+def MainProcess(request):
+    print "data processing"
+    for key in request.form.keys():
+        tmpFile = request.form.get(key)
+        strIo = StringIO(tmpFile)
+        df = pd.read_csv(strIo, header=None)
+        # df.to_csv("E:/" + key + ".csv", index=False, header=False)
+    if not Validation():
+>>>>>>> processManage
         return "Not Valid"
     print "data processing"
     var_dict = {}
