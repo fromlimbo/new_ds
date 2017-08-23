@@ -80,10 +80,9 @@ def view():
 def index():
     return "hello world!"
 
-
 @app.route('/uploaddata')
 def uploadData():
-	var_dict = GAVRP_Process(request)
+    var_dict = GAVRP_Process(request)
     tm.uploadData()
     return "data uploaded"
 
