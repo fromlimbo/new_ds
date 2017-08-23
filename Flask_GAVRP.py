@@ -3,7 +3,7 @@ from flask import Flask, request
 from flask_restful import Resource, Api
 import pandas as pd
 from io import StringIO
-from dataProcess import MainProcess
+from dataProcess import GAVRP_Process
 from algorithmModel import optimization
 
 
@@ -17,8 +17,8 @@ class SchedulingSolution(Resource):
         pass
 
     def post(self):
-        dataProcessed = MainProcess(request)
-        result = optimization(dataProcessed)
+        var_dict = GAVRP_Process(request)
+        result = optimization(var_dict)
         return result
 
 
