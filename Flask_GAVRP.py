@@ -41,6 +41,8 @@ class TaskManager():
         # 开始任务
         if self.dataProcessed == None:
             return -1
+        if self.p.is_alive():
+            return "process has already been running."
         self.p.start()
         self.info['starttime'] = datetime.now()
         self.info['pid'] = self.p.pid
