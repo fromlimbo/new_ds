@@ -13,7 +13,6 @@ from algorithmModel import optimization
 from multiprocessing import Process
 from datetime import datetime
 from flask import jsonify, make_response
-from flask_csv import send_csv
 
 app = Flask(__name__)
 
@@ -91,40 +90,9 @@ def uploadData():
 
 @app.route('/dynamic_scheduling', methods=['GET','POST'])
 def dynamicScheduling():
-    # var_dict = GAVRP_Process(request)
-    # result=optimization(var_dict)
-    # result_html=result.to_html
+    var_dict = GAVRP_Process(request)
+    result=optimization(var_dict)
 
-    class Request():
-        def __init__(self):
-            self.form = {}
-
-        def putValue(self, key, value):
-            self.form[key] = value
-
-    request = Request()
-    with open('unitTest/testData/order_raw.csv', 'r') as f:
-        content = f.read()
-        request.putValue('order_raw', unicode(content))
-        f.close()
-
-    with open('unitTest/testData/trailer_raw_truck.csv', 'r') as f:
-        content = f.read()
-        request.putValue('trailer_raw_truck', unicode(content))
-        f.close()
-
-    with open('unitTest/testData/OTD_pinche.csv', 'r') as f:
-        content = f.read()
-        request.putValue('OTD_pinche', unicode(content))
-        f.close()
-
-    with open('unitTest/testData/mix_city.csv', 'r') as f:
-        content = f.read()
-        request.putValue('mix_city', unicode(content))
-        f.close()
-
-    data = GAVRP_Process(request)
-    result=optimization(data)
     # result=pd.DataFrame({'states':['guangdong','fujian'],'year':[2011,2912]})
     return result.to_html()
 
