@@ -13,7 +13,7 @@ def initialization(ppl_size, data, misc, flag_crossover=False, print_switch=0, o
 
     :param ppl_size: poplulation size
     :param data: a variable of Data class containing order dictionary and shipment dictionary.
-    :param misc: the variable passed by main.py to set parameters
+    :param misc: the variable passed by GAVRP.py to set parameters
     :param flag_crossover: a flag to indicate whether this initialization is for crossover
     :param print_switch: if print_switch=1, some variables will be printed
     :param old_routes: 
