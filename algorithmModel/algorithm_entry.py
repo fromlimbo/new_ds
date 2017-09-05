@@ -39,10 +39,9 @@ def optimization(data):
         extra_constraint = [0, 0]
         result_temp1 = GAVRP.ga_vrp(data, weight_set, extra_weight, extra_constraint, 5, 0.0001)
         ind1 = result_temp1[len(result_temp1) - 1]
-        # object_level1 = cost_computation_ind(ind1, weight_set)
 
         # ----------------------------  To record the output solutions in pickle file-----------------------------------#
         solution = xmatrix_to_solution(convert_ind_to_matrix(ind1))
         print solution
 
-    output.close()
+    return solution

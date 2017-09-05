@@ -1,18 +1,21 @@
 # -*- coding: utf-8 -*-
+import sys
 
+reload(sys)
+sys.setdefaultencoding('utf8')
 from flask import Flask, request
-from flask_restful import Resource, Api
 import pandas as pd
-from io import StringIO
+# from io import StringIO
+import StringIO
 from dataProcess import GAVRP_Process
 
 from algorithmModel import optimization
 from multiprocessing import Process
 from datetime import datetime
-from flask import jsonify
+from flask import jsonify, make_response
+from flask_csv import send_csv
 
 app = Flask(__name__)
-api = Api(app)
 
 
 class TaskManager():
@@ -85,6 +88,47 @@ def uploadData():
     var_dict = GAVRP_Process(request)
     tm.uploadData(var_dict)
     return "data uploaded"
+
+@app.route('/dynamic_scheduling', methods=['GET','POST'])
+def dynamicScheduling():
+    # var_dict = GAVRP_Process(request)
+    # result=optimization(var_dict)
+    # result_html=result.to_html
+
+    class Request():
+        def __init__(self):
+            self.form = {}
+
+        def putValue(self, key, value):
+            self.form[key] = value
+
+    request = Request()
+    with open('unitTest/testData/order_raw.csv', 'r') as f:
+        content = f.read()
+        request.putValue('order_raw', unicode(content))
+        f.close()
+
+    with open('unitTest/testData/trailer_raw_truck.csv', 'r') as f:
+        content = f.read()
+        request.putValue('trailer_raw_truck', unicode(content))
+        f.close()
+
+    with open('unitTest/testData/OTD_pinche.csv', 'r') as f:
+        content = f.read()
+        request.putValue('OTD_pinche', unicode(content))
+        f.close()
+
+    with open('unitTest/testData/mix_city.csv', 'r') as f:
+        content = f.read()
+        request.putValue('mix_city', unicode(content))
+        f.close()
+
+    data = GAVRP_Process(request)
+    result=optimization(data)
+    # result=pd.DataFrame({'states':['guangdong','fujian'],'year':[2011,2912]})
+    return result.to_html()
+
+
 
 @app.route('/start')
 def startTask():
