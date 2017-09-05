@@ -12,13 +12,13 @@ Output: the output of this program, solution, is printed in the end of the code.
 ########################################################################################################################
 import numpy as np
 import datetime
-import GAVRP
+import main
 import cProfile
 import re
 from packaging import *
 from cost_function_ind import *
 from Bases import *
-from GAVRP import *
+from main import *
 
 weight = [0.0, 0.5, 0.0, 0.5]
 epsilon1 = 0.0
@@ -37,7 +37,7 @@ def optimization(data):
         weight_set = [weight[0], weight[1], weight[2], weight[3]]
         extra_weight = [[0, 0, 0, 0], [0, 0, 0, 0]]
         extra_constraint = [0, 0]
-        result_temp1 = GAVRP.ga_vrp(data, weight_set, extra_weight, extra_constraint, 5, 0.0001)
+        result_temp1 = main.ga_vrp(data, weight_set, extra_weight, extra_constraint, 5, 0.0001)
         ind1 = result_temp1[len(result_temp1) - 1]
         # object_level1 = cost_computation_ind(ind1, weight_set)
 
