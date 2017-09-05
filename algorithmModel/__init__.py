@@ -1,1 +1,1 @@
-from algorithm import *
+from algorithm_entry import optimization

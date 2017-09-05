@@ -1,0 +1,12 @@
+cType,cPriority_vendor,cSameVendor,cOtherVendor,cPriority_warehouse,cSameWarehouse
+T+0,0,5,2,0,3
+T+1,1,5,2,1,2
+T+2,1,5,2,1,2
+T+3,3,5,2,3,3
+T+4,6,5,3,6,3
+T+5,6,5,3,6,3
+T+6,6,5,3,6,3
+T+7,7,5,3,7,3
+T+8,8,5,3,8,3
+urgency,9,5,3,9,3
+urgency plus,10,5,3,10,3

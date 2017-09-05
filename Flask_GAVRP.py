@@ -35,9 +35,9 @@ class TaskManager():
         self.log = []
         self.log.append({'operation': 'initiate', 'time': datetime.now()})
 
-    def uploadData(self):
+    def uploadData(self,data):
         # 上传数据
-        self.dataProcessed = 0
+        self.dataProcessed = data
         self.log.append({'operation': 'upload data', 'time': datetime.now()})
         return 0
 
@@ -80,10 +80,10 @@ def view():
 def index():
     return "hello world!"
 
-@app.route('/uploaddata')
+@app.route('/uploaddata',methods=['POST'])
 def uploadData():
     var_dict = GAVRP_Process(request)
-    tm.uploadData()
+    tm.uploadData(var_dict)
     return "data uploaded"
 
 @app.route('/start')
