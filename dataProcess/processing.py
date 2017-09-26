@@ -21,7 +21,9 @@ def GAVRP_Process(request):
     today = datetime.strptime(datetime.now().strftime('%Y-%m-%d %H:%M:%S'), '%Y-%m-%d %H:%M:%S').date()
     order_tmpFile = request.form.get("order_raw")
     strIo = StringIO(order_tmpFile)
+
     input_file = csv.reader(strIo)
+
     order_dict = {
     i[0]: order(str(i[0]), int(i[1]), int(i[4]), (today - datetime.strptime(i[11], '%Y-%m-%d %H:%M:%S').date()).days,
                 int(i[12]), -1,

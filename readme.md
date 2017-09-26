@@ -1,0 +1,5 @@
+## Dependency
+
+- Celery
+- Flask
+- pyMongo
