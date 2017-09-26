@@ -3,3 +3,4 @@
 - Celery
 - Flask
 - pyMongo
+- requests

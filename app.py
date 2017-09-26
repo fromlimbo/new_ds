@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask
-from utils import CacheHandler,MQHandler, Logger, Reporter, DataLoader, MongoClient
+from utils import Logger, MongoClient
 from config import *
 from celery import Celery
 

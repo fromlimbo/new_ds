@@ -19,6 +19,7 @@ from packaging import *
 from cost_function_ind import *
 from Bases import *
 from GAVRP import *
+from app import celery
 
 weight = [0.0, 0.5, 0.0, 0.5]
 epsilon1 = 0.0
@@ -27,6 +28,7 @@ num_iteration = 1
 
 
 # ---------------------------To carry out optimization and record results in result_record.pkl--------------------------#
+@celery.task
 def optimization(data):
     output = open('result_record.pkl', 'wb')
 

@@ -5,10 +5,10 @@ class AuthConfig:
 
 class CeleryConfig(object):
 
-    BROKER_ADDRESS="amqp://localhost"
+    BROKER_ADDRESS="amqp://test:test@192.168.205.169:5672/DynamicSchedule"
 
     # please set this to the algorithm name
-    MAIN_NAME="sample_algorithm"
+    MAIN_NAME="dynamic-schedule"
 
     @staticmethod
     def __init__(self):
