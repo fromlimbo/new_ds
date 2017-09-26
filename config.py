@@ -60,3 +60,15 @@ class CacheConfig:
     @staticmethod
     def __init__(self):
         pass
+
+
+class MongoConfig:
+    MONGO_ADDRESS= "192.168.205.169"
+    MONGO_PORT= "27017"
+    MONGO_DATABASE="DynamicSchedlue"
+    MONGO_USER_NAME="test"
+    MONGO_USER_PASSWORD="test"
+
+    @staticmethod
+    def __init__(self):
+        pass

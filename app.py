@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask
-from utils import CacheHandler,MQHandler, Logger, Reporter, DataLoader
+from utils import CacheHandler,MQHandler, Logger, Reporter, DataLoader, MongoClient
 from config import *
 from celery import Celery
 
@@ -10,11 +10,9 @@ flask.config.from_object(AppConfig)
 
 celery=Celery(CeleryConfig.MAIN_NAME, broker=CeleryConfig.BROKER_ADDRESS)
 
-dataloader=DataLoader(config=DataLoaderConfig)
-mqhandler=MQHandler(config=MQConfig)
+
 logger=Logger(config=LoggerConfig)
-reporter=Reporter(config=ReporterConfig)
-cachehandler=CacheHandler(config=CacheConfig)
+mongoclient=MongoClient(config=MongoConfig)
 
 from app_view import *
 

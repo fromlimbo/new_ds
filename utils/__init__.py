@@ -4,3 +4,4 @@ from .logger import Logger
 from .MQHandler import MQHandler
 from .reporter import Reporter
 from .auth_handler import AuthHandler
+from .mongoclient import MongoClient
