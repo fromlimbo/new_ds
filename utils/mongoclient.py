@@ -17,28 +17,42 @@ class MongoDBClient(object):
             self.collection = self.db[self.config.MONGO_COLLECTION]
             # coll=db.collection_names(include_system_collections=False)
 
-    def saveData(self,id,result):
-        savdata = dict(task_id=id,result=result)
+    def saveData(self,task_id,result):
+        savdata = {'task_id':task_id,
+                   'result':result}
         try:
-            self.collection.insert(savdata)
+            id=self.collection.insert_one(savdata).inserted_id
         except Exception as e:
             logging.debug(e)
             return -1
         else:
             logging.debug("ok")
-            return 0
+            return id
 
-    def readData(self,id):
+    def readData(self,task_id):
         try:
-            res = self.collection.find_one({"task_id":id})
+            res = self.collection.find_one({"task_id":task_id})
         except Exception as e:
             logging.debug(e)
             return -1
         else:
             if res is None:
-                logging.debug("task_id is None")
+                logging.debug("No result for this task id.")
                 return -1
             return res
+
+    def deleteData(self, task_id):
+        try:
+            res = self.collection.delete_one({'task_id':task_id})
+        except Exception as e:
+            logging.debug(e)
+            return -1
+        else:
+            if res is None:
+                logging.debug("No result for this task id.")
+                return -1
+            return res
+
 
 
 
