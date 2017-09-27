@@ -11,13 +11,12 @@ class MongoTester(unittest.TestCase):
 
     def testSave(self):
         mongoclient = MongoDBClient(config=MongoConfig)
-        # mongoclient.saveData("task4",{'result':'result'})
+        mongoclient.saveData('task5','result')
 
     def testRead(self):
         mongoclient = MongoDBClient(config=MongoConfig)
-        retval=mongoclient.readData("task4")
-        logging.debug(retval)
-
+        retval=mongoclient.readData("task5")
+        assert retval['result']=='result'
 
 if __name__ == "__main__":
     unittest.main()

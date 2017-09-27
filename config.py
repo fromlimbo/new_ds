@@ -65,9 +65,10 @@ class CacheConfig:
 class MongoConfig:
     MONGO_ADDRESS= "192.168.205.169"
     MONGO_PORT= 27017
-    MONGO_DATABASE="DynamicSchedlue"
+    MONGO_DATABASE="DynamicSchedule"
     MONGO_USER_NAME="test"
     MONGO_USER_PASSWORD="test"
+    MONGO_COLLECTION="results"
 
     @staticmethod
     def __init__(self):

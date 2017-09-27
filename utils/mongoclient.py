@@ -13,8 +13,8 @@ class MongoDBClient(object):
         except ConnectionFailure:
             raise ConnectionFailure
         else:
-            self.db = self.client.config.DynamicSchedule
-            self.collection = self.db.config.my_collection
+            self.db = self.client[self.config.MONGO_DATABASE]
+            self.collection = self.db[self.config.MONGO_COLLECTION]
             # coll=db.collection_names(include_system_collections=False)
 
     def saveData(self,id,result):
@@ -25,7 +25,7 @@ class MongoDBClient(object):
             logging.debug(e)
             return -1
         else:
-            print "ok"
+            logging.debug("ok")
             return 0
 
     def readData(self,id):
@@ -37,8 +37,7 @@ class MongoDBClient(object):
         else:
             if res is None:
                 logging.debug("task_id is None")
-                return 0
-            print res
+                return -1
             return res
 
 
