@@ -2,6 +2,7 @@
 from utils import MongoDBClient
 from config import *
 import unittest
+import logging
 
 class MongoTester(unittest.TestCase):
     def testConnection(self):
@@ -9,14 +10,13 @@ class MongoTester(unittest.TestCase):
         print "connection ok"
 
     def testSave(self):
-        pass
-        # mongoclient = MongoDBClient(config=MongoConfig)
-        # mongoclient.saveData({"id":"123",'result':'result'})
+        mongoclient = MongoDBClient(config=MongoConfig)
+        # mongoclient.saveData("task4",{'result':'result'})
 
     def testRead(self):
-        pass
-        # mongoclient = MongoDBClient(config=MongoConfig)
-        # retval=mongoclient.resdData()
+        mongoclient = MongoDBClient(config=MongoConfig)
+        retval=mongoclient.readData("task4")
+        logging.debug(retval)
 
 
 if __name__ == "__main__":

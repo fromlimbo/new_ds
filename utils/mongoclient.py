@@ -1,6 +1,7 @@
 #coding=utf-8
 import pymongo
 from pymongo.errors import ConnectionFailure
+import logging
 
 class MongoDBClient(object):
 
@@ -8,9 +9,9 @@ class MongoDBClient(object):
         self.config=config
         self.client = pymongo.MongoClient(host=self.config.MONGO_ADDRESS,port=self.config.MONGO_PORT)
         try:
-            self.client.admin.command("ismaster")
+            self.client.admin.command("ping")
         except ConnectionFailure:
-            print "server not available "
+            raise ConnectionFailure
         else:
             self.db = self.client.config.DynamicSchedule
             self.collection = self.db.config.my_collection
@@ -21,7 +22,7 @@ class MongoDBClient(object):
         try:
             self.collection.insert(savdata)
         except Exception as e:
-            print e
+            logging.debug(e)
             return -1
         else:
             print "ok"
@@ -31,14 +32,14 @@ class MongoDBClient(object):
         try:
             res = self.collection.find_one({"task_id":id})
         except Exception as e:
-            print e
+            logging.debug(e)
             return -1
         else:
             if res is None:
-                print "task_id is None"
+                logging.debug("task_id is None")
                 return 0
             print res
-            return 0
+            return res
 
 
 
