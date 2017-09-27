@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-
 from flask import Flask
-from utils import Logger, MongoClient
+from utils import Logger, MongoDBClient
 from config import *
 from celery import Celery
 
@@ -12,7 +11,7 @@ celery=Celery(CeleryConfig.MAIN_NAME, broker=CeleryConfig.BROKER_ADDRESS)
 
 
 logger=Logger(config=LoggerConfig)
-mongoclient=MongoClient(config=MongoConfig)
+mongoclient=MongoDBClient(config=MongoConfig)
 
 from app_view import *
 
