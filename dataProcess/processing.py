@@ -59,3 +59,17 @@ def GAVRP_Process(request):
     # print var_dict
 
     return var_dict
+
+
+'''
+sample_json={'mix_city':[{'CenterCityId':..,
+                          'OtherCityId':...},
+                          ...]
+}
+'''
+
+def data_processing_json(input_json=None):
+    mix_city= pd.read_json(input_json['mix_city'])
+    OTD_pinche = pd.read_json(input_json['OTD_pinche'])
+
+
