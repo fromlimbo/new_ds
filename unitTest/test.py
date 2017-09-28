@@ -3,6 +3,7 @@
 import unittest
 from dataProcess import GAVRP_Process
 from algorithmModel import algorithm_entry
+import pandas as pd
 
 import sys
 
@@ -17,7 +18,7 @@ class Request():
     def putValue(self, key, value):
         self.form[key] = value
 
-class dataProcessTester(unittest.TestCase):
+class DataProcessTester(unittest.TestCase):
     def testProcess(self):
 
         request = Request()
@@ -68,8 +69,32 @@ class dataProcessTester(unittest.TestCase):
         data=GAVRP_Process(request)
         algorithm_entry.optimization(data)
 
+class DataProcessJsonTester(unittest.TestCase):
+
+    def test_process_json(self):
+        mix_city=pd.read_csv('testData/mix_city.csv')
+        mix_city_json=mix_city.to_json(orient='records')
+
+        otd_pinche=pd.read_csv('testData/OTD_pinche.csv')
+        otd_pinche_json=otd_pinche.to_json(orient='records')
+
+        order=pd.read_csv('testData/order_raw_json.csv')
+        order_json=order.to_json(orient='records')
+
+        trailer=pd.read_csv('testData/trailer_raw_truck_json.csv')
+        trailer_json=trailer.to_json(orient='records')
+
+        data_json={'mix_city':mix_city_json,'otd_pinche':otd_pinche_json,
+              'order':order_json, 'trailer':trailer_json}
+
+        # data=GAVRP_Process_json()
 
 
+def jsonsuite():
+    suite = unittest.TestSuite()
+    suite.addTest(DataProcessJsonTester('test_process_json'))
+    return suite
 
-if "__name__" == "__main__":
-    unittest.main()
+if __name__ == "__main__":
+    suite = jsonsuite()
+    unittest.TextTestRunner(verbosity=2).run(suite)

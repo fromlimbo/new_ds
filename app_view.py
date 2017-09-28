@@ -1,5 +1,4 @@
 from app import flask
-from algorithmModel import optimization
 from flask import jsonify
 from app import celery
 
