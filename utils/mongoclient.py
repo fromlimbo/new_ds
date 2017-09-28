@@ -2,6 +2,7 @@
 import pymongo
 from pymongo.errors import ConnectionFailure
 import logging
+from datetime import datetime
 
 class MongoDBClient(object):
 
@@ -19,6 +20,7 @@ class MongoDBClient(object):
 
     def saveData(self,task_id,result):
         savdata = {'task_id':task_id,
+                   # "created_time":datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                    'result':result}
         try:
             id=self.collection.insert_one(savdata).inserted_id
