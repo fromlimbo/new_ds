@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-# import sys
-# reload(sys)
-# sys.setdefaultencoding('utf8')
 from io import StringIO
 import csv
 import json
@@ -17,95 +14,95 @@ def GAVRP_Validation(request):
 
 def GAVARP_Process_json(input_json):
     var_dict = {}
-    required_keys = ['order_code', 'customer_code', 'dealer_code',
-                     'OTD', 'priority', 'start_loc', 'end_loc', 'car_type', 'effective_time']
-    optional_keys = {'VIN':-1,
-                     'shipment_code_set':-1,
-                     'created_time':-1,
-                     'transport_type':-1
-                     }
-    # order_example_json 值为-1，该变量可为空
-    # order_example_json = """[{"order_code":"order",
-    #                "customer_code":"",
-    #                "dealer_code":"",
-    #                 "OTD":"",
-    #                 "priority":"",
-    #                 "VIN":-1,
-    #                 "shipment_code_set":-1,
-    #                 "start_loc":"",
-    #                 "end_city":"",
-    #                 "end_loc":"",
-    #                 "created_time":-1,
-    #                 "effective_time":1,
-    #                 "car_type":1,
-    #                 "transport_type":-1
-    # }]"""
+    required_order_keys = ['order_code', 'customer_code', 'dealer_code',
+                           'OTD', 'priority', 'start_loc', 'end_loc', 'car_type', 'effective_time']
+
+    # key: default value
+    optional_order_keys = {'VIN': -1,
+                           'shipment_code_set': -1,
+                           'created_time': -1,
+                           'transport_type': -1
+                           }
 
     try:
-        orderjosn = json.loads(input_json['order'])
+        orderjson = json.loads(input_json['order'])
     except Exception:
         logging.debug("json type is error")
         return -1
-    order_dict={}
+
+    order_dict = {}
     for item in orderjson:
-        for k in required_keys:
-            if not item.haskey(k):
+        for k in required_order_keys:
+            if not item.has_key(k):
                 logging.debug('lost required keys.')
                 return -1
-        for k in optional_keys.keys():
-            if not item.haskey(k):
-                item[k]=optional_keys[k]
+        for k in optional_order_keys.keys():
+            if not item.has_key(k):
+                item[k] = optional_order_keys[k]
 
-    order_dict[item["order_code"]]=order(item["order_code"], item["customer_code"], item["dealer_code"],
-                                  item["OTD"], item["priority"], item["VIN"],
-                                  item["shipment_code_set"], item["start_loc"], item["end_city"],
-                                  item["end_loc"], item["created_time"], item["effective_time"],
-                                  item["car_type"], item["transport_type"])
+        item['effective_time'] = datetime.strptime(item['effective_time'], '%Y-%m-%d %H:%M:%S').date()
+        order_dict[item["order_code"]] = order(item["order_code"], item["customer_code"], item["dealer_code"],
+                                               item["OTD"], item["priority"], item["VIN"],
+                                               item["shipment_code_set"], item["start_loc"], item["end_city"],
+                                               item["end_loc"], item["created_time"], item["effective_time"],
+                                               item["car_type"], item["transport_type"])
     var_dict["order_dict"] = order_dict
 
-    # trailer_example_json  值为-1，该变量可为空
-    trailer_example_json = """[{"code":"",
-                            "supplier_code": -1,
-                            "capacity_all": "",
-                            "capacity_for_xl_car": "",
-                            "capacity_for_l_car":"",
-                            "capacity_for_m_car": "",
-                            "capacity_for_s_car": "",
-                            "capacity_for_xs_car": "",
-                            "reported_package_type": -1,
-                            "history_package_type":-1,
-                            "preferred_direction":"",
-                            "availability": "",
-                            "trailer_available_time":"",
-                            "shipments_set":-1,
-                            "loading_time": -1,
-                            "planed_start_time": -1,
-                            "planed_arrive_time":-1,
-                            "actual_start_time": -1,
-                            "actual_arrive_time": -1,
-                            "start_location": "",
-                            "current_location": "",
-                            "destination":"",
-                            "historic_trajectory": ""
-    }]"""
+    required_trailer_keys = ['code', 'capacity_all', 'capacity_for_xl_car',
+                             'capacity_for_l_car', 'capacity_for_m_car',
+                             'capacity_for_s_car', 'capacity_for_xs_car',
+                             'preferred_direction', 'availability',
+                             'trailer_available_time', 'start_location']
+
+    # key: default value
+    optional_trailer_keys = {'supplier_code': -1,
+                             'reported_package_type': -1,
+                             'history_package_type': -1,
+                             'shipments_set': -1,
+                             'loading_time': -1,
+                             'planed_start_time': -1,
+                             'planed_arrive_time': -1,
+                             'actual_start_time': -1,
+                             'actual_arrive_time': -1,
+                             'current_location': -1,
+                             'destination': -1,
+                             'historic_trajectory': -1}
+
     try:
-        trailerjson = json.loads(trailer_example_json)
+        trailerjson = json.loads(input_json['trailer'])
     except Exception:
         logging.debug("json type is error")
         return -1
-    else:
-        trailer_dict = {
-            data["code"]: trailer(data["code"], data["supplier_code"], data["capacity_all"],
-                                  data["capacity_for_xl_car"], data["capacity_for_l_car"], data["capacity_for_m_car"],
-                                  data["capacity_for_s_car"], data["capacity_for_xs_car"],
-                                  data["reported_package_type"],
-                                  data["history_package_type"], data["preferred_direction"], data["availability"],
-                                  data["trailer_available_time"], data["shipments_set"], data["loading_time"],
-                                  data["planed_start_time"], data["planed_arrive_time"], data["actual_start_time"],
-                                  data["actual_arrive_time"], data["start_location"], data["current_location"],
-                                  data["destination"], data["historic_trajectory"]) for data in trailerjson
-        }
-        var_dict["trailer_dict"] = trailer_dict
+    trailer_dict = {}
+    for item in trailerjson:
+
+        # check required keys
+        for k in required_trailer_keys:
+            if not item.has_key(k):
+                logging.warning('lost required trailer keys.')
+                return -1
+
+        for k in optional_trailer_keys.keys():
+            if not item.has_key(k):
+                item[k] = optional_trailer_keys[k]
+        item['preferred_direction'] = (map(int, (item['preferred_direction'].split('、'))))
+        trailer_dict[item["code"]] = trailer(item["code"], item["supplier_code"], item["capacity_all"],
+                                             item["capacity_for_xl_car"], item["capacity_for_l_car"],
+                                             item["capacity_for_m_car"],
+                                             item["capacity_for_s_car"], item["capacity_for_xs_car"],
+                                             item["reported_package_type"],
+                                             item["history_package_type"], item["preferred_direction"],
+                                             item["availability"],
+                                             item["trailer_available_time"], item["shipments_set"],
+                                             item["loading_time"],
+                                             item["planed_start_time"], item["planed_arrive_time"],
+                                             item["actual_start_time"],
+                                             item["actual_arrive_time"], item["start_location"],
+                                             item["current_location"],
+                                             item["destination"], item["historic_trajectory"])
+    var_dict["trailer_dict"] = trailer_dict
+    var_dict['mix_city'] = pd.read_json(input_json['mix_city'])
+    var_dict['OTD_pinche'] = pd.read_json(input_json['OTD_pinche'])
     return var_dict
 
 

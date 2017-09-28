@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-from dataProcess import GAVRP_Process
-from algorithmModel import algorithm_entry
+from dataProcess import GAVRP_Process, GAVARP_Process_json
+from algorithmModel.algorithm_entry import optimization
 import pandas as pd
+import json
+from datetime import datetime
 
 import sys
 
@@ -67,7 +69,7 @@ class DataProcessTester(unittest.TestCase):
             f.close()
 
         data=GAVRP_Process(request)
-        algorithm_entry.optimization(data)
+        optimization(data)
 
 class DataProcessJsonTester(unittest.TestCase):
 
@@ -79,15 +81,23 @@ class DataProcessJsonTester(unittest.TestCase):
         otd_pinche_json=otd_pinche.to_json(orient='records')
 
         order=pd.read_csv('testData/order_raw_json.csv')
-        order_json=order.to_json(orient='records')
+        order_dict=order.to_dict(orient='records')
+        today = datetime.strptime(datetime.now().strftime('%Y-%m-%d %H:%M:%S'), '%Y-%m-%d %H:%M:%S').date()
+        for item in order_dict:
+            item['OTD']=(today - datetime.strptime(item['effective_time'],'%Y-%m-%d %H:%M:%S').date()).days
+        order_json=json.dumps(order_dict)
+        print order_json[0]
 
         trailer=pd.read_csv('testData/trailer_raw_truck_json.csv')
+        trailer['availability']=1
+        trailer['trailer_available_time']='2015-06-1'
         trailer_json=trailer.to_json(orient='records')
 
-        data_json={'mix_city':mix_city_json,'otd_pinche':otd_pinche_json,
+        data_json={'mix_city':mix_city_json,'OTD_pinche':otd_pinche_json,
               'order':order_json, 'trailer':trailer_json}
 
-        # data=GAVRP_Process_json()
+        data=GAVARP_Process_json(data_json)
+        result=optimization(data)
 
 
 def jsonsuite():
@@ -95,6 +105,13 @@ def jsonsuite():
     suite.addTest(DataProcessJsonTester('test_process_json'))
     return suite
 
+
+def normalsuite():
+    suite = unittest.TestSuite()
+    suite.addTest(DataProcessTester('testAlgorithm'))
+    return suite
+
 if __name__ == "__main__":
     suite = jsonsuite()
     unittest.TextTestRunner(verbosity=2).run(suite)
+
