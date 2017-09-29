@@ -1,3 +1,9 @@
+#coding=utf-8
+
+"""
+工具类包
+"""
+
 from cachehandler import CacheHandler
 from dataloader import DataLoader
 from logger import Logger

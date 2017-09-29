@@ -21,6 +21,7 @@ class AuthHandler(object):
     def authenticate(self):
         '''
         认证
+
         :return: 0 认证成功，-1 认证失败
         '''
         headers = {'content-type': 'application/json'}
@@ -34,10 +35,11 @@ class AuthHandler(object):
             return -1
 
     def get_token(self):
-        '''
+        """
         返回认证成功后的token
+
         :return: token
-        '''
+        """
         return self.token
 
 

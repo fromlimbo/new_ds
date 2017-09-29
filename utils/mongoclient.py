@@ -24,6 +24,7 @@ class MongoDBClient(object):
     def saveData(self,task_id,result):
         '''
         把指定的json数据result,保存到__init__ 初始化的数据库
+
         :param task_id: celery中生成task_id，对存储到mongodb的记录result进行标识
         :param result: 需要存储到mongodb中的数据
         :return: 数据在mongodb中的ObjectId
@@ -43,6 +44,7 @@ class MongoDBClient(object):
     def readData(self,task_id):
         '''
         mongodb数据库中根据task_id,读取数据
+
         :param task_id: celery中生成task_id，对存储到mongodb的记录result进行标识
         :return: res 根据task_id读取到的数据
         '''
@@ -60,6 +62,7 @@ class MongoDBClient(object):
     def deleteData(self, task_id):
         '''
         删除数据库中的一条记录
+
         :param task_id: celery中生成task_id，对存储到mongodb的记录result进行标识
         :return: res 删除的数据
         '''

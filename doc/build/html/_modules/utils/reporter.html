@@ -153,10 +153,74 @@
            <div itemprop="articleBody">
             
   <h1>utils.reporter 源代码</h1><div class="highlight"><pre>
-<div class="viewcode-block" id="Reporter"><a class="viewcode-back" href="../../utils.html#utils.reporter.Reporter">[文档]</a><span></span><span class="k">class</span> <span class="nc">Reporter</span><span class="p">:</span>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<div class="viewcode-block" id="Reporter"><a class="viewcode-back" href="../../utils.html#utils.reporter.Reporter">[文档]</a><span class="k">class</span> <span class="nc">Reporter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    向制定目的发送get或post请求，返回状态码和结果。__init__ 初始化为要接的对象， reportGet，reportPost，分别为get请求和post请求</span>
+<span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="k">pass</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
+        <span class="c1">#REPORT_ADDRESS必须包含协议http或https</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">REPORT_SERVER</span> <span class="o">+</span><span class="s2">&quot;:&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">REPORT_PORT</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">REPORT_ADDRESS</span>
+
+
+<div class="viewcode-block" id="Reporter.report_get"><a class="viewcode-back" href="../../utils.html#utils.reporter.Reporter.report_get">[文档]</a>    <span class="k">def</span> <span class="nf">report_get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">jsonData</span><span class="p">,</span><span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        用get方法回报结果</span>
+
+
+<span class="sd">        Args:</span>
+<span class="sd">            jsonData: 传输给服务器的json数据</span>
+<span class="sd">            timeout: 连接超时时间，默认是3秒</span>
+
+<span class="sd">        Returns: (res_status, content),状态码和相应内容</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">jsonData</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">e</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">getdata</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;data&quot;</span><span class="p">:</span><span class="n">jsonData</span><span class="p">}</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span><span class="n">params</span><span class="o">=</span><span class="n">getdata</span><span class="p">,</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;connection error&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">res_status</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span>
+                <span class="n">content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+                <span class="k">return</span> <span class="p">(</span><span class="n">res_status</span><span class="p">,</span><span class="n">content</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Reporter.report_post"><a class="viewcode-back" href="../../utils.html#utils.reporter.Reporter.report_post">[文档]</a>    <span class="k">def</span> <span class="nf">report_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">jsonData</span><span class="p">,</span><span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        用post方法回报结果</span>
+
+<span class="sd">        :param jsonData:传输给服务器的json数据</span>
+<span class="sd">        :param timeout: 连接超时时间，默认是3秒</span>
+<span class="sd">        :return: (res_status,content),状态码和相应内容</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">postdata</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;data&quot;</span><span class="p">:</span><span class="n">jsonData</span><span class="p">}</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span>  <span class="n">e</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">postdata</span><span class="p">,</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;connection error&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">res_status</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span>
+                <span class="n">content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+                <span class="k">return</span> <span class="p">(</span><span class="n">res_status</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></div></div>
 </pre></div>
 
            </div>
@@ -203,7 +267,6 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

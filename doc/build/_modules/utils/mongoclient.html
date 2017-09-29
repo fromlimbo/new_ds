@@ -160,7 +160,10 @@
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
 
 <div class="viewcode-block" id="MongoDBClient"><a class="viewcode-back" href="../../utils.html#utils.mongoclient.MongoDBClient">[文档]</a><span class="k">class</span> <span class="nc">MongoDBClient</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Mongodb数据库 连接，保存数据，读取数据</span>
+<span class="sd">    __init__ 连接数据库，saveData 保存数据， readData重数据库中读取数据</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">=</span><span class="n">config</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">pymongo</span><span class="o">.</span><span class="n">MongoClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">MONGO_ADDRESS</span><span class="p">,</span><span class="n">port</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">MONGO_PORT</span><span class="p">)</span>
@@ -174,6 +177,13 @@
             <span class="c1"># coll=db.collection_names(include_system_collections=False)</span>
 
 <div class="viewcode-block" id="MongoDBClient.saveData"><a class="viewcode-back" href="../../utils.html#utils.mongoclient.MongoDBClient.saveData">[文档]</a>    <span class="k">def</span> <span class="nf">saveData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">task_id</span><span class="p">,</span><span class="n">result</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        把指定的json数据result,保存到__init__ 初始化的数据库</span>
+
+<span class="sd">        :param task_id: celery中生成task_id，对存储到mongodb的记录result进行标识</span>
+<span class="sd">        :param result: 需要存储到mongodb中的数据</span>
+<span class="sd">        :return: 数据在mongodb中的ObjectId</span>
+<span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">savdata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;task_id&#39;</span><span class="p">:</span><span class="n">task_id</span><span class="p">,</span>
                    <span class="c1"># &quot;created_time&quot;:datetime.now().strftime(&quot;%Y-%m-%d %H:%M:%S&quot;),</span>
                    <span class="s1">&#39;result&#39;</span><span class="p">:</span><span class="n">result</span><span class="p">}</span>
@@ -187,6 +197,12 @@
             <span class="k">return</span> <span class="nb">id</span></div>
 
 <div class="viewcode-block" id="MongoDBClient.readData"><a class="viewcode-back" href="../../utils.html#utils.mongoclient.MongoDBClient.readData">[文档]</a>    <span class="k">def</span> <span class="nf">readData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">task_id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        mongodb数据库中根据task_id,读取数据</span>
+
+<span class="sd">        :param task_id: celery中生成task_id，对存储到mongodb的记录result进行标识</span>
+<span class="sd">        :return: res 根据task_id读取到的数据</span>
+<span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s2">&quot;task_id&quot;</span><span class="p">:</span><span class="n">task_id</span><span class="p">})</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -199,6 +215,12 @@
             <span class="k">return</span> <span class="n">res</span></div>
 
 <div class="viewcode-block" id="MongoDBClient.deleteData"><a class="viewcode-back" href="../../utils.html#utils.mongoclient.MongoDBClient.deleteData">[文档]</a>    <span class="k">def</span> <span class="nf">deleteData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除数据库中的一条记录</span>
+
+<span class="sd">        :param task_id: celery中生成task_id，对存储到mongodb的记录result进行标识</span>
+<span class="sd">        :return: res 删除的数据</span>
+<span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="n">delete_one</span><span class="p">({</span><span class="s1">&#39;task_id&#39;</span><span class="p">:</span><span class="n">task_id</span><span class="p">})</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -259,7 +281,6 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

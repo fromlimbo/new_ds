@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from flask import Flask
 from utils import Logger, MongoDBClient
 from config import *
@@ -14,6 +15,7 @@ celery=Celery(CeleryConfig.MAIN_NAME, broker=CeleryConfig.BROKER_ADDRESS,
 
 logger=Logger(config=LoggerConfig)
 mongoclient=MongoDBClient(config=MongoConfig)
+
 logging.basicConfig(level=logging.DEBUG)
 
 from app_view import *
@@ -21,6 +23,4 @@ from app_view import *
 logging.debug("service starts")
 
 if __name__ == '__main__':
-    # app.run(debug=True)
-    # celery.start()
     flask.run()

@@ -176,6 +176,7 @@
 <div class="viewcode-block" id="AuthHandler.authenticate"><a class="viewcode-back" href="../../utils.html#utils.auth_handler.AuthHandler.authenticate">[文档]</a>    <span class="k">def</span> <span class="nf">authenticate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        认证</span>
+
 <span class="sd">        :return: 0 认证成功，-1 认证失败</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
@@ -189,10 +190,11 @@
             <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></div>
 
 <div class="viewcode-block" id="AuthHandler.get_token"><a class="viewcode-back" href="../../utils.html#utils.auth_handler.AuthHandler.get_token">[文档]</a>    <span class="k">def</span> <span class="nf">get_token</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
+        <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        返回认证成功后的token</span>
+
 <span class="sd">        :return: token</span>
-<span class="sd">        &#39;&#39;&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">token</span></div></div>
 
 
@@ -243,7 +245,6 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
