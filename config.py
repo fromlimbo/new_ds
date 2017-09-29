@@ -6,7 +6,7 @@ class AuthConfig:
 class CeleryConfig(object):
 
     BROKER_ADDRESS="amqp://test:test@192.168.205.169:5672/DynamicSchedule"
-
+    CELERY_TASK_SERIALIZER='pickle'
     # please set this to the algorithm name
     MAIN_NAME="dynamic-schedule"
 

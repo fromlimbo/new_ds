@@ -2,10 +2,10 @@
 
 import unittest
 from dataProcess import GAVRP_Process, GAVARP_Process_json
-from algorithmModel.algorithm_entry import optimization
 import pandas as pd
 import json
 from datetime import datetime
+from algorithmModel.algorithm_entry import optimization
 
 import sys
 
@@ -95,6 +95,9 @@ class DataProcessJsonTester(unittest.TestCase):
 
         data_json={'mix_city':mix_city_json,'OTD_pinche':otd_pinche_json,
               'order':order_json, 'trailer':trailer_json}
+
+        with open('data.txt', 'w') as outfile:
+            json.dump(data_json, outfile)
 
         data=GAVARP_Process_json(data_json)
         result=optimization(data)

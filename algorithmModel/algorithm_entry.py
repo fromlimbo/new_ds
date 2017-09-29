@@ -28,7 +28,7 @@ num_iteration = 1
 
 
 # ---------------------------To carry out optimization and record results in result_record.pkl--------------------------#
-@celery.task
+@celery.task(serializer='pickle')
 def optimization(data):
     output = open('result_record.pkl', 'wb')
 

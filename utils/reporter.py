@@ -13,6 +13,12 @@ class Reporter:
         self.url =  self.config.REPORT_SERVER +":"+self.config.REPORT_PORT + self.config.REPORT_ADDRESS
 
     def reportGet(self,jsonData,timeout=3):
+        '''
+
+        :param jsonData:
+        :param timeout:
+        :return:
+        '''
         try:
             json.loads(jsonData)
         except Exception as e:

@@ -16,6 +16,9 @@ def GAVARP_Process_json(input_json):
     """
     这是一个注释
     """
+    with open('data.txt', 'w') as outfile:
+        json.dump(input_json, outfile)
+
     var_dict = {}
     required_order_keys = ['order_code', 'customer_code', 'dealer_code',
                            'OTD', 'priority', 'start_loc', 'end_loc', 'car_type', 'effective_time']
@@ -27,11 +30,14 @@ def GAVARP_Process_json(input_json):
                            'transport_type': -1
                            }
 
-    try:
-        orderjson = json.loads(input_json['order'])
-    except Exception:
-        logging.debug("json type is error")
-        return -1
+    # try:
+    #     input_json = json.loads(input_json)
+    #
+    # except Exception:
+    #     logging.debug("json type is error")
+    #     return -1
+
+    orderjson = input_json['order']
 
     order_dict = {}
     for item in orderjson:
@@ -50,6 +56,8 @@ def GAVARP_Process_json(input_json):
                                                item["end_loc"], item["created_time"], item["effective_time"],
                                                item["car_type"], item["transport_type"])
     var_dict["order_dict"] = order_dict
+    logging.debug("order data ok")
+
 
     required_trailer_keys = ['code', 'capacity_all', 'capacity_for_xl_car',
                              'capacity_for_l_car', 'capacity_for_m_car',
@@ -71,11 +79,12 @@ def GAVARP_Process_json(input_json):
                              'destination': -1,
                              'historic_trajectory': -1}
 
-    try:
-        trailerjson = json.loads(input_json['trailer'])
-    except Exception:
-        logging.debug("json type is error")
-        return -1
+    # try:
+    #     trailerjson = json.loads(input_json['trailer'])
+    # except Exception:
+    #     logging.debug("json type is error")
+    #     return -1
+    trailerjson=input_json['trailer']
     trailer_dict = {}
     for item in trailerjson:
 
@@ -88,7 +97,7 @@ def GAVARP_Process_json(input_json):
         for k in optional_trailer_keys.keys():
             if not item.has_key(k):
                 item[k] = optional_trailer_keys[k]
-        item['preferred_direction'] = (map(int, (item['preferred_direction'].split('、'))))
+        item['preferred_direction'] = (map(int, (item['preferred_direction'].split('/'))))
         trailer_dict[item["code"]] = trailer(item["code"], item["supplier_code"], item["capacity_all"],
                                              item["capacity_for_xl_car"], item["capacity_for_l_car"],
                                              item["capacity_for_m_car"],
@@ -104,8 +113,9 @@ def GAVARP_Process_json(input_json):
                                              item["current_location"],
                                              item["destination"], item["historic_trajectory"])
     var_dict["trailer_dict"] = trailer_dict
-    var_dict['mix_city'] = pd.read_json(input_json['mix_city'])
-    var_dict['OTD_pinche'] = pd.read_json(input_json['OTD_pinche'])
+    logging.debug("trailer data ok.")
+    var_dict['mix_city'] = input_json['mix_city']
+    var_dict['OTD_pinche'] = input_json['otd_pinche']
     return var_dict
 
 
