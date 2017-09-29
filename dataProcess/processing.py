@@ -13,6 +13,9 @@ def GAVRP_Validation(request):
 
 
 def GAVARP_Process_json(input_json):
+    """
+    这是一个注释
+    """
     var_dict = {}
     required_order_keys = ['order_code', 'customer_code', 'dealer_code',
                            'OTD', 'priority', 'start_loc', 'end_loc', 'car_type', 'effective_time']

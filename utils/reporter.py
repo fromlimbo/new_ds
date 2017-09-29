@@ -1,4 +1,46 @@
-class Reporter:
+# -*- coding: utf-8 -*-
+import requests
+import logging
+import json
 
+class Reporter:
+    """
+    向制定目的发送get或post请求，返回状态码和结果
+    """
     def __init__(self, config=None):
-        pass
+        self.config = config
+        #REPORT_ADDRESS必须包含协议http或https
+        self.url =  self.config.REPORT_ADDRESS +":"+self.config.REPORT_PORT
+
+    def reportGet(self,jsonData,timeout=3):
+        try:
+            json.loads(jsonData)
+        except Exception as e:
+            raise e
+        else:
+            getdata = {"data":jsonData}
+            try:
+                response = requests.get(url=self.url,params=getdata,timeout=timeout)
+            except Exception as e:
+                logging.warn("connection error")
+                return -1
+            else:
+                res_status = response.status_code
+                content = response.content
+                return (res_status,content)
+
+    def reportPost(self,jsonData,timeout=3):
+        try:
+            postdata = {"data":jsonData}
+        except Exception as e:
+            raise  e
+        else:
+            try:
+                response = requests.post(self.url,data=postdata,timeout=timeout)
+            except Exception as e:
+                logging.warn("connection error")
+                return -1
+            else:
+                res_status = response.status_code
+                content = response.content
+                return (res_status, content)

@@ -12,6 +12,10 @@ def start_task():
     add.delay(3,4)
     return jsonify({'id':'123'})
 
+@flask.route('/con',methods=['GET','POST'])
+def connect_Test():
+    return 'connection ok'
+
 
 @celery.task
 def add(x,y):

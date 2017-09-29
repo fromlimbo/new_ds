@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>utils package &mdash; 动态调度 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="搜索" href="search.html"/>
+    <link rel="top" title="动态调度 0.1 文档" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> 动态调度
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">utils package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-utils.auth_handler">utils.auth_handler module</a></li>
+<li><a class="reference internal" href="#module-utils.cachehandler">utils.cachehandler module</a></li>
+<li><a class="reference internal" href="#module-utils.dataloader">utils.dataloader module</a></li>
+<li><a class="reference internal" href="#module-utils.dochandler">utils.dochandler module</a></li>
+<li><a class="reference internal" href="#module-utils.logger">utils.logger module</a></li>
+<li><a class="reference internal" href="#module-utils.mongoclient">utils.mongoclient module</a></li>
+<li><a class="reference internal" href="#module-utils.reporter">utils.reporter module</a></li>
+<li><a class="reference internal" href="#module-utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">动态调度</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>utils package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/utils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="utils-package">
+<h1>utils package<a class="headerlink" href="#utils-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-utils.auth_handler">
+<span id="utils-auth-handler-module"></span><h2>utils.auth_handler module<a class="headerlink" href="#module-utils.auth_handler" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="utils.auth_handler.AuthHandler">
+<em class="property">class </em><code class="descclassname">utils.auth_handler.</code><code class="descname">AuthHandler</code><span class="sig-paren">(</span><em>config=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/auth_handler.html#AuthHandler"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.auth_handler.AuthHandler" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>认证工具类</p>
+<dl class="method">
+<dt id="utils.auth_handler.AuthHandler.authenticate">
+<code class="descname">authenticate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/auth_handler.html#AuthHandler.authenticate"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.auth_handler.AuthHandler.authenticate" title="永久链接至目标">¶</a></dt>
+<dd><p>认证
+:return: 0 认证成功，-1 认证失败</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="utils.auth_handler.AuthHandler.get_token">
+<code class="descname">get_token</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/auth_handler.html#AuthHandler.get_token"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.auth_handler.AuthHandler.get_token" title="永久链接至目标">¶</a></dt>
+<dd><p>返回认证成功后的token
+:return: token</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-utils.cachehandler">
+<span id="utils-cachehandler-module"></span><h2>utils.cachehandler module<a class="headerlink" href="#module-utils.cachehandler" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="utils.cachehandler.CacheHandler">
+<em class="property">class </em><code class="descclassname">utils.cachehandler.</code><code class="descname">CacheHandler</code><span class="sig-paren">(</span><em>config=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/cachehandler.html#CacheHandler"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.cachehandler.CacheHandler" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-utils.dataloader">
+<span id="utils-dataloader-module"></span><h2>utils.dataloader module<a class="headerlink" href="#module-utils.dataloader" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="utils.dataloader.DataLoader">
+<em class="property">class </em><code class="descclassname">utils.dataloader.</code><code class="descname">DataLoader</code><span class="sig-paren">(</span><em>config=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/dataloader.html#DataLoader"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.dataloader.DataLoader" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-utils.dochandler">
+<span id="utils-dochandler-module"></span><h2>utils.dochandler module<a class="headerlink" href="#module-utils.dochandler" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="utils.dochandler.DocHandler">
+<em class="property">class </em><code class="descclassname">utils.dochandler.</code><code class="descname">DocHandler</code><span class="sig-paren">(</span><em>config=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/dochandler.html#DocHandler"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.dochandler.DocHandler" title="永久链接至目标">¶</a></dt>
+<dd><dl class="method">
+<dt id="utils.dochandler.DocHandler.getDocById">
+<code class="descname">getDocById</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/dochandler.html#DocHandler.getDocById"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.dochandler.DocHandler.getDocById" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-utils.logger">
+<span id="utils-logger-module"></span><h2>utils.logger module<a class="headerlink" href="#module-utils.logger" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="utils.logger.Logger">
+<em class="property">class </em><code class="descclassname">utils.logger.</code><code class="descname">Logger</code><span class="sig-paren">(</span><em>config=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/logger.html#Logger"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.logger.Logger" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-utils.mongoclient">
+<span id="utils-mongoclient-module"></span><h2>utils.mongoclient module<a class="headerlink" href="#module-utils.mongoclient" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="utils.mongoclient.MongoDBClient">
+<em class="property">class </em><code class="descclassname">utils.mongoclient.</code><code class="descname">MongoDBClient</code><span class="sig-paren">(</span><em>config=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/mongoclient.html#MongoDBClient"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.mongoclient.MongoDBClient" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="utils.mongoclient.MongoDBClient.deleteData">
+<code class="descname">deleteData</code><span class="sig-paren">(</span><em>task_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/mongoclient.html#MongoDBClient.deleteData"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.mongoclient.MongoDBClient.deleteData" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="utils.mongoclient.MongoDBClient.readData">
+<code class="descname">readData</code><span class="sig-paren">(</span><em>task_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/mongoclient.html#MongoDBClient.readData"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.mongoclient.MongoDBClient.readData" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="utils.mongoclient.MongoDBClient.saveData">
+<code class="descname">saveData</code><span class="sig-paren">(</span><em>task_id</em>, <em>result</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/mongoclient.html#MongoDBClient.saveData"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.mongoclient.MongoDBClient.saveData" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-utils.reporter">
+<span id="utils-reporter-module"></span><h2>utils.reporter module<a class="headerlink" href="#module-utils.reporter" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="utils.reporter.Reporter">
+<em class="property">class </em><code class="descclassname">utils.reporter.</code><code class="descname">Reporter</code><span class="sig-paren">(</span><em>config=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/reporter.html#Reporter"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.reporter.Reporter" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-utils" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Anji Logistics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

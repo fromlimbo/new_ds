@@ -5,7 +5,9 @@ import logging
 from datetime import datetime
 
 class MongoDBClient(object):
-
+    '''
+    mongodb客户端
+    '''
     def __init__(self,config=None):
         self.config=config
         self.client = pymongo.MongoClient(host=self.config.MONGO_ADDRESS,port=self.config.MONGO_PORT)
