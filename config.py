@@ -75,8 +75,9 @@ class MongoConfig:
         pass
 
 class reportConfig:
-    REPORT_ADDRESS = "http://127.0.0.1"
+    REPORT_SERVER = "http://127.0.0.1"
     REPORT_PORT = "5000"
+    REPORT_ADDRESS = "/con"
 
     @staticmethod
     def __init__(self):

@@ -10,7 +10,7 @@ class Reporter:
     def __init__(self, config=None):
         self.config = config
         #REPORT_ADDRESS必须包含协议http或https
-        self.url =  self.config.REPORT_ADDRESS +":"+self.config.REPORT_PORT
+        self.url =  self.config.REPORT_SERVER +":"+self.config.REPORT_PORT + self.config.REPORT_ADDRESS
 
     def reportGet(self,jsonData,timeout=3):
         try:
