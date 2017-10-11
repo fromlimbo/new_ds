@@ -1,3 +1,4 @@
+import logging
 class AuthConfig:
     USER_NAME="admin"
     PASSWORD="admin"
@@ -79,6 +80,30 @@ class reportConfig:
     REPORT_PORT = "5000"
     REPORT_ADDRESS = "/con"
 
+    @staticmethod
+    def __init__(self):
+        pass
+
+
+class MQLogConfig:
+    MQHOST = "localhost"
+    MQPORT = 5672
+    VIRTUAL_HOST = None
+    USERNAME = None
+    PASSWORD = None
+    EXCHANGE = "log"
+    EXCHANGE_TYPE = "topic"
+    BRIND_KEYS = {'DEBUG':'DEBUG',
+                   'INFO':'INFO',
+                   'CRITICAL':'CRITICAL',
+                   'WARNING':'WARNING',
+                   'ERROR':'ERROR'}
+
+    QUEUE_NAMES = {'DEBUG':'logging_debug_queue',
+                   'INFO':'logging_info_queue',
+                   'CRITICAL':'logging_critical_queue',
+                   'WARNING':'logging_warning_queue',
+                   'ERROR':'logging_error_queue'}
     @staticmethod
     def __init__(self):
         pass
