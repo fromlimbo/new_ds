@@ -4,20 +4,20 @@ from datetime import datetime
 import logging
 import sys
 
-class Handler(logging.Handler):
+class MQLoggingHandler(logging.Handler):
     """
         handler that send log to rabbitmq, using pika.
     """
-    def __init__(self, host, port=None, virtual_host=None, username=None, password=None, exchange='log'):
+    def __init__(self, config):
         logging.Handler.__init__(self)
-        self.connection_para = dict(host=host)
-        if port:
-            self.connection_para['port'] = port
-        if virtual_host:
-            self.connection_para['virtual_host'] = virtual_host
-        if username and password:
+        self.connection_para = dict(host=config.MQHOST)
+        if config.MQPORT:
+            self.connection_para['port'] = config.MQPORT
+        if config.VIRTUAL_HOST:
+            self.connection_para['virtual_host'] = config.VIRTUAL_HOST
+        if config.USERNAME and config.PASSWORD:
             self.connection_para['credentials'] = credentials.PlainCredentials(username, password)
-        self.exchange = exchange
+        self.exchange = config.EXCHANGE
         self.connection, self.channel = None, None
         # make sure exchange only declared once.
         self.is_exchange_declared = False

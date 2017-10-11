@@ -1,3 +1,4 @@
+import logging
 class AuthConfig:
     USER_NAME="admin"
     PASSWORD="admin"
@@ -78,6 +79,21 @@ class reportConfig:
     REPORT_SERVER = "http://127.0.0.1"
     REPORT_PORT = "5000"
     REPORT_ADDRESS = "/con"
+
+    @staticmethod
+    def __init__(self):
+        pass
+
+
+class LogMQ:
+    MQHOST = "localhost"
+    MQPORT = 5672
+    VIRTUAL_HOST = None
+    USERNAME = None
+    PASSWORD = None
+    EXCHANGE = "log"
+    EXCHANGE_TYPE = "topic"
+    BRIND_KEYS = ["DEBUG","INFO","WARNING","ERROR","CRITICAL"]
 
     @staticmethod
     def __init__(self):
