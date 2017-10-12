@@ -1,22 +1,11 @@
+
 # coding:utf-8
 """
 This file contains many functions called during genetic algorithm.
 """
 
-# def initialization():
-#     """
-#     This function initialize the x_matrix describing a scheduling solution and the parameter set, misc
-#     :return: initial solution matrix and parameter set
-#     """
-#     import packaging
-#     misc = Misc()
-#     misc.mix_city = packaging.mix_city
-#     misc.OTD_pinche = packaging.OTD_pinche
-#     misc.otd_type = packaging.otd_type
-#     return packaging.x_matrix, misc
-
 # Constraint 2:
-def preferred_direction_check(trailer, new_shipment):
+def preferred_direction_check(new_shipment, trailer):
     """
     This fuction check whether the input shipment and the input trailer satisfies the preferred direction requirement,
      if yes, return True, else return False
@@ -44,9 +33,7 @@ def mix_dealer_check(shipment_set, new_shipment, misc):
     if len(city_list) < 2:
         max_mix_dealer_number = misc.OTD_pinche.iloc[idx,2]
     else:
-        # print max(OTD_list)
         max_mix_dealer_number = misc.OTD_pinche.iloc[idx, 3]
-
 
     dealer_set = {i.dealer_code for i in shipment_set}
     dealer_set.add(new_shipment.dealer_code)

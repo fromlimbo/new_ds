@@ -3,20 +3,20 @@
 This file is called by the generic procedure to initialize a new generation.
 """
 import copy
-from Bases import *
+from basic_class_GA import *
 from packaging import *
-import operator
 
-def initialization(ppl_size, data, misc, flag_crossover=False, print_switch=0, old_routes=None):
+
+def initialization(ppl_size, data, misc, flag_crossover=False, print_switch=0, old_genes=None):
     """
     This function generates the initial generation based on raw data.
 
     :param ppl_size: poplulation size
     :param data: a variable of Data class containing order dictionary and shipment dictionary.
-    :param misc: the variable passed by GAVRP.py to set parameters
+    :param misc: the variable passed by main.py to set parameters
     :param flag_crossover: a flag to indicate whether this initialization is for crossover
     :param print_switch: if print_switch=1, some variables will be printed
-    :param old_routes: 
+    :param old_genes:
     :return: a generation of ppl_size
     """
 
@@ -41,30 +41,30 @@ def initialization(ppl_size, data, misc, flag_crossover=False, print_switch=0, o
             shipment_list.sort(key=operator.attrgetter('dealer_code'), reverse=False)
         if misc.cost_weight[1] > 0.4:
             shipment_list.sort(key=operator.attrgetter('OTD'), reverse=False)
-        route_list = [Route(i, misc) for i in trailer_list]#所有大板车及其装载情况类Route的变量组成的列表
+        gene_list = [ScheduleGene(i, misc) for i in trailer_list]#所有大板车及其装载情况类ScheduleGene的变量组成的列表
 
-        all_mighty_route = AllMightyRoute()#The super trailer which can take any shipment which is not taken by normal trailers
-        route_list.append(all_mighty_route)
+        all_mighty_gene = RemainShipsContainer()#The super trailer which can take any shipment which is not taken by normal trailers
+        gene_list.append(all_mighty_gene)
         full_pre = 0 #the total number of full trailers in the previous iteration
-        full_route = 1# the total number of full trailers in this iteration
-        while full_route != full_pre:# iteration stops when the number of full trailers cannot be bigger
-            full_pre = full_route
+        full_gene = 1# the total number of full trailers in this iteration
+        while full_gene != full_pre:# iteration stops when the number of full trailers cannot be bigger
+            full_pre = full_gene
             while shipment_list:#把所有运单都装走
                 ship = shipment_list.pop()
-                for route in route_list:
-                    if route.add_ship(ship):# Added this ship into this route successfully
+                for gene in gene_list:
+                    if gene.add_ship(ship):# Added this ship into this gene successfully
                         break
-            for route in route_list:
-                if route.id == 'AllMightyRoute' or len(route.ships) < sum(route.slot_cap):#If the trailer in this route is not full
-                    shipment_list += list(route.ships.values())# all the shipments in this trailer are put back into shipment_list
-                    route.ships = {}#this trailer is set empty
-                    route.rearrange_ships()#route.slot, route._ship_loc,route.ships are reset
-            full_route = sum(len(i.ships) == sum(i.slot_cap) for i in route_list if i.id != 'AllMightyRoute')# The total number of full trailers
+            for gene in gene_list:
+                if gene.id == 'RemainShipsContainer' or len(gene.ships) < sum(gene.slot_cap):#If the trailer in this gene is not full
+                    shipment_list += list(gene.ships.values())# all the shipments in this trailer are put back into shipment_list
+                    gene.ships = {}#this trailer is set empty
+                    gene.rearrange_ships()#gene.slot, gene._ship_loc,gene.ships are reset
+            full_gene = sum(len(i.ships) == sum(i.slot_cap) for i in gene_list if i.id != 'RemainShipsContainer')# The total number of full trailers
 
         for i in shipment_list:
-            all_mighty_route.add_ship(i)#To add shipments in shipment_list to the super trailer, all_mighty
+            all_mighty_gene.add_ship(i)#To add shipments in shipment_list to the super trailer, all_mighty
 
-        individual = {i.id: i for i in route_list}
+        individual = {i.id: i for i in gene_list}
 
         return individual
 
@@ -76,9 +76,9 @@ def initialization(ppl_size, data, misc, flag_crossover=False, print_switch=0, o
         if print_switch > 1:
             print 'Individual: %4d    GoneTrailer: %4d    GoneShips: %4d    RemainShips: %4d' % \
                   (count,
-                   sum(len(i.ships) == sum(i.slot_cap) for i in ind.values() if i.id != 'AllMightyRoute'),
-                   sum(len(i.ships) for i in ind.values() if i.id != 'AllMightyRoute'),
-                   len(ind['AllMightyRoute'].ships)
+                   sum(len(i.ships) == sum(i.slot_cap) for i in ind.values() if i.id != 'RemainShipsContainer'),
+                   sum(len(i.ships) for i in ind.values() if i.id != 'RemainShipsContainer'),
+                   len(ind['RemainShipsContainer'].ships)
                    )
 
     return population

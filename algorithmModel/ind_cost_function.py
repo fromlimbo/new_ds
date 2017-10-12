@@ -8,11 +8,9 @@ from packaging import *
 #----------------------------------------------- 已有ind词典情况下，封装所有目标为一个函数-------------------------------------#
 ############################################################################################################3##########
 
-def cost_computation_ind(ind, weight_set, trailer_dict=None, shipment_dict=None, GeneEvaluate=False):
+def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None, GeneEvaluate=False):
     """
     This function computes optimization object of the input individual or gene
-    :param trailer_dict:
-    :param shipment_dict:
     :param ind: the input individual or gene
     :param weight_set: weights to describe relative importance of all the optimization objects
     :param GeneEvaluate: the input is a gene instead of an individual when GeneEvaluate = True
@@ -29,7 +27,7 @@ def cost_computation_ind(ind, weight_set, trailer_dict=None, shipment_dict=None,
     num_trailer = 0
 
     for i in ind.values():
-        if i.id != 'AllMightyRoute' and len(i.ships) == sum(i.slot_cap):
+        if i.id != 'RemainShipsContainer' and len(i.ships) == sum(i.slot_cap):
             num_trailer += 1
             num_of_loaded_shipments += len(i.ships)
             num_of_high_priority += len([x_ship for x_ship in i.ships.values() if x_ship.OTD > 2])
@@ -51,7 +49,8 @@ def cost_computation_ind(ind, weight_set, trailer_dict=None, shipment_dict=None,
         normalized_cost_result.append(float(num_of_high_priority) / float(num_of_loaded_shipments))
     else:
         num_of_urgent_shipment = len([i.order_code for i in shipment_dict.values() if i.OTD > 2])
-        normalized_cost_result.append(float(num_of_high_priority) / float(min(num_of_loading_capacity, num_of_urgent_shipment)))
+        # To plus a small number in denominator to avoid zero denominator.
+        normalized_cost_result.append(float(num_of_high_priority) / (0.00001+float(min(num_of_loading_capacity, num_of_urgent_shipment))))
     #------------------------------------------------------------------------------------------------------------------#
 
     #------------------------------------------- 测试目标3:最大化大、中型商品车数量 ----------------------------------------#
@@ -60,7 +59,8 @@ def cost_computation_ind(ind, weight_set, trailer_dict=None, shipment_dict=None,
     else:
         total_num_of_big_car = len([i.order_code for i in shipment_dict.values() if i.car_type in ['L', 'XL']])
         big_car_capacity = sum([i.capacity_for_xl_car + i.capacity_for_l_car for i in trailer_dict.values()])
-        normalized_cost_result.append(float(num_of_big_car) / float(min(total_num_of_big_car,big_car_capacity)))
+        # To plus a small number in denominator to avoid zero denominator.
+        normalized_cost_result.append(float(num_of_big_car) / (0.00001+float(min(total_num_of_big_car,big_car_capacity))))
     #------------------------------------------------------------------------------------------------------------------#
 
     #------------------------------------------- 测试目标4:最小化异地拼车数量 ---------------------------------------------#
