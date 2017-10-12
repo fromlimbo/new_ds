@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import logging
 class AuthConfig:
     USER_NAME="admin"
