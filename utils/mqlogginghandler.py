@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import pika
 from pika import credentials
 from datetime import datetime
@@ -6,10 +7,14 @@ import json
 import sys
 
 class MQLoggingHandler(logging.Handler):
-    """
-        handler that send log to rabbitmq, using pika.
-    """
+    '''
+     handler that send log to rabbitmq, using pika.
+    '''
     def __init__(self, config):
+        '''
+        初始化需要连接的rabbitmq server
+        :param config: 要连接的rabbitmq server 配置信息，config.py模块导入
+        '''
         logging.Handler.__init__(self)
         self.connection_para = dict(host=config.MQHOST)
         if config.MQPORT:
@@ -27,8 +32,9 @@ class MQLoggingHandler(logging.Handler):
         self.connect()
 
     def connect(self):
-        """connect to rabbitMq server, using topic exchange"""
-
+        '''
+        connect to rabbitMq server, using topic exchange
+        '''
         # emit pika to stdout, avoid RecursionError when connecting.
         pika_logger = logging.getLogger('pika')
         handler = logging.StreamHandler()
@@ -56,9 +62,11 @@ class MQLoggingHandler(logging.Handler):
             routing_key = "{name}.{level}".format(name=record.name, level=record.levelname)
             self.channel.basic_publish(exchange=self.exchange,
                                        routing_key=routing_key,
+                                       #传入到rabbitmq队列中的日志信息，还可传入，pathname,lineno,args,exc_info
+                                       #func,例如：record.pathname
                                        body=json.dumps({'name':record.name,
-                                             'level':record.levelname,
-                                             'mesg':record.msg}),
+                                                        'level':record.levelname,
+                                                         'mesg':record.msg}),
                                        properties=pika.BasicProperties(
                                            delivery_mode=2
                                        ))
@@ -69,9 +77,9 @@ class MQLoggingHandler(logging.Handler):
             self.handleError(record)
 
     def close(self):
-        """
+        '''
         clear when closing
-        """
+        '''
         self.acquire()
         try:
             logging.Handler.close(self)
