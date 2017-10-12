@@ -64,6 +64,7 @@ class CacheConfig:
 
 
 class MongoConfig:
+    #mongodb-server 配置参数
     MONGO_ADDRESS= "192.168.205.169"
     MONGO_PORT= 27017
     MONGO_DATABASE="DynamicSchedule"
@@ -76,6 +77,7 @@ class MongoConfig:
         pass
 
 class reportConfig:
+    #连接请求配置参数(reporter模块)
     REPORT_SERVER = "http://127.0.0.1"
     REPORT_PORT = "5000"
     REPORT_ADDRESS = "/con"
@@ -86,6 +88,7 @@ class reportConfig:
 
 
 class MQLogConfig:
+    #集中日志模块中rabbitmq-server初始化参数(logconsumer,mqlogginghandler)
     MQHOST = "localhost"
     MQPORT = 5672
     VIRTUAL_HOST = None
@@ -93,12 +96,14 @@ class MQLogConfig:
     PASSWORD = None
     EXCHANGE = "log"
     EXCHANGE_TYPE = "topic"
+
+    #Consumer 中routing_key参数
     BRIND_KEYS = {'DEBUG':'DEBUG',
                    'INFO':'INFO',
                    'CRITICAL':'CRITICAL',
                    'WARNING':'WARNING',
                    'ERROR':'ERROR'}
-
+    #集中日志 中消息队列名称
     QUEUE_NAMES = {'DEBUG':'logging_debug_queue',
                    'INFO':'logging_info_queue',
                    'CRITICAL':'logging_critical_queue',
