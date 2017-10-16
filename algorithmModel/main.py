@@ -11,6 +11,13 @@ import init
 import crossover as co
 import copy
 from basic_class_GA import *
+import logging
+
+logging.basicConfig(level=logging.DEBUG,
+                format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                datefmt='%a, %d %b %Y %H:%M:%S',
+                filename='myapp.log',
+                filemode='w')
 
 max_step_para = 10  # The maximum of iteretion
 converge_gap_para = 0.0001  # The converge gap between two continuous iterations when the algorithm stops
@@ -62,7 +69,11 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
     :param print_switch: the bool value to determine whether variables should be printed.
     :return: the individual set containing the last generation and the best individual among all the individuals during evolution.
     """
-    misc = gen_misc(cost_weight, _data)
+    try:
+        misc = gen_misc(cost_weight, _data)
+    except KeyError:
+        print "Ineffective input data!"
+        logging.error("Ineffective input data!")
     data = Data(misc.ship_dict, misc.trailer_dict)  # build a new variant of Data class, containing shipment dictionary and trailer dictionary
     co_par = CrossoverParameters(mutant_rate_para, fit_threshold_para, crossover_ratio_para)  # set a variant containing crossover ratio, fitness threshold and mutant rate
 
@@ -83,16 +94,20 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
     while stop_count and step < max_steps:
         if np.abs(ave_goal - ave_goal_pre) < converge_gap and not stay_flag:
             stop_count = 3
-            ave_goal_pre, optimal_goal, optimal_ind = ppl_cost(ppl, misc, with_optimal_goal=True)
             stay_flag = True
         if np.abs(ave_goal - ave_goal_pre) < converge_gap and stay_flag:
             stop_count -= 1
             stay_flag = True
-            ave_goal_pre, optimal_goal, optimal_ind = ppl_cost(ppl, misc, with_optimal_goal=True)
         if np.abs(ave_goal - ave_goal_pre) > converge_gap:
             stay_flag = False
         ave_goal_pre = ave_goal
         ppl = co.co_pro(ppl, co_par, data, misc, print_switch)
+        ave_goal, optimal_goal, optimal_ind = ppl_cost(ppl, misc, with_optimal_goal=True)
+        logging.info('OptimalIndividual   GoneTrailer: %4d    GoneShips: %4d    RemainShips: %4d' % \
+                     (sum(len(i.ships) == sum(i.slot_cap) for i in optimal_ind.values() if i.id != 'RemainShipsContainer'),
+                      sum(len(i.ships) for i in optimal_ind.values() if i.id != 'RemainShipsContainer'),
+                      len(optimal_ind['RemainShipsContainer'].ships)
+                      ))
         if optimal_goal > best_value:
             best_ind = optimal_ind
             best_value = optimal_goal

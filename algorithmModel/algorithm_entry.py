@@ -21,8 +21,12 @@ weight = [0.0, 0.5, 0.0, 0.5]
 @celery.task(serializer='pickle')
 def optimization(data):
     #----------------- To generate scheduling solutions through hierarchical mult-object optimization--------------
-    weight_set = [weight[0], weight[1], weight[2], weight[3]]
-    ind1 = main.ga_vrp(data, weight_set, 5, 0.0001)
+    try:
+        logging.info("The algorithm starts")
+        ind1 = main.ga_vrp(data, weight, 5, 0.0001)
+    except ValueError:
+        print "Ineffective input data!"
+        logging.error("Ineffective input data!")
     solution = xmatrix_to_solution(convert_ind_to_matrix(ind1))
     print solution
     return solution

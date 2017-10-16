@@ -31,16 +31,32 @@ def initialization(ppl_size, data, misc, flag_crossover=False, print_switch=0, o
         np.random.shuffle(trailer_list)
 
         if misc.cost_weight[0] > 0.4 or misc.cost_weight[1] > 0.4 or misc.cost_weight[2] > 0.4:
-            trailer_list.sort(key=operator.attrgetter('capacity_for_xl_car'), reverse=True)
-            trailer_list.sort(key=operator.attrgetter('capacity_for_l_car'), reverse=True)
-            trailer_list.sort(key=operator.attrgetter('capacity_all'), reverse=False)
+            try:
+                trailer_list.sort(key=operator.attrgetter('capacity_for_xl_car'), reverse=True)
+                trailer_list.sort(key=operator.attrgetter('capacity_for_l_car'), reverse=True)
+                trailer_list.sort(key=operator.attrgetter('capacity_all'), reverse=False)
+            except KeyError:
+                print "The input trailer data is ineffective!"
+                logging.error("The input trailer data is ineffective!")
         if misc.cost_weight[2] > 0.4:
-            shipment_list.sort(key=operator.attrgetter('car_type'), reverse=True)
+            try:
+                shipment_list.sort(key=operator.attrgetter('car_type'), reverse=True)
+            except KeyError:
+                print "The input shipment data is ineffective!"
+                logging.error("The input shipment data is ineffective!")
         if misc.cost_weight[3] > 0.4:
-            shipment_list.sort(key=operator.attrgetter('start_loc'), reverse=False)
-            shipment_list.sort(key=operator.attrgetter('dealer_code'), reverse=False)
+            try:
+                shipment_list.sort(key=operator.attrgetter('start_loc'), reverse=False)
+                shipment_list.sort(key=operator.attrgetter('dealer_code'), reverse=False)
+            except KeyError:
+                print "The input shipment data is ineffective!"
+                logging.error("The input shipment data is ineffective!")
         if misc.cost_weight[1] > 0.4:
-            shipment_list.sort(key=operator.attrgetter('OTD'), reverse=False)
+            try:
+                shipment_list.sort(key=operator.attrgetter('OTD'), reverse=False)
+            except KeyError:
+                print "The input shipment data is ineffective!"
+                logging.error("The input shipment data is ineffective!")
         gene_list = [ScheduleGene(i, misc) for i in trailer_list]#所有大板车及其装载情况类ScheduleGene的变量组成的列表
 
         all_mighty_gene = RemainShipsContainer()#The super trailer which can take any shipment which is not taken by normal trailers
@@ -80,5 +96,11 @@ def initialization(ppl_size, data, misc, flag_crossover=False, print_switch=0, o
                    sum(len(i.ships) for i in ind.values() if i.id != 'RemainShipsContainer'),
                    len(ind['RemainShipsContainer'].ships)
                    )
+            logging.info('Individual: %4d    GoneTrailer: %4d    GoneShips: %4d    RemainShips: %4d' % \
+                         (count,
+                          sum(len(i.ships) == sum(i.slot_cap) for i in ind.values() if i.id != 'RemainShipsContainer'),
+                          sum(len(i.ships) for i in ind.values() if i.id != 'RemainShipsContainer'),
+                          len(ind['RemainShipsContainer'].ships)
+                          ))
 
     return population
