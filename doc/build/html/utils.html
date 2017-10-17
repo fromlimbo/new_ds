@@ -35,7 +35,8 @@
         <link rel="index" title="索引"
               href="genindex.html"/>
         <link rel="search" title="搜索" href="search.html"/>
-    <link rel="top" title="动态调度 0.1 文档" href="index.html"/> 
+    <link rel="top" title="动态调度 0.1 文档" href="index.html"/>
+        <link rel="prev" title="工具类使用样例" href="example.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -88,22 +89,25 @@
               
             
             
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">utils package</a><ul>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-utils.auth_handler">utils.auth_handler module</a></li>
-<li><a class="reference internal" href="#module-utils.cachehandler">utils.cachehandler module</a></li>
-<li><a class="reference internal" href="#module-utils.dataloader">utils.dataloader module</a></li>
-<li><a class="reference internal" href="#module-utils.dochandler">utils.dochandler module</a></li>
-<li><a class="reference internal" href="#module-utils.logger">utils.logger module</a></li>
-<li><a class="reference internal" href="#module-utils.mongoclient">utils.mongoclient module</a></li>
-<li><a class="reference internal" href="#module-utils.reporter">utils.reporter module</a></li>
-<li><a class="reference internal" href="#module-utils">Module contents</a></li>
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="async.html">异步调用样例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">工具类使用样例</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-utils.auth_handler">utils.auth_handler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-utils.cachehandler">utils.cachehandler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-utils.dataloader">utils.dataloader module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-utils.dochandler">utils.dochandler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-utils.logger">utils.logger module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-utils.mongoclient">utils.mongoclient module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-utils.mqlogginghandler">utils.mqlogginghandler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-utils.reporter">utils.reporter module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-utils">Module contents</a></li>
 </ul>
 </li>
 </ul>
-</div>
+
             
           
         </div>
@@ -313,6 +317,33 @@ __init__ 连接数据库，saveData 保存数据， readData重数据库中读�
 </dd></dl>
 
 </div>
+<div class="section" id="module-utils.mqlogginghandler">
+<span id="utils-mqlogginghandler-module"></span><h2>utils.mqlogginghandler module<a class="headerlink" href="#module-utils.mqlogginghandler" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="utils.mqlogginghandler.MQLoggingHandler">
+<em class="property">class </em><code class="descclassname">utils.mqlogginghandler.</code><code class="descname">MQLoggingHandler</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/mqlogginghandler.html#MQLoggingHandler"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.mqlogginghandler.MQLoggingHandler" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">logging.Handler</span></code></p>
+<p>handler that send log to rabbitmq, using pika.</p>
+<dl class="method">
+<dt id="utils.mqlogginghandler.MQLoggingHandler.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/mqlogginghandler.html#MQLoggingHandler.close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.mqlogginghandler.MQLoggingHandler.close" title="永久链接至目标">¶</a></dt>
+<dd><p>clear when closing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="utils.mqlogginghandler.MQLoggingHandler.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/mqlogginghandler.html#MQLoggingHandler.connect"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.mqlogginghandler.MQLoggingHandler.connect" title="永久链接至目标">¶</a></dt>
+<dd><p>connect to rabbitMq server, using topic exchange</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="utils.mqlogginghandler.MQLoggingHandler.emit">
+<code class="descname">emit</code><span class="sig-paren">(</span><em>record</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/mqlogginghandler.html#MQLoggingHandler.emit"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.mqlogginghandler.MQLoggingHandler.emit" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="module-utils.reporter">
 <span id="utils-reporter-module"></span><h2>utils.reporter module<a class="headerlink" href="#module-utils.reporter" title="永久链接至标题">¶</a></h2>
 <dl class="class">
@@ -378,6 +409,13 @@ __init__ 连接数据库，saveData 保存数据， readData重数据库中读�
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="example.html" class="btn btn-neutral" title="工具类使用样例" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

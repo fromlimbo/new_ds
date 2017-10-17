@@ -1,5 +1,8 @@
-工具类文档
+utils package
 =============
+
+Submodules
+----------
 
 utils\.auth\_handler module
 ---------------------------
@@ -45,6 +48,14 @@ utils\.mongoclient module
 -------------------------
 
 .. automodule:: utils.mongoclient
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+utils\.mqlogginghandler module
+------------------------------
+
+.. automodule:: utils.mqlogginghandler
     :members:
     :undoc-members:
     :show-inheritance:

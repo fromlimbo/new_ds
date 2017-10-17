@@ -10,9 +10,11 @@ class MQLoggingHandler(logging.Handler):
     '''
      handler that send log to rabbitmq, using pika.
     '''
+
     def __init__(self, config):
         '''
         初始化需要连接的rabbitmq server
+
         :param config: 要连接的rabbitmq server 配置信息，config.py模块导入
         '''
         logging.Handler.__init__(self)
