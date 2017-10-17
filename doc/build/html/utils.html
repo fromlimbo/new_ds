@@ -260,9 +260,17 @@ __init__ 连接数据库，saveData 保存数据， readData重数据库中读�
 <dl class="method">
 <dt id="utils.mongoclient.MongoDBClient.deleteData">
 <code class="descname">deleteData</code><span class="sig-paren">(</span><em>task_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/mongoclient.html#MongoDBClient.deleteData"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.mongoclient.MongoDBClient.deleteData" title="永久链接至目标">¶</a></dt>
-<dd><p>删除数据库中的一条记录
-:param task_id: celery中生成task_id，对存储到mongodb的记录result进行标识
-:return: res 删除的数据</p>
+<dd><p>删除数据库中的一条记录</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>task_id</strong> – celery中生成task_id，对存储到mongodb的记录result进行标识</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">res 删除的数据</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -314,23 +322,44 @@ __init__ 连接数据库，saveData 保存数据， readData重数据库中读�
 <p>向制定目的发送get或post请求，返回状态码和结果。__init__ 初始化为要接的对象， reportGet，reportPost，分别为get请求和post请求</p>
 <dl class="method">
 <dt id="utils.reporter.Reporter.report_get">
-<code class="descname">report_get</code><span class="sig-paren">(</span><em>jsonData</em>, <em>timeout=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/reporter.html#Reporter.report_get"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.reporter.Reporter.report_get" title="永久链接至目标">¶</a></dt>
+<code class="descname">report_get</code><span class="sig-paren">(</span><em>jsondata</em>, <em>timeout=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/reporter.html#Reporter.report_get"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.reporter.Reporter.report_get" title="永久链接至目标">¶</a></dt>
 <dd><p>用get方法回报结果</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>jsonData: 传输给服务器的json数据
-timeout: 连接超时时间，默认是3秒</dd>
-</dl>
-<p>Returns: (res_status, content),状态码和相应内容</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>jsondata</strong> – 传输给服务器的json数据</li>
+<li><strong>timeout</strong> – 连接超时时间，默认是3秒</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">(res_status, content),状态码和相应内容</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="utils.reporter.Reporter.report_post">
-<code class="descname">report_post</code><span class="sig-paren">(</span><em>jsonData</em>, <em>timeout=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/reporter.html#Reporter.report_post"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.reporter.Reporter.report_post" title="永久链接至目标">¶</a></dt>
+<code class="descname">report_post</code><span class="sig-paren">(</span><em>jsondata</em>, <em>timeout=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/reporter.html#Reporter.report_post"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#utils.reporter.Reporter.report_post" title="永久链接至目标">¶</a></dt>
 <dd><p>用post方法回报结果</p>
-<p>:param jsonData:传输给服务器的json数据
-:param timeout: 连接超时时间，默认是3秒
-:return: (res_status,content),状态码和相应内容</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>jsondata</strong> – 传输给服务器的json数据</li>
+<li><strong>timeout</strong> – 连接超时时间，默认是3秒</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">(res_status,content),状态码和相应内容</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
