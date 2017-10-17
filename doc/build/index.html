@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>算法模板文档 &mdash; 动态调度 0.1 文档</title>
+  <title>Python算法模板 &mdash; 动态调度 0.1 文档</title>
   
 
   
@@ -36,7 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="搜索" href="search.html"/>
     <link rel="top" title="动态调度 0.1 文档" href="#"/>
-        <link rel="next" title="utils package" href="utils.html"/> 
+        <link rel="next" title="配置" href="config.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -90,7 +90,10 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="utils.html">utils package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="async.html">异步调用样例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">工具类使用样例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">工具类文档</a></li>
 </ul>
 
             
@@ -135,7 +138,7 @@
     
       <li><a href="#">Docs</a> &raquo;</li>
         
-      <li>算法模板文档</li>
+      <li>Python算法模板</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -154,77 +157,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="id1">
-<h1>算法模板文档<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="python">
+<h1>Python算法模板<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h1>
 <p>本项目的核心是提供了一套使得算法可以被分布式异步调用的框架，以及算法运行过程中会使用的工具类，包括日志、读写缓存、读写数据库等。</p>
 <p>工程分为三个主要部分：算法入口、算法模块和工具类。</p>
 <p>算法入口主要为 <code class="docutils literal"><span class="pre">app.py</span></code> 和 <code class="docutils literal"><span class="pre">app_view.py</span></code> 两个文件。其中 <code class="docutils literal"><span class="pre">app.py</span></code> 里生成了各工具类的实例， <code class="docutils literal"><span class="pre">app_view.py</span></code> 为flask的视图函数。</p>
 <p>工具类包含在 <code class="docutils literal"><span class="pre">util</span></code> 文件夹下，各模块的使用方法可在各自的文档中找到。</p>
-<p>算法模块是与本模板独立的一部分，由各个小组实现。</p>
+<p>算法模块是与本模板独立的一部分，由各个小组实现。请将算法放在 <code class="docutils literal"><span class="pre">algorithm</span></code> 文件夹下，并提供明确的调用入口。</p>
 </div>
-<div class="section" id="id2">
-<h1>异步调用样例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h1>
-<p>分布式异步调用是通过开源框架Celery实现的。将算法修改为异步调用的版本是非常容易的，我们在 <code class="docutils literal"><span class="pre">app_view.py</span></code> 中提供了一个例子:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@celery</span><span class="o">.</span><span class="n">task</span>
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-   <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
-</pre></div>
-</div>
-<p><code class="docutils literal"><span class="pre">add``为一个普通的python函数，只需要在函数定义上增加</span> <span class="pre">``&#64;celery.task</span></code> 装饰器，即可将其变为一个celery任务。
-这里的 <code class="docutils literal"><span class="pre">celery</span></code> 是一个Celery类实例，我们在 <code class="docutils literal"><span class="pre">app.py</span></code> 中生成了这个实例，所以算法同学需要在你们的算法入口函数所在脚本文件中引用它:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">app</span> <span class="k">import</span> <span class="n">celery</span>
-</pre></div>
-</div>
-<p>这里有个需要注意的地方，celery默认的序列化器是 <code class="docutils literal"><span class="pre">json</span></code> 所以没办法在参数中传递python类对象，若算法的参数中有类对象请使用 <code class="docutils literal"><span class="pre">pickle</span></code> 作为序列化器。
-指定序列化器也很简单，将修饰器改成如下形式即可:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@celery</span><span class="o">.</span><span class="n">task</span><span class="p">(</span><span class="n">serializer</span><span class="o">=</span><span class="s1">&#39;pickle&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>当将函数转为celery任务之后，我们在 <code class="docutils literal"><span class="pre">app_view.py</span></code> 中即可根据请求进行异步调用。例如新建一个 <code class="docutils literal"><span class="pre">add</span></code> 任务:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">add</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">task_id</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">id</span>
-</pre></div>
-</div>
-<p>之后便可使用获得的 <code class="docutils literal"><span class="pre">task_id</span></code> 获取计算结果及进行任务管理。</p>
-</div>
-<div class="section" id="id3">
-<h1>工具类使用样例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h1>
-<div class="section" id="logging">
-<h2>Logging<a class="headerlink" href="#logging" title="永久链接至标题">¶</a></h2>
-<p>以下代码展示了如何使用我们的日志模块。:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">utils</span> <span class="k">import</span> <span class="n">MQLoggingHandler</span>
-<span class="kn">import</span> <span class="nn">logging</span>
-
-<span class="n">loger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-
-<span class="c1"># 初始化MQLoggingHandler对象（logging Handler的一个子类对象）</span>
-<span class="n">handler</span> <span class="o">=</span> <span class="n">MQLoggingHandler</span><span class="p">(</span><span class="n">MQLogConfig</span><span class="p">)</span>
-
-<span class="n">loger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
-
-<span class="c1"># 设置日志等级，Consumer需要通过这个等级确定要接收的信息</span>
-<span class="n">loger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
-
-<span class="c1"># 获得执行日志模块的 电脑名称和进程号</span>
-<span class="n">computer_name</span><span class="o">=</span><span class="n">platform</span><span class="o">.</span><span class="n">node</span><span class="p">()</span>
-<span class="n">pid</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">()</span>
-
-<span class="c1"># 以下为不同级别的logging</span>
-<span class="n">loger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;computer_name&#39;</span><span class="p">:</span><span class="n">computer_name</span><span class="p">,</span>
-                       <span class="s1">&#39;pid&#39;</span><span class="p">:</span><span class="n">pid</span><span class="p">,</span>
-                       <span class="s1">&#39;msg&#39;</span><span class="p">:</span><span class="s1">&#39;hello world&#39;</span><span class="p">}))</span>
-<span class="n">loger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
-<span class="n">loger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s2">&quot;critical world&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="id4">
-<h1>工具类文档<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h1>文档<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="utils.html">utils package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#submodules">Submodules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="async.html">异步调用样例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">工具类使用样例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="example.html#logging">Logging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">工具类文档</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.auth_handler">utils.auth_handler module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.cachehandler">utils.cachehandler module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.dataloader">utils.dataloader module</a></li>
@@ -257,7 +208,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="utils.html" class="btn btn-neutral float-right" title="utils package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="config.html" class="btn btn-neutral float-right" title="配置" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>

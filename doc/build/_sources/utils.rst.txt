@@ -1,8 +1,5 @@
-utils package
+工具类文档
 =============
-
-Submodules
-----------
 
 utils\.auth\_handler module
 ---------------------------
