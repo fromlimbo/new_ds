@@ -13,7 +13,7 @@ class AuthConfig:
     AUTH_URL=cf.get("AuthConfig","AUTH_URL")
 
     @staticmethod
-    def __init__(cls):
+    def __init__():
         pass
 
     @staticmethod
