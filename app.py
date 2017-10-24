@@ -18,7 +18,7 @@ mongoclient=MongoDBClient(config=MongoConfig)
 
 logging.basicConfig(level=logging.DEBUG)
 
-from app_view import *
+# from app_view import *
 
 logging.debug("service starts")
 

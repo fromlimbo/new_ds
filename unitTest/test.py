@@ -115,6 +115,6 @@ def normalsuite():
     return suite
 
 if __name__ == "__main__":
-    suite = jsonsuite()
+    suite = normalsuite()
     unittest.TextTestRunner(verbosity=2).run(suite)
 

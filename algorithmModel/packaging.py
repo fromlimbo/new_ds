@@ -6,8 +6,20 @@ Input: data_117_0626.pkl
 
 Output: All the data related variants, e.g. order_dict, shipment_dict, etc.
 """
+from basic_class import *
 import pandas as pd
+import cPickle as pickle
+import operator
+import datetime
 import numpy as np
+import copy
+import logging
+
+logging.basicConfig(level=logging.DEBUG,
+                format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                datefmt='%a, %d %b %Y %H:%M:%S',
+                filename='myapp.log',
+                filemode='w')
 
 # parameters
 mix_city_limit = 2
@@ -26,7 +38,7 @@ def xmatrix_generation(trailer_list, shipment_list):
                 x_matrix.iloc[row, col] = 1
     return x_matrix
 
-def xmatrix_to_solution(x_matrix):
+def xmatrix_to_solution(x_matrix,route):
     ####----------step1----------####
     trailer_index = []
     for i in range(x_matrix.shape[1]):
@@ -37,19 +49,29 @@ def xmatrix_to_solution(x_matrix):
         i_trailer_list = []
         for j in range(x_matrix.shape[0]):
             if x_matrix.iloc[j, i] == 1:
-                i_trailer_list.append(x_matrix.index[j])
+                i_trailer_list.append(x_matrix.index[j])#shipments
         temp_dict[x_matrix.columns[i]] = i_trailer_list
     output_column_quantity = max([len(temp_dict[trailer_index[x]]) for x in range(len(trailer_index))])
     ####----------step3----------####
-    shipment_index = ['space_'+str(i + 1) for i in xrange(output_column_quantity)]
+    shipment_index = ['city1']+['city2']+['space_'+str(i + 1) for i in xrange(output_column_quantity)]
     ####----------step4----------####
-    matrix_gen = [ None ] * len(trailer_index)
+    matrix_gen = [ None ] *len(trailer_index)
     ####----------step5----------####
+    city1 = []
+    city2 = []
+    for city in route:
+        city1.append(city[0])
+        city2.append(city[1])
     for i in range(len(trailer_index)):
         ####----------step6----------####
-        matrix_gen[i] = temp_dict[trailer_index[i]] + [-1]*(output_column_quantity-len(temp_dict[trailer_index[i]]))
+        lst=temp_dict[trailer_index[i]]
+        l=len(temp_dict[trailer_index[i]])
+        matrix_gen[i] = lst + [-1]*(output_column_quantity-l)
         matrix_gen[i].sort(reverse=True)
+        matrix_gen[i].insert(0,city2[i])
+        matrix_gen[i].insert(0, city1[i])
     ####----------step7----------####
     solution = pd.DataFrame(matrix_gen, index=trailer_index,
                           columns=shipment_index)
+
     return solution
