@@ -1,12 +1,59 @@
 # -*- coding: utf-8 -*-
 import logging
+import ConfigParser
+
+cf = ConfigParser.ConfigParser()
+#Configparser模块,操作文件格式为 ini,最好指定为绝对路径
+filepath = r"E:\anji\DynamicSchedule-Flask\document.ini"
+cf.read(filepath)
+
 class AuthConfig:
-    USER_NAME="admin"
-    PASSWORD="admin"
-    AUTH_URL="http://localhost:8090/api/ai/gateway/security/authenticate"
+    USER_NAME=cf.get("AuthConfig","USER_NAME")
+    PASSWORD=cf.get("AuthConfig","PASSWORD")
+    AUTH_URL=cf.get("AuthConfig","AUTH_URL")
+
+    @staticmethod
+    def __init__(cls):
+        pass
+
+    @staticmethod
+    def save_modify(section, option, newname):
+        '''
+        保存对配置文件的修改
+        :param section: ini文件中需要修改的section
+        :param option:  ini文件中需要修改的option
+        :param newname:  需要被修改的值
+        :return:
+        '''
+        keys = cf.options(section)
+        if option not in keys:
+            raise (Exception("key error"))
+
+        cf.set("AuthConfig", option, newname)
+        cf.write(open(filepath, "w"))
+
+        setattr(AuthConfig, option, newname)
+        return 0
+
+    @staticmethod
+    def getconf(section):
+        '''
+        获得指定的配置数据
+        :param section: ini文件中指定的section
+        :return: dict 格式，指定section的详细数据
+        '''
+        context = {}
+        try:
+            data = cf.items(section)
+        except Exception as e:
+            logging.debug("section is error")
+            return -1
+        for info in data:
+            context[info[0]] = info[1]
+        return context
 
 class CeleryConfig(object):
-
+    NAME = "name is CeleryConfig"
     BROKER_ADDRESS="amqp://test:test@192.168.205.169:5672/DynamicSchedule"
     CELERY_TASK_SERIALIZER='pickle'
     # please set this to the algorithm name
