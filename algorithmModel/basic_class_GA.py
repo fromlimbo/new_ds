@@ -227,11 +227,27 @@ def convert_ind_to_matrix(ind):
     :return: solution matrix
     """
     matrix = pd.DataFrame()
+    Route = []
+    count = 0
     for _id, gene in ind.iteritems():
-        if _id != 'RemainShipsContainer' and len(gene.ships) == sum(gene.slot_cap): # To select the trailer whose total number of shipments achieves the capacity volume.
+        if _id != 'RemainShipsContainer' and len(gene.ships) == sum(
+                gene.slot_cap):  # To select the trailer whose total number of shipments achieves the capacity volume.
+            count += 1
             matrix = matrix.append(gene.to_matrix())
+            city_set = set()
+            for id, ship in gene.ships.iteritems():
+                city_set.add(ship.end_loc)
+            route = list(city_set)
+            if len(route) == 1:
+                route.append(0)
+            elif len(route) == 2:
+                pass
+            else:
+                print "route error!!!"
+            Route.append(route)
+    # mixroute=np.array(Route,dtype=int)
     matrix = matrix.fillna(0)
-    return matrix
+    return matrix, Route
 
 
 def ind_cost(ind, misc):
