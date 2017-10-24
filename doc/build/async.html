@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python 模块索引 &mdash; 动态调度 0.1 文档</title>
+  <title>异步调用样例 &mdash; 动态调度 0.1 文档</title>
   
 
   
@@ -36,9 +36,8 @@
               href="genindex.html"/>
         <link rel="search" title="搜索" href="search.html"/>
     <link rel="top" title="动态调度 0.1 文档" href="index.html"/>
- 
-
-
+        <link rel="next" title="工具类使用样例" href="example.html"/>
+        <link rel="prev" title="Python算法模板" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -91,9 +90,8 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="config.html">配置</a></li>
-<li class="toctree-l1"><a class="reference internal" href="async.html">异步调用样例</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">异步调用样例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="example.html">工具类使用样例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">工具类文档</a></li>
 </ul>
@@ -140,12 +138,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Python 模块索引</li>
+      <li>异步调用样例</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/async.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -157,59 +157,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-   <h1>Python 模块索引</h1>
-
-   <div class="modindex-jumpbox">
-   <a href="#cap-u"><strong>u</strong></a>
-   </div>
-
-   <table class="indextable modindextable">
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-u"><td></td><td>
-       <strong>u</strong></td><td></td></tr>
-     <tr>
-       <td><img src="_static/minus.png" class="toggler"
-              id="toggle-1" style="display: none" alt="-" /></td>
-       <td>
-       <a href="utils.html#module-utils"><code class="xref">utils</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="utils.html#module-utils.auth_handler"><code class="xref">utils.auth_handler</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="utils.html#module-utils.cachehandler"><code class="xref">utils.cachehandler</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="utils.html#module-utils.dataloader"><code class="xref">utils.dataloader</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="utils.html#module-utils.dochandler"><code class="xref">utils.dochandler</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="utils.html#module-utils.logger"><code class="xref">utils.logger</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="utils.html#module-utils.mongoclient"><code class="xref">utils.mongoclient</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="utils.html#module-utils.reporter"><code class="xref">utils.reporter</code></a></td><td>
-       <em></em></td></tr>
-   </table>
+  <div class="section" id="id1">
+<h1>异步调用样例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>分布式异步调用是通过开源框架Celery实现的。将算法修改为异步调用的版本是非常容易的，我们在 <code class="docutils literal"><span class="pre">app_view.py</span></code> 中提供了一个例子:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@celery</span><span class="o">.</span><span class="n">task</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+   <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">add``为一个普通的python函数，只需要在函数定义上增加</span> <span class="pre">``&#64;celery.task</span></code> 装饰器，即可将其变为一个celery任务。
+这里的 <code class="docutils literal"><span class="pre">celery</span></code> 是一个Celery类实例，我们在 <code class="docutils literal"><span class="pre">app.py</span></code> 中生成了这个实例，所以算法同学需要在你们的算法入口函数所在脚本文件中引用它:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">app</span> <span class="k">import</span> <span class="n">celery</span>
+</pre></div>
+</div>
+<p>这里有个需要注意的地方，celery默认的序列化器是 <code class="docutils literal"><span class="pre">json</span></code> 所以没办法在参数中传递python类对象，若算法的参数中有类对象请使用 <code class="docutils literal"><span class="pre">pickle</span></code> 作为序列化器。
+指定序列化器也很简单，将修饰器改成如下形式即可:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@celery</span><span class="o">.</span><span class="n">task</span><span class="p">(</span><span class="n">serializer</span><span class="o">=</span><span class="s1">&#39;pickle&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>当将函数转为celery任务之后，我们在 <code class="docutils literal"><span class="pre">app_view.py</span></code> 中即可根据请求进行异步调用。例如新建一个 <code class="docutils literal"><span class="pre">add</span></code> 任务:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">add</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">task_id</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">id</span>
+</pre></div>
+</div>
+<p>之后便可使用获得的 <code class="docutils literal"><span class="pre">task_id</span></code> 获取计算结果及进行任务管理。</p>
+</div>
 
 
            </div>
@@ -218,6 +190,15 @@
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="example.html" class="btn btn-neutral float-right" title="工具类使用样例" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Python算法模板" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

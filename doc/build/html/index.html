@@ -91,6 +91,7 @@
               <!-- Local TOC -->
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Welcome to 动态调度’s documentation!</a></li>
+<li><a class="reference internal" href="#id1">工具类使用样例</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 </div>
@@ -157,6 +158,35 @@
             
   <div class="section" id="welcome-to-s-documentation">
 <h1>Welcome to 动态调度’s documentation!<a class="headerlink" href="#welcome-to-s-documentation" title="永久链接至标题">¶</a></h1>
+</div>
+<div class="section" id="id1">
+<h1>工具类使用样例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>Logging
+—
+以下代码展示了如何使用我们的日志模块。:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">utils</span> <span class="k">import</span> <span class="n">MQLoggingHandler</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">loger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="c1">#初始化MQLoggingHandler对象（logging Handler的一个子类对象）</span>
+<span class="n">handler</span> <span class="o">=</span> <span class="n">MQLoggingHandler</span><span class="p">(</span><span class="n">MQLogConfig</span><span class="p">)</span>
+
+<span class="n">loger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+
+<span class="c1">#设置日志等级，Consumer需要通过这个等级确定要接收的信息</span>
+<span class="n">loger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+<span class="c1">#获得执行日志模块的 电脑名称和进程号</span>
+<span class="n">computer_name</span><span class="o">=</span><span class="n">platform</span><span class="o">.</span><span class="n">node</span><span class="p">()</span>
+<span class="n">pid</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">()</span>
+
+<span class="n">loger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;computer_name&#39;</span><span class="p">:</span><span class="n">computer_name</span><span class="p">,</span>
+                       <span class="s1">&#39;pid&#39;</span><span class="p">:</span><span class="n">pid</span><span class="p">,</span>
+                       <span class="s1">&#39;msg&#39;</span><span class="p">:</span><span class="s1">&#39;hello world&#39;</span><span class="p">}))</span>
+<span class="n">loger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+<span class="n">loger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s2">&quot;critical world&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
