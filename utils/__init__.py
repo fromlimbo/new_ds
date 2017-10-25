@@ -10,3 +10,4 @@ from logger import Logger
 from reporter import Reporter
 from auth_handler import AuthHandler
 from mongoclient import MongoDBClient
+from mqlogginghandler import MQLoggingHandler

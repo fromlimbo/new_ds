@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to 动态调度’s documentation! &mdash; 动态调度 0.1 文档</title>
+  <title>Python算法模板 &mdash; 动态调度 0.1 文档</title>
   
 
   
@@ -35,7 +35,8 @@
         <link rel="index" title="索引"
               href="genindex.html"/>
         <link rel="search" title="搜索" href="search.html"/>
-    <link rel="top" title="动态调度 0.1 文档" href="#"/> 
+    <link rel="top" title="动态调度 0.1 文档" href="#"/>
+        <link rel="next" title="配置" href="config.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -88,12 +89,13 @@
               
             
             
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to 动态调度’s documentation!</a></li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="async.html">异步调用样例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">工具类使用样例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils package</a></li>
 </ul>
-</div>
+
             
           
         </div>
@@ -136,7 +138,7 @@
     
       <li><a href="#">Docs</a> &raquo;</li>
         
-      <li>Welcome to 动态调度’s documentation!</li>
+      <li>Python算法模板</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -155,9 +157,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-s-documentation">
-<h1>Welcome to 动态调度’s documentation!<a class="headerlink" href="#welcome-to-s-documentation" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="python">
+<h1>Python算法模板<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h1>
+<p>本项目的核心是提供了一套使得算法可以被分布式异步调用的框架，以及算法运行过程中会使用的工具类，包括日志、读写缓存、读写数据库等。</p>
+<p>工程分为三个主要部分：算法入口、算法模块和工具类。</p>
+<p>算法入口主要为 <code class="docutils literal"><span class="pre">app.py</span></code> 和 <code class="docutils literal"><span class="pre">app_view.py</span></code> 两个文件。其中 <code class="docutils literal"><span class="pre">app.py</span></code> 里生成了各工具类的实例， <code class="docutils literal"><span class="pre">app_view.py</span></code> 为flask的视图函数。</p>
+<p>工具类包含在 <code class="docutils literal"><span class="pre">util</span></code> 文件夹下，各模块的使用方法可在各自的文档中找到。</p>
+<p>算法模块是与本模板独立的一部分，由各个小组实现。请将算法放在 <code class="docutils literal"><span class="pre">algorithm</span></code> 文件夹下，并提供明确的调用入口。</p>
+</div>
+<div class="section" id="id1">
+<h1>文档<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="async.html">异步调用样例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">工具类使用样例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="example.html#logging">Logging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.auth_handler">utils.auth_handler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.cachehandler">utils.cachehandler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.dataloader">utils.dataloader module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.dochandler">utils.dochandler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.logger">utils.logger module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.mongoclient">utils.mongoclient module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.mqlogginghandler">utils.mqlogginghandler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.reporter">utils.reporter module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 <div class="section" id="indices-and-tables">
@@ -176,6 +207,13 @@
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="config.html" class="btn btn-neutral float-right" title="配置" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
   
 
   <hr/>

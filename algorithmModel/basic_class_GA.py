@@ -8,6 +8,9 @@ CAR_TYPE_LOC = {'XL': 0, 'L': 1, 'M': 2, 'S': 3, 'XS': 4}
 
 
 class CrossoverParameters:
+    """
+    this class contains all the useful parameters for crossover.
+    """
     def __init__(self, mutant_rate=0.05, fit_threshold=0, crossover_ratio=1):
         self.mutant_rate = mutant_rate
         self.fit_threshold = fit_threshold
@@ -15,14 +18,20 @@ class CrossoverParameters:
 
 
 class Data:
+    """
+    this class contains shipment dictionary and trailer dictionary.
+    """
     def __init__(self, ship_dict, trailer_dict):
         self.ship_dict = ship_dict
         self.trailer_dict = trailer_dict
 
 
-class AllMightyRoute:
+class RemainShipsContainer:
+    """
+    This class represents a special gene which contains all the shipments/orders not loaded by any trailer.
+    """
     def __init__(self):
-        self.id = 'AllMightyRoute'
+        self.id = 'RemainShipsContainer'
         self.ships = {}
         self.fit = -float('Inf')
 
@@ -47,7 +56,11 @@ class AllMightyRoute:
         return None
 
 
-class Route:
+class ScheduleGene:
+    """
+    This class represents each gene in the GA algorithm. It contains useful information describing the trailer, orders loaded into this trailer and
+     some parameters related with this class. Besides, there are some operations with respect to  this gene.
+    """
     def __init__(self, _trailer, misc):
         self.trailer = _trailer
         self.id = _trailer.code
@@ -58,11 +71,11 @@ class Route:
                          _trailer.capacity_for_xs_car]
         self.slot = [{}, {}, {}, {}, {}]# the list of shipment dictionary
         self.ships = {}# shipment dictionary
-        self._ship_loc = {}
+        self.ship_loc = {}# the dictionary of car type expressed with number
         self.misc = misc
         self.fit = 0
 
-    # To add a shipment into this route
+    # To add a shipment/order into this gene
     def add_ship(self, ship, bool_log=False):
         # flag = TRUE if ships is empty, simultaneously this ship satisfies preferred direction constraint.
         if not constraints_tier_0(ship, self.trailer):
@@ -80,7 +93,7 @@ class Route:
                 if len(self.slot[car_type]) < self.slot_cap[car_type]:#actual number of cars of this type is smaller than the capacity
                     self.slot[car_type][ship.order_code] = ship
                     self.ships[ship.order_code] = ship
-                    self._ship_loc[ship.order_code] = car_type
+                    self.ship_loc[ship.order_code] = car_type
                     return True
                 car_type -= 1
         return False
@@ -90,29 +103,42 @@ class Route:
             return False
         else:
             self.ships.pop(ship_code)
-            the_slot_type = self._ship_loc[ship_code]
+            the_slot_type = self.ship_loc[ship_code]
             self.slot[the_slot_type].pop(ship_code)
-            self._ship_loc.pop(ship_code)
+            self.ship_loc.pop(ship_code)
             return True
 
     def rearrange_ships(self):
+        """
+        update information about shipment/order
+        :return: None
+        """
         self.slot = [{}, {}, {}, {}, {}]
-        self._ship_loc = {}
-        temp_ship_list = self.ships.values()
-        for i in temp_ship_list:
-            self.add_ship(i)
+        self.ship_loc = {}
         return None
 
     def renew_fit(self):
+        """
+        update fitness of this gene.
+        :return:
+        """
         if len(self.ships) == sum(self.slot_cap):
             self.fit = cal_fit(self, self.misc)
         else:
             self.fit = 0
 
     def renew_trailer(self):
+        """
+        update shipments_set of variant trailer with ships.values.
+        :return:
+        """
         self.trailer.shipments_set = list(self.ships.values())
 
     def to_matrix(self):
+        """
+        transfer the representing style of ships in this gene from dataframe to matrix.
+        :return: the matrix representing the ships in this gene.
+        """
         matrix = pd.DataFrame()
         for i in self.ships:
             matrix = matrix.append(pd.DataFrame(data=1, index=[i], columns=[self.id], dtype=np.int8))
@@ -128,10 +154,18 @@ def constraints_tier_0(ship, trl):
     :return: return True if the constraint is satisfied, otherwise reture False if.
     """
     # Constraint: 2
-    return tt.preferred_direction_check(trl, ship)
+    return tt.preferred_direction_check(ship, trl)
 
 
 def constraints_tier_1(as_ships, ship, misc, full_check=False):
+    """
+    To check constrains 4, 6, 9
+    :param as_ships:
+    :param ship:
+    :param misc:
+    :param full_check:
+    :return: True or Fasle.
+    """
     mix_city_limit = 2
     check_list = [True] * 4
 
@@ -181,37 +215,55 @@ def ppl_cost(ppl, misc, with_optimal_goal=False):
         return float(sum(ind_cost(ind, misc) for ind in ppl)) / len(ppl)
     else:
         cost_list = [ind_cost(ind, misc) for ind in ppl]
-        return sum(cost_list)/len(cost_list), max(cost_list)
+        optimal_ind_loc = max((ind_cost(ppl[x], misc), x) for x in xrange(len(ppl)))[1]  # To select the best individual whose cost is the biggest
+        best_ind = ppl[optimal_ind_loc]
+        return sum(cost_list)/len(cost_list), max(cost_list), best_ind
 
 
 def convert_ind_to_matrix(ind):
     """
     This function transfer the input individual into the a matrix
-    :param ind: the input individual 
+    :param ind: the input individual
     :return: solution matrix
     """
     matrix = pd.DataFrame()
-    for _id, route in ind.iteritems():
-        if _id != 'AllMightyRoute' and len(route.ships) == sum(route.slot_cap): # To select the trailer whose total number of shipments achieves the capacity volume.
-            matrix = matrix.append(route.to_matrix())
+    Route = []
+    count = 0
+    for _id, gene in ind.iteritems():
+        if _id != 'RemainShipsContainer' and len(gene.ships) == sum(
+                gene.slot_cap):  # To select the trailer whose total number of shipments achieves the capacity volume.
+            count += 1
+            matrix = matrix.append(gene.to_matrix())
+            city_set = set()
+            for id, ship in gene.ships.iteritems():
+                city_set.add(ship.end_loc)
+            route = list(city_set)
+            if len(route) == 1:
+                route.append(0)
+            elif len(route) == 2:
+                pass
+            else:
+                print "route error!!!"
+            Route.append(route)
+    # mixroute=np.array(Route,dtype=int)
     matrix = matrix.fillna(0)
-    return matrix
+    return matrix, Route
 
 
 def ind_cost(ind, misc):
     """
-    This function calculate the cost of the input individual 
+    This function calculate the cost of the input individual
     :param ind: input individual
     :param misc: parameter set
     :return: the cost of the input individual
     """
-    return misc.cf(ind, misc.cost_weight,misc.trailer_dict, misc.ship_dict)
+    return misc.cost_computation(ind,misc.cost_weight, misc.trailer_dict, misc.ship_dict)
 
-def cal_fit(route, misc):
+def cal_fit(gene, misc):
     """
     to calculate fitness according to cost_function, misc.cf
-    :param route: a 'gene' in individual
+    :param gene: a 'gene' in individual
     :param misc: parameter set
     :return: the fitness of the input gene(the set of trailer and loaded shipments)
     """
-    return misc.cf({route.id:route}, misc.cost_weight, misc.trailer_dict, misc.ship_dict, True)
+    return misc.cost_computation({gene.id:gene}, misc.cost_weight, misc.trailer_dict, misc.ship_dict, True)
