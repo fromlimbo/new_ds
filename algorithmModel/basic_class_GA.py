@@ -247,7 +247,9 @@ def convert_ind_to_matrix(ind):
             Route.append(route)
     # mixroute=np.array(Route,dtype=int)
     matrix = matrix.fillna(0)
-    return matrix, Route
+    if count==0:
+        return False,matrix,Route
+    return True,matrix, Route
 
 
 def ind_cost(ind, misc):
