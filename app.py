@@ -9,9 +9,9 @@ import logging
 flask = Flask(__name__)
 flask.config.from_object(AppConfig)
 
-# celery=Celery(CeleryConfig.MAIN_NAME, broker=CeleryConfig.BROKER_ADDRESS,
-#               task_serializer=CeleryConfig.CELERY_TASK_SERIALIZER)
-celery = Celery("app",broker="amqp://localhost//")
+celery=Celery(CeleryConfig.MAIN_NAME, broker=CeleryConfig.BROKER_ADDRESS,
+              task_serializer=CeleryConfig.CELERY_TASK_SERIALIZER)
+
 
 
 logger=Logger(config=LoggerConfig)
