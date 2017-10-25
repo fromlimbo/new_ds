@@ -3,8 +3,10 @@ from flask import jsonify, request
 from app import celery
 from dataProcess.processing import GAVARP_Process_json
 from algorithmModel.algorithm_entry import optimization
+
 import time
-import os
+
+import json
 
 @flask.route('/')
 def index():
@@ -18,6 +20,8 @@ def test_revoke():
 @flask.route('/start',methods=['POST'])
 def start_task():
     data = request.get_json()
+    with open('input_data.json', 'w') as f:
+        json.dump(data,f)
     input_data = GAVARP_Process_json(data)
     if not input_data == -1:
         print 'parsing successfully'

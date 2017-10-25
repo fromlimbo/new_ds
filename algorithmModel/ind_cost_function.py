@@ -38,15 +38,15 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
 
     # ------------------------------------------- 测试目标1:最大化装载数 --------------------------------------------------#
     if GeneEvaluate:
-        normalized_cost_result.append(float(num_of_loaded_shipments) / float(sum(i.slot_cap)))
+        normalized_cost_result.append(float(num_of_loaded_shipments) / (0.00001+float(sum(i.slot_cap))))
     else:
         num_of_loading_capacity = sum([i.capacity_all for i in trailer_dict.values()])
-        normalized_cost_result.append(float(num_of_loaded_shipments) / float(num_of_loading_capacity))
+        normalized_cost_result.append(float(num_of_loaded_shipments) / (0.00001+float(num_of_loading_capacity)))
     #------------------------------------------------------------------------------------------------------------------#
 
     #------------------------------------------- 测试目标2:最大化装载商品车紧急程度 ----------------------------------------#
     if GeneEvaluate:
-        normalized_cost_result.append(float(num_of_high_priority) / float(num_of_loaded_shipments))
+        normalized_cost_result.append(float(num_of_high_priority) / (0.00001+float(num_of_loaded_shipments)))
     else:
         num_of_urgent_shipment = len([i.order_code for i in shipment_dict.values() if i.OTD > 2])
         # To plus a small number in denominator to avoid zero denominator.
@@ -55,7 +55,7 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
 
     #------------------------------------------- 测试目标3:最大化大、中型商品车数量 ----------------------------------------#
     if GeneEvaluate:
-        normalized_cost_result.append(float(num_of_big_car) / float(num_of_loaded_shipments))
+        normalized_cost_result.append(float(num_of_big_car) / (0.00001+float(num_of_loaded_shipments)))
     else:
         total_num_of_big_car = len([i.order_code for i in shipment_dict.values() if i.car_type in ['L', 'XL']])
         big_car_capacity = sum([i.capacity_for_xl_car + i.capacity_for_l_car for i in trailer_dict.values()])
@@ -64,18 +64,18 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
     #------------------------------------------------------------------------------------------------------------------#
 
     #------------------------------------------- 测试目标4:最小化异地拼车数量 ---------------------------------------------#
-    average_mix_city = float(num_of_mix_city) / float(num_trailer)
+    average_mix_city = float(num_of_mix_city) / (0.00001+float(num_trailer))
     #------------------------------------------------------------------------------------------------------------------#
 
 
     #------------------------------------------- 测试目标5:最小化经销商拼车数量 --------------------------------------------#
-    average_mix_dealer = float(num_of_mix_dealer) / float(num_trailer)
+    average_mix_dealer = float(num_of_mix_dealer) / (0.00001+float(num_trailer))
     #------------------------------------------------------------------------------------------------------------------#
 
 
     #------------------------------------------- 测试目标8:最小化拼车库区数量 ---------------------------------------------#
-    average_mix_warehouse = float(num_of_mix_warehouse) / float(num_trailer)
+    average_mix_warehouse = float(num_of_mix_warehouse) / (0.00001+float(num_trailer))
     #------------------------------------------------------------------------------------------------------------------#
 
-    normalized_cost_result.append(float(6+3+12) / float(6*average_mix_dealer + 3*average_mix_warehouse + 12*average_mix_city))
+    normalized_cost_result.append(float(6+3+12) / (0.00001+float(6*average_mix_dealer + 3*average_mix_warehouse + 12*average_mix_city)))
     return float(np.dot(np.array(weight_set), (np.array(normalized_cost_result).T)))

@@ -11,7 +11,7 @@ flask.config.from_object(AppConfig)
 
 celery=Celery(CeleryConfig.MAIN_NAME, broker=CeleryConfig.BROKER_ADDRESS,
               task_serializer=CeleryConfig.CELERY_TASK_SERIALIZER)
-
+celery.conf.update(CELERY_ACCEPT_CONTENT=['pickle'])
 
 
 logger=Logger(config=LoggerConfig)
