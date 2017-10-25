@@ -27,6 +27,8 @@ def optimization(data):
     except ValueError:
         print "Ineffective input data!"
         logging.error("Ineffective input data!")
-    solution = xmatrix_to_solution(convert_ind_to_matrix(ind1))
+    #solution = xmatrix_to_solution(convert_ind_to_matrix(ind1))
+    matrix, route = convert_ind_to_matrix(ind1)
+    solution = xmatrix_to_solution(matrix, route)
     print solution
     return solution
