@@ -15,7 +15,7 @@ class AuthConfig:
 
     @staticmethod
     def __init__():
-        pass    
+        pass
 
     @staticmethod
     def save_modify(section, option, newname):

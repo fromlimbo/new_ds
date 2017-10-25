@@ -7,6 +7,10 @@ from config import *
 import os
 import json
 
+import os
+from celery import Celery
+
+
 class rabbitTest(unittest.TestCase):
 
     def testProducerConnect(self):
