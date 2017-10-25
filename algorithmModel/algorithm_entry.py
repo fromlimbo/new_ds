@@ -14,6 +14,9 @@ import main
 from packaging import *
 from main import *
 from app import celery#for transporting parameters
+import pickle
+import json
+import requests
 
 weight = [0.0, 0.5, 0.0, 0.5]
 
@@ -30,5 +33,42 @@ def optimization(data):
     #solution = xmatrix_to_solution(convert_ind_to_matrix(ind1))
     matrix, route = convert_ind_to_matrix(ind1)
     solution = xmatrix_to_solution(matrix, route)
-    print solution
-    return solution
+    # print solution
+
+    # TODO:
+    # {
+    #     "taskId": "fewewewerwr32",
+    #     "trailerOrders":
+    #         [
+    #             {"code": "板车code1",
+    #              "orderCoes": ["订单code1-1", "订单code1-2"],
+    #              "sequenceCitys": ["城市code1", "城市code2"]
+    #              },
+    #             {"code": "板车code2",
+    #              "orderCoes": ["订单code2-1", "订单code2-2"],
+    #              "sequenceCitys": ["城市code3", "城市code4"]
+    #              }
+    #         ]
+    # }
+
+    retval={"taskId":optimization.request.id,
+            "trailerOrders":[]}
+    for index, row_data in solution.iterrows():
+        row={}
+        row["code"]=index
+        row["sequenceCitys"]=[]
+        if not row_data['city1']==0:
+            row["sequenceCitys"].append(row_data['city1'])
+        if not row_data['city2']==0:
+            row["sequenceCitys"].append(row_data['city2'])
+        a=row_data.iloc[2:-1]
+        row["orderCodes"]=a[a!="-1"].tolist()
+
+        retval["trailerOrders"].append(row)
+    # with open('result.json','r') as f:
+    #     retval=json.load( f)
+    headers = {'content-type': 'application/json'}
+    r = requests.post("http://192.168.204.169:28109/ids/engine/dealPlan", data=json.dumps(retval),
+                      headers=headers)
+    print r.text
+    return 0
