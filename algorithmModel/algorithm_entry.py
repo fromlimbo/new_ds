@@ -24,6 +24,10 @@ weight = [0.0, 0.5, 0.0, 0.5]
 @celery.task(serializer='pickle')
 def optimization(data):
     #----------------- To generate scheduling solutions through hierarchical mult-object optimization--------------
+
+    retval = {"taskId": optimization.request.id,
+              "trailerOrders": []}
+
     try:
         logging.info("The algorithm starts")
         ind1 = main.ga_vrp(data, weight, 5, 0.0001)
@@ -31,7 +35,13 @@ def optimization(data):
         print "Ineffective input data!"
         logging.error("Ineffective input data!")
     #solution = xmatrix_to_solution(convert_ind_to_matrix(ind1))
-    matrix, route = convert_ind_to_matrix(ind1)
+
+    flag, matrix, route = convert_ind_to_matrix(ind1)
+    if not flag:
+        headers = {'content-type': 'application/json'}
+        r = requests.post("http://192.168.204.169:28109/ids/engine/dealPlan", data=json.dumps(retval),
+                          headers=headers)
+        return 0
     solution = xmatrix_to_solution(matrix, route)
     # print solution
 
@@ -65,10 +75,10 @@ def optimization(data):
         row["orderCodes"]=a[a!="-1"].tolist()
 
         retval["trailerOrders"].append(row)
-    # with open('result.json','r') as f:
-    #     retval=json.load( f)
+
     headers = {'content-type': 'application/json'}
     r = requests.post("http://192.168.204.169:28109/ids/engine/dealPlan", data=json.dumps(retval),
                       headers=headers)
     print r.text
     return 0
+
