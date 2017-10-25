@@ -16,6 +16,7 @@ def GAVARP_Process_json(input_json):
     """
     这是一个注释
     """
+    logger=logging.getLogger(__name__)
     with open('data.txt', 'w') as outfile:
         json.dump(input_json, outfile)
 
@@ -56,7 +57,7 @@ def GAVARP_Process_json(input_json):
                                                item["end_loc"], item["created_time"], item["effective_time"],
                                                item["car_type"], item["transport_type"])
     var_dict["order_dict"] = order_dict
-    logging.debug("order data ok")
+    logger.debug("order data ok")
 
 
     required_trailer_keys = ['code', 'capacity_all', 'capacity_for_xl_car',
@@ -91,7 +92,7 @@ def GAVARP_Process_json(input_json):
         # check required keys
         for k in required_trailer_keys:
             if not item.has_key(k):
-                logging.warning('lost required trailer keys.')
+                logger.warning('lost required trailer keys.')
                 return -1
 
         for k in optional_trailer_keys.keys():
@@ -113,7 +114,7 @@ def GAVARP_Process_json(input_json):
                                              item["current_location"],
                                              item["destination"], item["historic_trajectory"])
     var_dict["trailer_dict"] = trailer_dict
-    logging.debug("trailer data ok.")
+    logger.debug("trailer data ok.")
     var_dict['mix_city'] = input_json['mix_city']
     var_dict['OTD_pinche'] = input_json['otd_pinche']
     return var_dict

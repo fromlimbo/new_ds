@@ -52,6 +52,14 @@ utils\.mongoclient module
     :undoc-members:
     :show-inheritance:
 
+utils\.mqlogginghandler module
+------------------------------
+
+.. automodule:: utils.mqlogginghandler
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 utils\.reporter module
 ----------------------
 
