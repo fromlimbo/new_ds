@@ -36,6 +36,21 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
             num_of_mix_dealer += len(set([x_ship.dealer_code for x_ship in i.ships.values()]))
             num_of_mix_warehouse += len(set([x_ship.start_loc for x_ship in i.ships.values()]))
 
+    if num_trailer == 0:
+        logging.info("num_trailer is zero.")
+    if num_of_loaded_shipments == 0:
+        logging.info("num_of_loaded_shipments is zero.")
+    if num_of_high_priority == 0:
+        logging.info("num_of_high_priority is zero.")
+    if num_of_big_car == 0:
+        logging.info("num_of_big_car is zero.")
+    if num_of_mix_city == 0:
+        logging.info("num_of_mix_city is zero.")
+    if num_of_mix_dealer == 0:
+        logging.info("num_of_mix_dealer is zero.")
+    if num_of_mix_warehouse == 0:
+        logging.info("num_of_mix_warehouse is zero.")
+
     # ------------------------------------------- 测试目标1:最大化装载数 --------------------------------------------------#
     if GeneEvaluate:
         normalized_cost_result.append(float(num_of_loaded_shipments) / (0.00001+float(sum(i.slot_cap))))

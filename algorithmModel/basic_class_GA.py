@@ -244,12 +244,12 @@ def convert_ind_to_matrix(ind):
             elif len(route) == 2:
                 pass
             else:
-                logging.info( "route error!!!")
+                logging.info( "route error!")
             Route.append(route)
     # mixroute=np.array(Route,dtype=int)
     matrix = matrix.fillna(0)
     if count == 0:
-        logging.info("none of trailer has been fully loaded!!!")
+        logging.info("none of trailer has been fully loaded!")
         return False,matrix,Route
     return True,matrix, Route
 
