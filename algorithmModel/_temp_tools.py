@@ -31,9 +31,9 @@ def mix_dealer_check(shipment_set, new_shipment, misc):
 
     idx=min(10,max(OTD_list))
     if len(city_list) < 2:
-        max_mix_dealer_number = misc.OTD_pinche.iloc[idx,2]
+        max_mix_dealer_number = misc.OTD_pinche[idx]['cSameVendor']
     else:
-        max_mix_dealer_number = misc.OTD_pinche.iloc[idx, 3]
+        max_mix_dealer_number = misc.OTD_pinche[idx]['cOtherVendor']
 
     dealer_set = {i.dealer_code for i in shipment_set}
     dealer_set.add(new_shipment.dealer_code)
@@ -53,8 +53,8 @@ def mix_city_set_check(shipment_set, new_shipment, mix_city_rule_matrix):
         return True
 
     # 在拼车规则文件mix_city中查找
-    for i in range(mix_city_rule_matrix.shape[0]):
-        mix_city_rule = [mix_city_rule_matrix.iloc[i, j] for j in range(mix_city_rule_matrix.shape[1])]
+    for i in range(len(mix_city_rule_matrix[0])):
+        mix_city_rule = mix_city_rule_matrix[i].values()
         # If all the end cities are in this list of mix city table, the requirement is satisfied.
         if len([x for x in destination_set if x not in mix_city_rule]) == 0:
             return True

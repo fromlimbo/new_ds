@@ -98,7 +98,7 @@ def GAVARP_Process_json(input_json):
         for k in optional_trailer_keys.keys():
             if not item.has_key(k):
                 item[k] = optional_trailer_keys[k]
-        item['preferred_direction'] = (map(int, (item['preferred_direction'].split('/'))))
+        item['preferred_direction'] = (map(str, (item['preferred_direction'].split('/'))))
         trailer_dict[item["code"]] = trailer(item["code"], item["supplier_code"], item["capacity_all"],
                                              item["capacity_for_xl_car"], item["capacity_for_l_car"],
                                              item["capacity_for_m_car"],
