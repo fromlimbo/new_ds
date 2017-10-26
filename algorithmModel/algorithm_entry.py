@@ -27,7 +27,7 @@ def optimization(data):
 
     retval = {"taskId": optimization.request.id,
               "trailerOrders": []}
-
+    headers = {'content-type': 'application/json'}
     try:
         logging.info("The algorithm starts")
         ind1 = main.ga_vrp(data, weight, 5, 0.0001)
@@ -38,9 +38,11 @@ def optimization(data):
 
     flag, matrix, route = convert_ind_to_matrix(ind1)
     if not flag:
-        headers = {'content-type': 'application/json'}
+        print("report result")
         r = requests.post("http://192.168.204.169:28109/ids/engine/dealPlan", data=json.dumps(retval),
                           headers=headers)
+        print r
+        print 'empty plan'
         return 0
     solution = xmatrix_to_solution(matrix, route)
     # print solution

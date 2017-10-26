@@ -1,18 +1,3 @@
-Wed, 25 Oct 2017 09:36:25 app.py[line:23] DEBUG service starts
-Wed, 25 Oct 2017 09:36:26 algorithm_entry.py[line:28] INFO The algorithm starts
-Wed, 25 Oct 2017 09:36:27 init.py[line:103] INFO Individual:    1    GoneTrailer:   66    GoneShips:  600    RemainShips:  545
-Wed, 25 Oct 2017 09:36:28 init.py[line:103] INFO Individual:    2    GoneTrailer:   67    GoneShips:  608    RemainShips:  537
-Wed, 25 Oct 2017 09:36:30 init.py[line:103] INFO Individual:    3    GoneTrailer:   66    GoneShips:  600    RemainShips:  545
-Wed, 25 Oct 2017 09:36:31 init.py[line:103] INFO Individual:    4    GoneTrailer:   66    GoneShips:  600    RemainShips:  545
-Wed, 25 Oct 2017 09:36:32 init.py[line:103] INFO Individual:    5    GoneTrailer:   67    GoneShips:  608    RemainShips:  537
-Wed, 25 Oct 2017 09:36:33 main.py[line:109] INFO OptimalIndividual   GoneTrailer:   67    GoneShips:  608    RemainShips:  537
-Wed, 25 Oct 2017 09:36:35 main.py[line:109] INFO OptimalIndividual   GoneTrailer:   67    GoneShips:  608    RemainShips:  537
-Wed, 25 Oct 2017 09:36:37 main.py[line:109] INFO OptimalIndividual   GoneTrailer:   67    GoneShips:  608    RemainShips:  537
-Wed, 25 Oct 2017 09:36:39 main.py[line:109] INFO OptimalIndividual   GoneTrailer:   67    GoneShips:  608    RemainShips:  537
-Wed, 25 Oct 2017 09:36:41 main.py[line:109] INFO OptimalIndividual   GoneTrailer:   67    GoneShips:  608    RemainShips:  537
-Wed, 25 Oct 2017 09:36:43 main.py[line:109] INFO OptimalIndividual   GoneTrailer:   67    GoneShips:  608    RemainShips:  537
-Wed, 25 Oct 2017 09:36:44 main.py[line:109] INFO OptimalIndividual   GoneTrailer:   67    GoneShips:  608    RemainShips:  537
-Wed, 25 Oct 2017 09:36:47 main.py[line:109] INFO OptimalIndividual   GoneTrailer:   67    GoneShips:  608    RemainShips:  537
-Wed, 25 Oct 2017 09:36:49 main.py[line:109] INFO OptimalIndividual   GoneTrailer:   67    GoneShips:  608    RemainShips:  537
-Wed, 25 Oct 2017 09:36:50 connectionpool.py[line:208] DEBUG Starting new HTTP connection (1): 192.168.204.169
-Wed, 25 Oct 2017 09:38:17 connectionpool.py[line:396] DEBUG http://192.168.204.169:28109 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+Wed, 25 Oct 2017 14:36:53 app.py[line:23] DEBUG service starts
+Wed, 25 Oct 2017 14:36:53 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 192.168.204.169
+Wed, 25 Oct 2017 14:36:56 connectionpool.py[line:395] DEBUG http://192.168.204.169:28109 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
