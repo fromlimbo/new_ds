@@ -2,9 +2,9 @@
 import logging
 import ConfigParser
 import os
+import json
 
-
-class GetConfig:
+class ConfigBuild:
     '''
     获取配置信息的操作，初始化时需指定 配置存放的位置filename,和section(需要获得的配置)
     '''
@@ -17,7 +17,22 @@ class GetConfig:
         self.config = dict()
 
         for con in self.cf.items(self.section):
-            self.config[con[0]] = con[1]
+            self.set_config(con[0],con[1])
+
+    def set_config(self,key,values):
+        '''
+        修改配置文件
+        :param key: 需要修改的键
+        :param values:  需要修改的值
+        :return:
+        '''
+        try:
+            vals = json.loads(values)
+            self.config[key] = vals
+        except:
+            self.config[key] = values
+        return 0
+
 
     def update_config(self, key, value, write_file=False):
         '''
@@ -27,8 +42,9 @@ class GetConfig:
         :param write_file: 是否把修改写入到配置文件，默认False（不写入）
         :return:
         '''
-        self.config[key] = value
-        setattr(self, key, value)
+        # self.config[key] = value
+        # setattr(self, key, value)
+        self.set_config(key,value)
         if write_file:
             self.save_config(key, value)
         return 0
@@ -53,3 +69,11 @@ class GetConfig:
 
 
 
+if __name__ == "__main__":
+    cf = ConfigParser.ConfigParser()
+    cf.read(os.path.abspath("document.ini"))
+    info = cf.get("MQLogConfig", "queue_names")
+    print info
+    todic = json.loads(info)
+    print type(todic)
+    print todic

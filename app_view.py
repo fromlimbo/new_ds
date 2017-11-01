@@ -3,6 +3,8 @@ from flask import jsonify, request
 from app import celery
 from dataProcess.processing import GAVARP_Process_json
 from algorithmModel.algorithm_entry import optimization
+from celery.app.control import Inspect
+import json
 
 @flask.route('/')
 def index():
@@ -25,6 +27,12 @@ def start_task():
 def connect_Test():
     return 'connection ok'
 
+@flask.route('/workers')
+def workers_info():
+    inspect = Inspect(app=celery)
+    work_stats = inspect.stats()
+    work_info = json.dumps(work_stats,ensure_ascii=False)
+    return work_info
 
 @celery.task
 def add(x,y):

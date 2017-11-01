@@ -16,15 +16,15 @@ class MQLoggingHandler(logging.Handler):
         :param config: 要连接的rabbitmq server 配置信息，config.py模块导入
         '''
         logging.Handler.__init__(self)
-        self.connection_para = dict(host=config.MQHOST)
-        if config.MQPORT:
-            self.connection_para['port'] = config.MQPORT
-        if config.VIRTUAL_HOST:
-            self.connection_para['virtual_host'] = config.VIRTUAL_HOST
-        if config.USERNAME and config.PASSWORD:
-            self.connection_para['credentials'] = credentials.PlainCredentials(config.USERNAME, config.PASSWORD)
-        self.exchange = config.EXCHANGE
-        self.exchange_type=config.EXCHANGE_TYPE
+        self.connection_para = dict(host=config["mqhsot"])
+        if config["mqhsot"]:
+            self.connection_para['port'] = config["mqport"]
+        if config["virtual_host"]:
+            self.connection_para['virtual_host'] = config["virtual_host"]
+        if config["username"] and config["password"]:
+            self.connection_para['credentials'] = credentials.PlainCredentials(config["username"], config["password"])
+        self.exchange = config["exchange"]
+        self.exchange_type=config["exchange_type"]
         self.connection, self.channel = None, None
         # make sure exchange only declared once.
         self.is_exchange_declared = False
