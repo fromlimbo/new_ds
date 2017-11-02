@@ -33,3 +33,5 @@ from app_view import *
 
 logging.debug("service starts")
 
+if __name__ == '__main__':
+    flask.run()
