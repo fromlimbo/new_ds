@@ -1,1 +1,1 @@
-from processing import *
+from processing import GAVARP_Process_json, GAVRP_Process

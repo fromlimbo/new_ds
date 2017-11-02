@@ -2,12 +2,14 @@
 
 import unittest
 from dataProcess import GAVRP_Process, GAVARP_Process_json
+# from dataProcess import GAVRP_Process, GAVARP_Process_json
 import pandas as pd
 import json
 from datetime import datetime
 from algorithmModel.algorithm_entry import optimization
 
 import sys
+import requests
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -46,6 +48,16 @@ class DataProcessTester(unittest.TestCase):
 
         assert(GAVRP_Process(request)!=None)
 
+    def testConnection(self):
+        print('testing connection')
+        retval = {"taskId": optimization.request.id,
+                  "trailerOrders": []}
+        # retval = {'haha':'haha'}
+        headers = {'content-type': 'application/json'}
+        r = requests.post("http://192.168.204.169:28109/ids/engine/dealPlan", data=json.dumps(retval),
+                          headers=headers)
+        print(r)
+
     def testAlgorithm(self):
         request = Request()
         with open('testData/order_raw.csv','r') as f:
@@ -69,7 +81,7 @@ class DataProcessTester(unittest.TestCase):
             f.close()
 
         data=GAVRP_Process(request)
-        optimization(data)
+        # optimization(data)
 
 class DataProcessJsonTester(unittest.TestCase):
 
@@ -111,6 +123,7 @@ def jsonsuite():
 
 def normalsuite():
     suite = unittest.TestSuite()
+    suite.addTest(DataProcessTester('testConnection'))
     suite.addTest(DataProcessTester('testAlgorithm'))
     return suite
 
