@@ -7,6 +7,7 @@ from algorithmModel.algorithm_entry import optimization
 from celery.app.control import Inspect
 import json
 from jsonpath_rw import jsonpath,parse
+from collections import OrderedDict
 
 @flask.route('/')
 def index():
@@ -35,7 +36,7 @@ def workers():
     if not isinstance(worker_stats,dict):
         return worker_stats
     else:
-        dic = dict()
+        dic = OrderedDict()
         for worker in worker_stats:
             dic[worker] = "on"
             dic["pid"] = worker_stats[worker]["pid"]
@@ -47,7 +48,6 @@ def workers():
                                  userid=brok["userid"],
                                  virtual = brok["virtual_host"],
                                  )
-
         return json.dumps(dic,ensure_ascii=False)
 
 
@@ -61,7 +61,7 @@ def workers_info(worker_id):
         return worker_data
 
 
-@flask.route('/api/workers/shutdown/<worker_id>')
+@flask.route('/api/workers/shutdown/<worker_id>',methods=['POST'])
 def workers_shutdown(worker_id):
     inspect = Inspect(destination=[worker_id], app=celery)
     test_ping = inspect.ping()
