@@ -44,13 +44,25 @@ def connect_Test():
 
 @flask.route('/api/workers')
 def workers():
+    '''
+    获取所有worker的基本信息，返回格式为：
+    [{"worker_name":xx,
+      "state":xx,
+       "pid":xx,
+       "pool":xx,
+       "broker":xx},
+       ...]
+    :return:
+    '''
     worker_stats = worker_state()
     if not isinstance(worker_stats,dict):
         return worker_stats
     else:
-        dic = OrderedDict()
+        all_worker = list()
         for worker in worker_stats:
-            dic[worker] = "on"
+            dic = OrderedDict()
+            dic["worker_name"] = worker
+            dic["state"] = "online"
             dic["pid"] = worker_stats[worker]["pid"]
             dic["pool"] = worker_stats[worker]["pool"]["processes"]
 
@@ -60,7 +72,8 @@ def workers():
                                  userid=brok["userid"],
                                  virtual = brok["virtual_host"],
                                  )
-        return json.dumps(dic,ensure_ascii=False)
+            all_worker.append(dic)
+        return json.dumps(all_worker,ensure_ascii=False)
 
 
 
