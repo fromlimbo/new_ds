@@ -85,10 +85,10 @@ def initialization(ppl_size, data, misc, flag_crossover=False, print_switch=0, o
         return individual
 
     while count < ppl_size:
+        count += 1
         ind = random_packaging()#产生一个随机装载方案
 
         population.append(ind)
-        count += 1
         if print_switch > 1:
             print 'Individual: %4d    GoneTrailer: %4d    GoneShips: %4d    RemainShips: %4d' % \
                   (count,
@@ -102,5 +102,6 @@ def initialization(ppl_size, data, misc, flag_crossover=False, print_switch=0, o
                           sum(len(i.ships) for i in ind.values() if i.id != 'RemainShipsContainer'),
                           len(ind['RemainShipsContainer'].ships)
                           ))
-
+    if not population:
+        logging.info("population random initial failed.")
     return population

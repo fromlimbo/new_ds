@@ -5,19 +5,36 @@ from utils import Logger, MongoDBClient
 from config import *
 from celery import Celery
 import logging
+from config import ConfigBuilder
 
 flask = Flask(__name__)
-flask.config.from_object(AppConfig)
+AppConfig = ConfigBuilder("config/config_sample.ini","AppConfig")
+AppConfigs = AppConfig.todict()
+flask.config.from_object(AppConfigs)
 
-celery=Celery(CeleryConfig.MAIN_NAME, broker=CeleryConfig.BROKER_ADDRESS,
-              task_serializer=CeleryConfig.CELERY_TASK_SERIALIZER)
-celery.conf.update(CELERY_ACCEPT_CONTENT=['pickle'])
+LoggerConfig = ConfigBuilder("config/config_sample.ini","LoggerConfig")
+LoggerConfigs = LoggerConfig.todict()
+
+MongoConfig = ConfigBuilder("config/config_sample.ini","LoggerConfig")
+MongoConfigs = LoggerConfig.todict()
+
+logger=Logger(config=LoggerConfigs)
+logging.basicConfig(level=logging.DEBUG)
+
 
 
 logger=Logger(config=LoggerConfig)
-mongoclient=MongoDBClient(config=MongoConfig)
+mongoclient=MongoDBClient(config=MongoConfigs)
 
-logging.basicConfig(level=logging.DEBUG)
+CeleryConfig = ConfigBuilder("config/config_sample.ini","CeleryConfig")
+CeleryConfigs = CeleryConfig.todict()
+celery=Celery(CeleryConfigs["main_name"], broker=CeleryConfigs["broker_address"],
+              task_serializer=CeleryConfigs["celery_task_serializer"])
+
+
+MongoConfig = ConfigBuilder("config/config_sample.ini","MongoConfig")
+MongoConfigs = MongoConfig.todict()
+mongoclient=MongoDBClient(config=MongoConfigs)
 
 from app_view import *
 

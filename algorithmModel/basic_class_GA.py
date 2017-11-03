@@ -4,6 +4,7 @@ This file contains all the classes used in genetic algorithm.
 import _temp_tools as tt
 import pandas as pd
 import numpy as np
+import logging
 CAR_TYPE_LOC = {'XL': 0, 'L': 1, 'M': 2, 'S': 3, 'XS': 4}
 
 
@@ -243,11 +244,12 @@ def convert_ind_to_matrix(ind):
             elif len(route) == 2:
                 pass
             else:
-                print "route error!!!"
+                logging.info( "route error!")
             Route.append(route)
     # mixroute=np.array(Route,dtype=int)
     matrix = matrix.fillna(0)
-    if count==0:
+    if count == 0:
+        logging.info("none of trailer has been fully loaded!")
         return False,matrix,Route
     return True,matrix, Route
 
