@@ -98,6 +98,15 @@ def workers_shutdown(worker_id):
 
 @flask.route('/api/tasks')
 def task_basics():
+    '''
+    获取所有task的基本信息，返回格式为：
+    [{"task_name":xx,
+      "id":xx,
+       "start_time":xx,
+       "worker_name":xx},
+       ...]
+    :return:
+    '''
     ins = Inspect(app=celery)
     data_basic = ins.active()
     basic_info = list()
@@ -106,7 +115,7 @@ def task_basics():
             return "no activate task"
         for info in data_basic[data]:
             basic_de = OrderedDict()
-            basic_de["name"] = info["name"]
+            basic_de["task_name"] = info["name"]
             basic_de["id"] = info["id"]
             basic_de["start_time"] = info["time_start"]
             basic_de["worker"] = info["hostname"]
