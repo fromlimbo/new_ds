@@ -27,7 +27,9 @@ mongoclient=MongoDBClient(config=MongoConfigs)
 CeleryConfig = ConfigBuilder("config/config_sample.ini","CeleryConfig")
 CeleryConfigs = CeleryConfig.todict()
 
-celery=Celery(CeleryConfigs["main_name"], broker=CeleryConfigs["broker_address"],
+celery=Celery(CeleryConfigs["main_name"],
+              broker=CeleryConfigs["broker_address"],
+              backend = "rpc://",
               task_serializer=CeleryConfigs["celery_task_serializer"])
 
 

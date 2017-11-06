@@ -96,20 +96,41 @@ def workers_shutdown(worker_id):
     if shut_ping == None:
         return "the worker {} was shutdown".format(worker_id)
 
+@flask.route('/api/tasks')
+def task_basics():
+    ins = Inspect(app=celery)
+    data_basic = ins.active()
+    basic_info = list()
+    for data in data_basic:
+        if not data_basic[data]:
+            return "no activate task"
+        for info in data_basic[data]:
+            basic_de = OrderedDict()
+            basic_de["name"] = info["name"]
+            basic_de["id"] = info["id"]
+            basic_de["start_time"] = info["time_start"]
+            basic_de["worker"] = info["hostname"]
+            basic_info.append(basic_de)
+    return json.dumps(basic_info,ensure_ascii=False)
+
+@flask.route('/api/task/info/<task_id>')
+def tasks_detail(task_id):
+    inspect = Inspect(app=celery)
+    detail_info = inspect.query_task(task_id)
+    if not detail_info.values():
+        return "no activate task"
+    else:
+        return json.dumps(detail_info,ensure_ascii=False)
 
 
-@celery.task(bind=True,track_started=True)
-def add(self,x,y):
-    # self.update_state(meta={"taskpid":os.getpid()})
-    time.sleep(30)
-    return x+y
 
 def on_raw_message(body):
     print body
 
-@celery.task
+@celery.task()
 def add(x,y):
-    return x+y
+    time.sleep(200)
+    return x +y
 
 def worker_state(worker_id=None):
     '''
