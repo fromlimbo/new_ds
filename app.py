@@ -2,12 +2,17 @@
 
 from flask import Flask
 from utils import Logger, MongoDBClient
-from config import *
 from celery import Celery
 import logging
 from config import ConfigBuilder
+import threading
+from celery.events import EventReceiver
+from celery.events.state import State
+import time
+from events import *
 
 flask = Flask(__name__)
+
 AppConfig = ConfigBuilder("config/config_sample.ini","AppConfig")
 AppConfigs = AppConfig.todict()
 flask.config.from_object(AppConfigs)
@@ -32,11 +37,15 @@ celery=Celery(CeleryConfigs["main_name"],
               backend = "rpc://",
               task_serializer=CeleryConfigs["celery_task_serializer"])
 
-
-
+state = State()
 from app_view import *
-
 logging.debug("service starts")
 
+
+
 if __name__ == '__main__':
+    event = Events(state)
+    event.setDaemon(True)
+    event.start()
+    flask.logger.setLevel(logging.INFO)
     flask.run()
