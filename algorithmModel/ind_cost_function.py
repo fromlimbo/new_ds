@@ -3,7 +3,7 @@
 This file computes all the optimization targets when the solution is described with dictionary.
 """
 from packaging import *
-
+import pinche
 ####################################################################################################################
 #----------------------------------------------- 已有ind词典情况下，封装所有目标为一个函数-------------------------------------#
 ############################################################################################################3##########
@@ -25,6 +25,8 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
     num_of_mix_dealer = 0
     num_of_mix_warehouse = 0
     num_trailer = 0
+    load_info={}
+    order_info=[]
 
     for i in ind.values():
         if i.id != 'RemainShipsContainer' and len(i.ships) == sum(i.slot_cap):
@@ -35,6 +37,8 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
             num_of_mix_city += len(set([x_ship.end_loc for x_ship in i.ships.values()]))
             num_of_mix_dealer += len(set([x_ship.dealer_code for x_ship in i.ships.values()]))
             num_of_mix_warehouse += len(set([x_ship.start_loc for x_ship in i.ships.values()]))
+            load_info[i.id] = [j for j in i.ships.keys()]
+            order_info.append(i.ships)
 
     if num_trailer == 0:
         logging.info("num_trailer is zero.")
@@ -79,18 +83,22 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
     #------------------------------------------------------------------------------------------------------------------#
 
     #------------------------------------------- 测试目标4:最小化异地拼车数量 ---------------------------------------------#
-    average_mix_city = float(num_of_mix_city) / (0.00001+float(num_trailer))
+    #average_mix_city = float(num_of_mix_city) / (0.00001+float(num_trailer))
     #------------------------------------------------------------------------------------------------------------------#
 
 
     #------------------------------------------- 测试目标5:最小化经销商拼车数量 --------------------------------------------#
-    average_mix_dealer = float(num_of_mix_dealer) / (0.00001+float(num_trailer))
+    #average_mix_dealer = float(num_of_mix_dealer) / (0.00001+float(num_trailer))
     #------------------------------------------------------------------------------------------------------------------#
+
+    # ------------------------------------------- 测试目标4&5:最大化经销商拼车装载率 --------------------------------------------#
+    route, average_loading_rate = pinche.load_rate(load_info, order_info)
+    # ------------------------------------------------------------------------------------------------------------------#
 
 
     #------------------------------------------- 测试目标8:最小化拼车库区数量 ---------------------------------------------#
     average_mix_warehouse = float(num_of_mix_warehouse) / (0.00001+float(num_trailer))
     #------------------------------------------------------------------------------------------------------------------#
 
-    normalized_cost_result.append(float(6+3+12) / (0.00001+float(6*average_mix_dealer + 3*average_mix_warehouse + 12*average_mix_city)))
+    normalized_cost_result.append(float(6+3) / (0.00001+float(6*average_loading_rate + 3*average_mix_warehouse)))
     return float(np.dot(np.array(weight_set), (np.array(normalized_cost_result).T)))

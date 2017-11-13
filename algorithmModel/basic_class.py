@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 
+# import numpy as np
 import pandas as pd
 
 
 ################################################################################
 class order:
     def __init__(self, order_code, customer_code, dealer_code, OTD, priority, VIN,
-                 shipment_code_set, start_loc, end_city, end_loc, created_time, effective_time,
+                 shipment_code_set, start_loc, start_loc_longitude, start_loc_latitude, end_city, end_loc,
+                 end_loc_longitude, end_loc_latitude,
+                 dealer_address, created_time, effective_time,
                  car_type, transport_type):
         self.order_code = order_code
         self.customer_code = customer_code
@@ -16,8 +19,13 @@ class order:
         self.VIN = VIN
         self.shipment_code_set = shipment_code_set
         self.start_loc = start_loc
+        self.start_loc_longitude = start_loc_longitude
+        self.start_loc_latitude = start_loc_latitude
         self.end_city = end_city
         self.end_loc = end_loc
+        self.end_loc_longitude = end_loc_longitude
+        self.end_loc_latitude = end_loc_latitude
+        self.dealer_address = dealer_address
         self.created_time = created_time
         self.effective_time = effective_time
         self.car_type = car_type
@@ -42,7 +50,9 @@ class order:
 
 class shipment:
     def __init__(self, shipment_code, dealer_code, order_code, customer_code, OTD, priority, VIN,
-                 start_loc, end_city, end_loc, effective_time, car_type, transport_type):
+                 start_loc, start_loc_longitude, start_loc_latitude, end_city, end_loc,
+                 end_loc_longitude, end_loc_latitude,
+                 dealer_address, effective_time, car_type, transport_type):
         self.shipment_code = shipment_code
         self.dealer_code = dealer_code
         self.order_code = order_code
@@ -51,8 +61,13 @@ class shipment:
         self.priority = priority
         self.VIN = VIN
         self.start_loc = start_loc
+        self.start_loc_longitude = start_loc_longitude
+        self.start_loc_latitude = start_loc_latitude
         self.end_city = end_city
         self.end_loc = end_loc
+        self.end_loc_longitude = end_loc_longitude
+        self.end_loc_latitude = end_loc_latitude
+        self.dealer_address = dealer_address
         self.effective_time = effective_time
         self.car_type = car_type
         self.transport_type = transport_type
@@ -83,7 +98,7 @@ class trailer:
                  trailer_available_time,
                  shipments_set, loading_time, planed_start_time, planed_arrive_time, actual_start_time,
                  actual_arrive_time, start_location,
-                 current_location, destination, historic_trajectory=None):
+                 current_location, destination, priority,historic_trajectory=None):
         self.code = code
         self.supplier_code = supplier_code
         self.capacity_all = capacity_all
@@ -110,6 +125,7 @@ class trailer:
         self.destination = destination
         self.historic_trajectory = historic_trajectory
         self.time_line = pd.DataFrame({}, [], [])
+        self.priority= priority if priority != None else float("inf")
 
     def add_time_line(self, time_str, shipments_set_t, loading_time_t, planed_start_time_t, planed_arrive_time_t,
                       actual_start_time_t, actual_arrive_time_t, start_location_t, current_location_t, destination_t):
