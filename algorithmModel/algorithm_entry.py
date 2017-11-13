@@ -13,7 +13,7 @@ Output: the output of this program, solution, is printed in the end of the code.
 import main
 from packaging import *
 from main import *
-from app import celery#for transporting parameters
+from app import celery #for transporting parameters
 import pickle
 import json
 import requests

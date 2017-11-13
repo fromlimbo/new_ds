@@ -20,7 +20,10 @@ logging.basicConfig(level=logging.DEBUG)
 CeleryConfig = ConfigBuilder("config/config_sample.ini","CeleryConfig")
 CeleryConfigs = CeleryConfig.todict()
 celery=Celery(CeleryConfigs["main_name"], broker=CeleryConfigs["broker_address"],
-              task_serializer=CeleryConfigs["celery_task_serializer"])
+              task_serializer=CeleryConfigs["celery_task_serializer"],
+              accept_content=['pickle'])
+celery.conf['CELERY_TASK_SERIALIZER'] = 'pickle'
+celery.conf['CELERY_ACCEPT_CONTENT'] = ['json', 'pickle']
 
 MongoConfig = ConfigBuilder("config/config_sample.ini","MongoConfig")
 MongoConfigs = MongoConfig.todict()
