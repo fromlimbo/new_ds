@@ -24,7 +24,7 @@ def GAVARP_Process_json(input_json):
     required_order_keys = ['order_code', 'customer_code', 'dealer_code',
                            'OTD', 'priority', 'start_loc', 'end_loc', 'car_type', 'effective_time',
                            'start_loc_longitude','start_loc_latitude',
-                           'end_loc_longitude','end_loc_latitude'
+                           'end_loc_longitude','end_loc_latitude',
                            'dealer_address']
 
     # key: default value
