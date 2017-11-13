@@ -2,10 +2,14 @@
 
 # import numpy as np
 import pandas as pd
+
+
 ################################################################################
 class order:
     def __init__(self, order_code, customer_code, dealer_code, OTD, priority, VIN,
-                 shipment_code_set, start_loc, end_city, end_loc, created_time, effective_time,
+                 shipment_code_set, start_loc, start_loc_longitude, start_loc_latitude, end_city, end_loc,
+                 end_loc_longitude, end_loc_latitude,
+                 dealer_address, created_time, effective_time,
                  car_type, transport_type):
         self.order_code = order_code
         self.customer_code = customer_code
@@ -15,13 +19,18 @@ class order:
         self.VIN = VIN
         self.shipment_code_set = shipment_code_set
         self.start_loc = start_loc
+        self.start_loc_longitude = start_loc_longitude
+        self.start_loc_latitude = start_loc_latitude
         self.end_city = end_city
         self.end_loc = end_loc
+        self.end_loc_longitude = end_loc_longitude
+        self.end_loc_latitude = end_loc_latitude
+        self.dealer_address = dealer_address
         self.created_time = created_time
         self.effective_time = effective_time
         self.car_type = car_type
         self.transport_type = transport_type
-        self.time_line = pd.DataFrame({},[], [])
+        self.time_line = pd.DataFrame({}, [], [])
 
     def add_time_line(self, time_str, effective_time_t, priority_t, shipment_set_t):
         temp_index = [self.time_line.index[j] for j in range(0, len(self.time_line.index))]
@@ -33,14 +42,17 @@ class order:
         temp_df.loc[time_str] = [effective_time_t, priority_t, shipment_set_t]
         self.time_line = temp_df
         return True
-    
+
     def change_time_line(self, time_str, effective_time_t, priority_t, shipment_set_t):
         self.time_line.loc[time_str] = [effective_time_t, priority_t, shipment_set_t]
         return True
 
+
 class shipment:
     def __init__(self, shipment_code, dealer_code, order_code, customer_code, OTD, priority, VIN,
-                 start_loc, end_city, end_loc, effective_time, car_type, transport_type):
+                 start_loc, start_loc_longitude, start_loc_latitude, end_city, end_loc,
+                 end_loc_longitude, end_loc_latitude,
+                 dealer_address, effective_time, car_type, transport_type):
         self.shipment_code = shipment_code
         self.dealer_code = dealer_code
         self.order_code = order_code
@@ -49,12 +61,17 @@ class shipment:
         self.priority = priority
         self.VIN = VIN
         self.start_loc = start_loc
+        self.start_loc_longitude = start_loc_longitude
+        self.start_loc_latitude = start_loc_latitude
         self.end_city = end_city
         self.end_loc = end_loc
+        self.end_loc_longitude = end_loc_longitude
+        self.end_loc_latitude = end_loc_latitude
+        self.dealer_address = dealer_address
         self.effective_time = effective_time
         self.car_type = car_type
         self.transport_type = transport_type
-        self.time_line = pd.DataFrame({},[], [])
+        self.time_line = pd.DataFrame({}, [], [])
 
     def add_time_line(self, time_str, effective_time_t, priority_t):
         temp_index = [self.time_line.index[j] for j in range(0, len(self.time_line.index))]
@@ -70,14 +87,18 @@ class shipment:
     def change_time_line(self, time_str, effective_time_t, priority_t):
         self.time_line.loc[time_str] = [effective_time_t, priority_t]
         return True
-    
+
+
 # Carriers: Edited by Bohao
 ## Trailers
 class trailer:
-    def __init__(self, code, supplier_code, capacity_all, capacity_for_xl_car, capacity_for_l_car, capacity_for_m_car, capacity_for_s_car,
-                 capacity_for_xs_car, reported_package_type, history_package_type, preferred_direction, availability, trailer_available_time,
-                 shipments_set, loading_time, planed_start_time, planed_arrive_time, actual_start_time, actual_arrive_time, start_location,
-                 current_location, destination, historic_trajectory=None):
+    def __init__(self, code, supplier_code, capacity_all, capacity_for_xl_car, capacity_for_l_car, capacity_for_m_car,
+                 capacity_for_s_car,
+                 capacity_for_xs_car, reported_package_type, history_package_type, preferred_direction, availability,
+                 trailer_available_time,
+                 shipments_set, loading_time, planed_start_time, planed_arrive_time, actual_start_time,
+                 actual_arrive_time, start_location,
+                 current_location, destination, priority, historic_trajectory=None):
         self.code = code
         self.supplier_code = supplier_code
         self.capacity_all = capacity_all
@@ -93,8 +114,8 @@ class trailer:
         self.trailer_available_time = trailer_available_time
 
         ## assigned
-        self.shipments_set = shipments_set 
-        self.loading_time = loading_time 
+        self.shipments_set = shipments_set
+        self.loading_time = loading_time
         self.planed_start_time = planed_start_time
         self.planed_arrive_time = planed_arrive_time
         self.actual_start_time = actual_start_time
@@ -104,28 +125,39 @@ class trailer:
         self.destination = destination
         self.historic_trajectory = historic_trajectory
         self.time_line = pd.DataFrame({}, [], [])
+        self.priority= priority if priority != None else float("inf")
 
-    def add_time_line(self, time_str, shipments_set_t, loading_time_t, planed_start_time_t, planed_arrive_time_t,actual_start_time_t, actual_arrive_time_t, start_location_t, current_location_t, destination_t):
+    def add_time_line(self, time_str, shipments_set_t, loading_time_t, planed_start_time_t, planed_arrive_time_t,
+                      actual_start_time_t, actual_arrive_time_t, start_location_t, current_location_t, destination_t):
         temp_index = [self.time_line.index[j] for j in range(0, len(self.time_line.index))]
         temp_index.append(time_str)
-        temp_df = pd.DataFrame({}, temp_index, columns=['shipments_set', 'loading_time', 'planed_start_time', 'planed_arrive_time','actual_start_time', 'actual_arrive_time', 'start_location', 'destination', 'destination'])
+        temp_df = pd.DataFrame({}, temp_index,
+                               columns=['shipments_set', 'loading_time', 'planed_start_time', 'planed_arrive_time',
+                                        'actual_start_time', 'actual_arrive_time', 'start_location', 'destination',
+                                        'destination'])
         temp_loc = len(self.time_line.index)
         for i in range(0, temp_loc):
             temp_df.loc[i] = self.time_line.loc[i]
-        temp_df.loc[time_str] = [shipments_set_t, loading_time_t, planed_start_time_t, planed_arrive_time_t,actual_start_time_t, actual_arrive_time_t, start_location_t, current_location_t, destination_t]
+        temp_df.loc[time_str] = [shipments_set_t, loading_time_t, planed_start_time_t, planed_arrive_time_t,
+                                 actual_start_time_t, actual_arrive_time_t, start_location_t, current_location_t,
+                                 destination_t]
         self.time_line = temp_df
         return True
 
-    def change_time_line(self, time_str, shipments_set_t, loading_time_t, planed_start_time_t, planed_arrive_time_t,actual_start_time_t, actual_arrive_time_t, start_location_t, current_location_t, destination_t):
-        self.time_line.loc[time_str] = [shipments_set_t, loading_time_t, planed_start_time_t, planed_arrive_time_t,actual_start_time_t, actual_arrive_time_t, start_location_t, current_location_t, destination_t]
+    def change_time_line(self, time_str, shipments_set_t, loading_time_t, planed_start_time_t, planed_arrive_time_t,
+                         actual_start_time_t, actual_arrive_time_t, start_location_t, current_location_t,
+                         destination_t):
+        self.time_line.loc[time_str] = [shipments_set_t, loading_time_t, planed_start_time_t, planed_arrive_time_t,
+                                        actual_start_time_t, actual_arrive_time_t, start_location_t, current_location_t,
+                                        destination_t]
         return True
-    
+
+
 ## Train
 class train:
     def __init__(self, code, capacity_for_big_car, capacity_for_small_car, start_station, end_station,
                  time_table, shipments_set, planed_start_time, planed_arrive_time, actual_start_time,
                  actual_arrive_time, current_location=None):
-
         ## Self
         self.code = code
         self.capacity_for_big_car = capacity_for_big_car
@@ -148,7 +180,6 @@ class ship:
     def __init__(self, code, max_capacity, min_capacity, start_station, end_station,
                  time_table, stops, shipments_set, planed_start_time, planed_arrive_time,
                  actual_start_time, actual_arrive_time, current_location=None):
-
         ## self
         self.code = code
         self.max_capacity = max_capacity
@@ -212,7 +243,7 @@ class warehouse:
         self.locked_lanes = locked_lanes
         self.lane_number_available = lane_number_available
         self.cost = cost
-        self.time_line = pd.DataFrame({},[],[])
+        self.time_line = pd.DataFrame({}, [], [])
 
     def add_time_line(self, time_str, locked_lanes_t, lane_number_available_t):
         temp_index = [self.time_line.index[j] for j in range(0, len(self.time_line.index))]
@@ -224,10 +255,11 @@ class warehouse:
         temp_df.loc[time_str] = [locked_lanes_t, lane_number_available_t]
         self.time_line = temp_df
         return True
-    
+
     def change_time_line(self, time_str, locked_lanes_t, lane_number_available_t):
         self.time_line.loc[time_str] = [locked_lanes_t, lane_number_available_t]
         return True
+
 
 class wharf:
     def __init__(self, wharf_code, capacity, time_start, time_end,
@@ -245,8 +277,9 @@ class dealer:
     def __init__(self, dealer_code, location, order_freq, add):
         self.code = dealer_code
         self.location = location
-        self.order_freq = order_freq #下单频率
+        self.order_freq = order_freq  # 下单频率
         self.add = add
+
 
 # Edited by Wenbo
 class supplier:
@@ -266,11 +299,11 @@ class supplier:
         temp_df.loc[time_str] = [trailer_available_t]
         self.time_line = temp_df
         return True
-        
+
     def change_time_line(self, time_str, trailer_available_t):
         self.time_line.loc[time_str] = [trailer_available_t]
         return True
-    
+
 
 class route:
     def __init__(self, route_code, start, end, dist, duration, price, supplier_code):
@@ -282,11 +315,13 @@ class route:
         self.price = price
         self.supplier = supplier_code
 
+
 class car:
     def __init__(self, car_code, type, shipment_code):
         self.code = car_code
         self.type = type
         self.shipment_code = shipment_code  ##############
+
 
 class customer:
     def __init__(self, customer_code):

@@ -168,40 +168,40 @@ def constraints_tier_1(as_ships, ship, misc, full_check=False):
     :return: True or Fasle.
     """
     mix_city_limit = 2
-    check_list = [True] * 4
+    check_list = [True] * 3
 
 
-    if not tt.mix_city_number_check(as_ships, ship, mix_city_limit):
-        if not full_check:
-            return False
-        else:
-            check_list[0] = False
+    # if not tt.mix_city_number_check(as_ships, ship, mix_city_limit):
+    #     if not full_check:
+    #         return False
+    #     else:
+    #         check_list[0] = False
 
     # Constraint: 4
     if not tt.mix_dealer_check(as_ships, ship, misc):
         if not full_check:
             return False
         else:
-            check_list[1] = False
+            check_list[0] = False
 
     # Constraint: 6
-    if not tt.mix_city_set_check(as_ships, ship, misc.mix_city):
+    if not tt.mix_dealer_set_check(as_ships, ship, misc.mix_dealer_rule):
         if not full_check:
             return False
         else:
-            check_list[2] = False
+           check_list[1] = False
 
     # Constraint: 9 - limit for maximum number of warehouse in a trailer
     if not tt.mix_warehouse_number_check(as_ships, ship, misc):
         if not full_check:
             return False
         else:
-            check_list[3] = False
+            check_list[2] = False
 
     if not full_check:
         return True
     else:
-        return sum(check_list) == 4, check_list
+        return sum(check_list) == 3, check_list
 
 
 def ppl_cost(ppl, misc, with_optimal_goal=False):

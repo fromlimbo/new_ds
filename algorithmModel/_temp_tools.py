@@ -16,10 +16,11 @@ def preferred_direction_check(new_shipment, trailer):
     return new_shipment.end_loc in trailer.preferred_direction
 
 # Constraint 3:
-def mix_city_number_check(shipment_set, new_shipment, max_mix_city_number):
-    city_set = {i.end_loc for i in shipment_set}
-    city_set.add(new_shipment.end_loc)
-    return len(city_set) <= max_mix_city_number
+# def mix_city_number_check(shipment_set, new_shipment, max_mix_city_number):
+#     city_set = {i.end_loc for i in shipment_set}
+#     city_set.add(new_shipment.end_loc)
+#     return len(city_set) <= max_mix_city_number
+
 
 # Constraint 4:
 def mix_dealer_check(shipment_set, new_shipment, misc):
@@ -44,19 +45,35 @@ def availability_check(shipment_set, new_shipment):
     pass
 
 # Constraint 6:
-def mix_city_set_check(shipment_set, new_shipment, mix_city_rule_matrix):
-    destination_temp = [i.end_loc for i in shipment_set]
-    destination_temp.append(new_shipment.end_loc)
+# def mix_city_set_check(shipment_set, new_shipment, mix_city_rule_matrix):
+#     destination_temp = [i.end_loc for i in shipment_set]
+#     destination_temp.append(new_shipment.end_loc)
+#     destination_set = list(set(destination_temp))
+#
+#     if len(destination_set) < 2:
+#         return True
+#
+#     # 在拼车规则文件mix_city中查找
+#     for i in range(len(mix_city_rule_matrix[0])):
+#         mix_city_rule = mix_city_rule_matrix[i].values()
+#         # If all the end cities are in this list of mix city table, the requirement is satisfied.
+#         if len([x for x in destination_set if x not in mix_city_rule]) == 0:
+#             return True
+#     return False
+
+def mix_dealer_set_check(shipment_set, new_shipment, mix_dealer_rule_matrix):
+    destination_temp = [i.dealer_code for i in shipment_set]
+    destination_temp.append(new_shipment.dealer_code)
     destination_set = list(set(destination_temp))
 
     if len(destination_set) < 2:
         return True
+    #在拼经销商规则mix_dealer_rule中查找
 
-    # 在拼车规则文件mix_city中查找
-    for i in range(len(mix_city_rule_matrix[0])):
-        mix_city_rule = mix_city_rule_matrix[i].values()
+    for i in range(len(mix_dealer_rule_matrix[0])):
+        mix_dealer_rule = mix_dealer_rule_matrix[i].values()
         # If all the end cities are in this list of mix city table, the requirement is satisfied.
-        if len([x for x in destination_set if x not in mix_city_rule]) == 0:
+        if len([x for x in destination_set if x not in mix_dealer_rule]) == 0:
             return True
     return False
 
