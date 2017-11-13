@@ -28,14 +28,19 @@
             "car_type": "S",
             "created_time": "2017-10-17 15:35:24",
             "customer_code": "LSV",
-            "dealer_code": "A009620004",
+            "dealer_code": "4100000",
             "effective_time": "2017-10-19 11:05:20",
             "end_city": "26600",
             "end_loc": "111",
             "order_code": "40000",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 2,
@@ -50,7 +55,12 @@
             "order_code": "40001",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"650",
+            "dealer_address":"add"
         },
         {
             "OTD": 1,
@@ -65,7 +75,12 @@
             "order_code": "40002",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"650",
+            "dealer_address":"add"
         },
         {
             "OTD": 4,
@@ -73,14 +88,19 @@
             "car_type": "S",
             "created_time": "2017-10-17 17:09:13",
             "customer_code": "LSV",
-            "dealer_code": "4100001",
+            "dealer_code": "4100002",
             "effective_time": "2017-10-21 04:37:22",
             "end_city": "25700",
             "end_loc": "222",
             "order_code": "40003",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"550",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 6,
@@ -88,14 +108,19 @@
             "car_type": "S",
             "created_time": "2017-10-17 15:35:24",
             "customer_code": "LSV",
-            "dealer_code": "4100001",
+            "dealer_code": "4100002",
             "effective_time": "2017-10-19 11:05:20",
             "end_city": "26600",
             "end_loc": "111",
             "order_code": "40004",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"550",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 2,
@@ -110,7 +135,12 @@
             "order_code": "40005",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 1,
@@ -125,7 +155,12 @@
             "order_code": "40006",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 4,
@@ -133,14 +168,19 @@
             "car_type": "S",
             "created_time": "2017-10-17 17:09:13",
             "customer_code": "LSV",
-            "dealer_code": "4100001",
+            "dealer_code": "4100005",
             "effective_time": "2017-10-21 04:37:22",
             "end_city": "25700",
             "end_loc": "222",
             "order_code": "40007",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"600",
+            "end_loc_latitude":"700",
+            "dealer_address":"add"
         },
         {
             "OTD": 6,
@@ -148,14 +188,19 @@
             "car_type": "S",
             "created_time": "2017-10-17 15:35:24",
             "customer_code": "LSV",
-            "dealer_code": "4100001",
+            "dealer_code": "4100005",
             "effective_time": "2017-10-19 11:05:20",
             "end_city": "26600",
             "end_loc": "111",
             "order_code": "40008",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"600",
+            "end_loc_latitude":"700",
+            "dealer_address":"add"
         },
         {
             "OTD": 2,
@@ -163,14 +208,19 @@
             "car_type": "S",
             "created_time": "2017-10-17 17:06:02",
             "customer_code": "LSV",
-            "dealer_code": "4100001",
+            "dealer_code": "4100005",
             "effective_time": "2017-10-23 02:34:50",
             "end_city": "25700",
             "end_loc": "222",
             "order_code": "40009",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"600",
+            "end_loc_latitude":"700",
+            "dealer_address":"add"
         },
         {
             "OTD": 1,
@@ -185,7 +235,12 @@
             "order_code": "40010",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 4,
@@ -200,7 +255,12 @@
             "order_code": "40011",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 6,
@@ -215,7 +275,12 @@
             "order_code": "40012",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 2,
@@ -230,7 +295,12 @@
             "order_code": "40013",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 1,
@@ -245,7 +315,12 @@
             "order_code": "40014",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 4,
@@ -260,7 +335,12 @@
             "order_code": "40015",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 6,
@@ -268,14 +348,19 @@
             "car_type": "S",
             "created_time": "2017-10-17 15:35:24",
             "customer_code": "LSV",
-            "dealer_code": "4100001",
+            "dealer_code": "4100002",
             "effective_time": "2017-10-19 11:05:20",
             "end_city": "26600",
             "end_loc": "25700",
             "order_code": "40016",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"550",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 2,
@@ -283,14 +368,19 @@
             "car_type": "S",
             "created_time": "2017-10-17 17:06:02",
             "customer_code": "LSV",
-            "dealer_code": "4100001",
+            "dealer_code": "4100002",
             "effective_time": "2017-10-23 02:34:50",
             "end_city": "25700",
             "end_loc": "25700",
             "order_code": "40017",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"550",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 1,
@@ -305,7 +395,12 @@
             "order_code": "40018",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 4,
@@ -313,14 +408,19 @@
             "car_type": "S",
             "created_time": "2017-10-17 17:09:13",
             "customer_code": "LSV",
-            "dealer_code": "4100001",
+            "dealer_code": "4100000",
             "effective_time": "2017-10-21 04:37:22",
             "end_city": "25700",
             "end_loc": "25700",
             "order_code": "40019",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 6,
@@ -328,14 +428,19 @@
             "car_type": "S",
             "created_time": "2017-10-17 15:35:24",
             "customer_code": "LSV",
-            "dealer_code": "4100001",
+            "dealer_code": "4100000",
             "effective_time": "2017-10-19 11:05:20",
             "end_city": "26600",
             "end_loc": "25700",
             "order_code": "40020",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 2,
@@ -343,14 +448,19 @@
             "car_type": "S",
             "created_time": "2017-10-17 17:06:02",
             "customer_code": "LSV",
-            "dealer_code": "4100001",
+            "dealer_code": "4100000",
             "effective_time": "2017-10-23 02:34:50",
             "end_city": "25700",
             "end_loc": "25700",
             "order_code": "40021",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 1,
@@ -358,14 +468,19 @@
             "car_type": "S",
             "created_time": "2017-10-17 17:07:42",
             "customer_code": "LSV",
-            "dealer_code": "4100001",
+            "dealer_code": "4100000",
             "effective_time": "2017-10-24 14:27:54",
             "end_city": "26600",
             "end_loc": "25700",
             "order_code": "40022",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         },
         {
             "OTD": 4,
@@ -373,14 +488,19 @@
             "car_type": "S",
             "created_time": "2017-10-17 17:09:13",
             "customer_code": "LSV",
-            "dealer_code": "4100001",
+            "dealer_code": "4100000",
             "effective_time": "2017-10-21 04:37:22",
             "end_city": "25700",
             "end_loc": "25700",
             "order_code": "40023",
             "priority": 0,
             "start_loc": "1",
-            "transport_type": "R"
+            "transport_type": "R",
+            "start_loc_longitude":"100",
+            "start_loc_latitude":"200",
+            "end_loc_longitude":"500",
+            "end_loc_latitude":"600",
+            "dealer_address":"add"
         }
     ],
     "otd_pinche": [
@@ -485,7 +605,8 @@
             "code": "40000",
             "preferred_direction": "111/222/25700/25660/26100/26400/26420/26600/27210/27600/25200/25300/27100/27400/27680/25500/27110/25000/27700",
             "start_location": "U1",
-            "trailer_available_time": "2017-10-25 11:27:08"
+            "trailer_available_time": "2017-10-25 11:27:08",
+            "priority": null
         },
         {
             "availability": 1,
@@ -498,7 +619,8 @@
             "code": "40001",
             "preferred_direction": "111/222/25700/25660/26100/26400/26420/26600/27210/27600/25200/25300/27100/27400/27680/25500/27110/25000/27700",
             "start_location": "U1",
-            "trailer_available_time": "2017-10-25 10:35:34"
+            "trailer_available_time": "2017-10-25 10:35:34",
+            "priority": null
         },
         {
             "availability": 1,
@@ -511,7 +633,9 @@
             "code": "40002",
             "preferred_direction": "111/222/25700/25660/26100/26400/26420/26600/27210/27600/25200/25300/27100/27400/27680/25500/27110/25000/27700",
             "start_location": "U1",
-            "trailer_available_time": "2017-10-25 10:35:34"
+            "trailer_available_time": "2017-10-25 10:35:34",
+            "priority": 1
+
         }
     ]
 }

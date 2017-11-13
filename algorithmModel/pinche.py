@@ -16,6 +16,7 @@ def average_loading_rate(Warehouse, Retailers, n_capacity):
     StWarehouse['x'], StWarehouse['y'], StWarehouse['z'] = list(to_Cartesian(StWarehouse['start_loc_latitude'],
                                                                              StWarehouse['start_loc_longitude']))
     Retailers_AB = Retailers.copy()
+
     Retailers_AB['x'], Retailers_AB['y'], Retailers_AB['z'] = zip(*map(to_Cartesian, Retailers_AB['end_loc_latitude'],
                                                                        Retailers_AB['end_loc_longitude']))
     route_AB = pd.DataFrame(find_the_path(StWarehouse, Retailers_AB), columns=['dealer_code', 'dist', 'num_order'])
@@ -59,7 +60,7 @@ def find_the_path(StWarehouse, Retailers_AB):
 
 
 def find_nearest_id(retailer_info, k_nn=12, leaf_size=10):
-    k_nn = min(k_nn, len(retailer_info))
+    k_nn = min(k_nn, len(retailer_info)-1)
     leaf_size = leaf_size
     now_retailer_gps = copy.deepcopy(retailer_info)
 
@@ -75,7 +76,7 @@ def find_nearest_id(retailer_info, k_nn=12, leaf_size=10):
     now_retailer_xyz = list(zip(now_retailer_gps['x'], now_retailer_gps['y'], now_retailer_gps['z']))
 
     RetlTree = KDTree(now_retailer_xyz, leafsize=leaf_size)
-    dist_k, ind_k = RetlTree.query(now_retailer_xyz, k=k_nn + 1)
+    dist_k, ind_k = RetlTree.query(now_retailer_xyz, k=k_nn+1 )
     B_retailer_list = now_retailer_gps.iloc[ind_k[:, 1:].flatten(), :]
     # B_retailer_dist = now_retailer_gps.iloc[dist_k[:, 1:].flatten(), :]
 
@@ -83,9 +84,10 @@ def find_nearest_id(retailer_info, k_nn=12, leaf_size=10):
         data=B_retailer_list['dealer_code'].values.reshape([len(now_retailer_gps), k_nn]),
         index=now_retailer_gps.dealer_code)
     # 需求不明，距离不知何时返回
-    retailerAB_dist = pd.DataFrame(data=dist_k, index=now_retailer_gps.dealer_code).drop(0, 1)
+    #retailerAB_dist = pd.DataFrame(data=dist_k, index=now_retailer_gps.dealer_code).drop(0, 1)
 
-    return retailerAB_IDlist
+    return retailerAB_IDlist.reset_index()
+
 
 def load_rate(load_info, order_info):
     load_rate_path = pd.DataFrame()
@@ -95,9 +97,9 @@ def load_rate(load_info, order_info):
     for trailer_code,order_id in load_info.items():
         assert len(order_id)>0
         item = order_info[order_id[0]]
-        id = [item['start_loc']]
-        SRC_WH_LATITUDE = [item['start_loc_latitude']]
-        SRC_WH_LONGITUDE = [item['start_loc_longitude']]
+        id = [item.start_loc]
+        SRC_WH_LATITUDE = item.start_loc_latitude
+        SRC_WH_LONGITUDE = item.start_loc_longitude
         test_StWarehouse = pd.DataFrame()
         test_StWarehouse['start_loc'] = id
         test_StWarehouse['start_loc_latitude'] = SRC_WH_LATITUDE
@@ -106,21 +108,22 @@ def load_rate(load_info, order_info):
         load_order = [order_info[item] for item in order_id]
         dealer_code,LATITUDE,LONGITUDE = [], [], []
         for item in load_order:
-            dealer_code.append(item['dealer_code'])
-            #ADDRESS.append(item['PURCHASER_ADDRESS'])
-            LATITUDE.append(item['end_loc_latitude'])
-            LONGITUDE.append(item['end_loc_longitude'])
+            dealer_code.append(item.dealer_code)
+            LATITUDE.append(item.end_loc_latitude)
+            LONGITUDE.append(item.end_loc_longitude)
         test_Retailers_order = pd.DataFrame()
         test_Retailers_order['dealer_code'] = dealer_code
-        #test_Retailers_order['ADDRESS'] = ADDRESS
-        test_Retailers_order['end_loc_latitude'] = LATITUDE
-        test_Retailers_order['end_loc_longitude'] = LONGITUDE
+
+        test_Retailers_order['end_loc_latitude'] = map(float,LATITUDE)
+        test_Retailers_order['end_loc_longitude'] = map(float,LONGITUDE)
+
         count_order_dict = test_Retailers_order['dealer_code'].groupby(test_Retailers_order['dealer_code']).count()
         test_Retailers_order.drop_duplicates(['dealer_code'], inplace=True)
         count_order_list = [count_order_dict[item] for item in test_Retailers_order['dealer_code']]
         test_Retailers_order['num_order'] = count_order_list
         # the route and their averaged loading rate
         n_capacity = test_Retailers_order['num_order'].sum()  # just the sum of the orders//should be the real capacity
+
         test_route, test_loading_rate = average_loading_rate(test_StWarehouse, test_Retailers_order, n_capacity)
         trailer_list.append(trailer_code)
         path_list.append(list(test_route['dealer_code']))

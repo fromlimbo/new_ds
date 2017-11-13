@@ -117,7 +117,7 @@ class DataProcessJsonTester(unittest.TestCase):
 
     def testAlgorithm(self):
 
-        with open('data1.json', 'r') as jsonfile:
+        with open('data.json', 'r') as jsonfile:
             data_json=json_load_byteified(jsonfile)
         data=GAVARP_Process_json(data_json)
         result=optimization(data)
