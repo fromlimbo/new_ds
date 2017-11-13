@@ -71,7 +71,7 @@ def mix_dealer_set_check(shipment_set, new_shipment, mix_dealer_rule_matrix):
     #在拼经销商规则mix_dealer_rule中查找
 
     for i in range(len(mix_dealer_rule_matrix[0])):
-        mix_dealer_rule = mix_dealer_rule_matrix[i].values()
+        mix_dealer_rule = mix_dealer_rule_matrix[i]
         # If all the end cities are in this list of mix city table, the requirement is satisfied.
         if len([x for x in destination_set if x not in mix_dealer_rule]) == 0:
             return True

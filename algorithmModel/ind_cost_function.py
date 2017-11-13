@@ -26,7 +26,7 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
     num_of_mix_warehouse = 0
     num_trailer = 0
     load_info={}
-    order_info=[]
+    order_info={}
 
     for i in ind.values():
         if i.id != 'RemainShipsContainer' and len(i.ships) == sum(i.slot_cap):
@@ -38,7 +38,8 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
             num_of_mix_dealer += len(set([x_ship.dealer_code for x_ship in i.ships.values()]))
             num_of_mix_warehouse += len(set([x_ship.start_loc for x_ship in i.ships.values()]))
             load_info[i.id] = [j for j in i.ships.keys()]
-            order_info.append(i.ships)
+            for ship in i.ships.values():
+                order_info[ship.order_code]=ship
 
     if num_trailer == 0:
         logging.info("num_trailer is zero.")
@@ -92,7 +93,8 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
     #------------------------------------------------------------------------------------------------------------------#
 
     # ------------------------------------------- 测试目标4&5:最大化经销商拼车装载率 --------------------------------------------#
-    route, average_loading_rate = pinche.load_rate(load_info, order_info)
+    loading_rate = pinche.load_rate(load_info, order_info)['load_rate']
+    average_loading_rate=np.mean(loading_rate)
     # ------------------------------------------------------------------------------------------------------------------#
 
 
