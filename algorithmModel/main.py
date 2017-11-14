@@ -73,8 +73,8 @@ def gen_mix_dealer_rule(misc):
     i = 0
     for ship_info in misc.ship_dict.values():
         list[i][0] = ship_info.dealer_code
-        list[i][1] = int(ship_info.end_loc_longitude)
-        list[i][2] = int(ship_info.end_loc_latitude)
+        list[i][1] = ship_info.end_loc_longitude
+        list[i][2] = ship_info.end_loc_latitude
         i += 1
     dealer_rule = pd.DataFrame(list, index=misc.ship_dict.keys(), columns=dealer_index)
     dealer_rule = dealer_rule.drop_duplicates('dealer_code')

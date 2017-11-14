@@ -31,6 +31,8 @@ def to_Cartesian(lat, lng):
     so that the KDTree with E-distance can be just applied.
     """
     R = 6371.004
+    lat=float(lat)
+    lng=float(lng)
     lat_, lng_ = map(radians, [lat, lng])  # degree to radius
     x = R * cos(lat_) * cos(lng_)
     y = R * cos(lat_) * sin(lng_)
