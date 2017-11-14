@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from app import flask,state
+from app import flask
 from flask import jsonify, request
 from app import celery
 from dataProcess.processing import GAVARP_Process_json
@@ -141,7 +141,6 @@ def workers():
     for methods in INSPECT_METHODS:
        result[methods] = getattr(inspect,methods)
     return json.dumps(result,ensure_ascii=False)
-
 
 
 @flask.route('/api/workers/shutdown/<worker_id>',methods=['POST'])

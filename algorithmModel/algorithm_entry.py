@@ -19,23 +19,24 @@ import json
 import requests
 import  logging
 
-Logger = logging.getLogger(__name__)
+
+
 weight = [0.0, 0.5, 0.0, 0.5]
 
 # ---------------------------To carry out optimization and record results in result_record.pkl--------------------------#
 @celery.task(serializer='pickle')
 def optimization(data):
     #----------------- To generate scheduling solutions through hierarchical mult-object optimization--------------
+    logger = logging.getLogger(__name__)
 
     retval = {"taskId": optimization.request.id,
               "trailerOrders": []}
     headers = {'content-type': 'application/json'}
     try:
-        Logger.info("The algorithm starts")
+        logger.info("The algorithm starts")
         ind1 = main.ga_vrp(data, weight, 5, 0.0001)
     except ValueError:
-        print "Ineffective input data!"
-        Logger.error("Ineffective input data!")
+        logger.error("Ineffective input data!")
     #solution = xmatrix_to_solution(convert_ind_to_matrix(ind1))
 
     flag, matrix, route = convert_ind_to_matrix(ind1)
@@ -44,7 +45,6 @@ def optimization(data):
         url="http://192.168.204.169:28109/ids/engine/dealPlan"
         url="http://10.108.11.40:28060/ids/engine/dealPlan"
         r = requests.post(url=url, data=json.dumps(retval),headers=headers)
-        print r
         print 'empty plan'
         return 0
     solution = xmatrix_to_solution(matrix, route)
@@ -84,6 +84,5 @@ def optimization(data):
     headers = {'content-type': 'application/json'}
     r = requests.post("http://192.168.204.169:28109/ids/engine/dealPlan", data=json.dumps(retval),
                       headers=headers)
-    print r.text
     return 0
 

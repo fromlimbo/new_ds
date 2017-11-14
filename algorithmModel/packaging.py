@@ -15,7 +15,6 @@ import numpy as np
 import copy
 import logging
 
-Logger = logging.getLogger(__name__)
 # parameters
 mix_city_limit = 2
 mix_dealer_limit = 2

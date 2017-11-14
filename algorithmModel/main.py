@@ -15,7 +15,6 @@ import logging
 import pinche
 import pandas as pd
 
-Logger = logging.getLogger(__name__)
 # logging.basicConfig(level=logging.DEBUG,
 #                 format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
 #                 datefmt='%a, %d %b %Y %H:%M:%S',
@@ -95,11 +94,13 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
     :param print_switch: the bool value to determine whether variables should be printed.
     :return: the individual set containing the last generation and the best individual among all the individuals during evolution.
     """
+    logger = logging.getLogger(__name__)
+
     try:
         misc = gen_misc(cost_weight, _data)
     except KeyError:
         print "Ineffective input data!"
-        Logger.error("Ineffective input data!")
+        logger.error("Ineffective input data!")
     data = Data(misc.ship_dict, misc.trailer_dict)  # build a new variant of Data class, containing shipment dictionary and trailer dictionary
     co_par = CrossoverParameters(mutant_rate_para, fit_threshold_para, crossover_ratio_para)  # set a variant containing crossover ratio, fitness threshold and mutant rate
 
@@ -129,8 +130,8 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
         ave_goal_pre = ave_goal
         ppl = co.co_pro(ppl, co_par, data, misc, print_switch)
         ave_goal, optimal_goal, optimal_ind = ppl_cost(ppl, misc, with_optimal_goal=True)
-        Logger.info('OptimalIndividual   GoneTrailer: %4d    GoneShips: %4d    RemainShips: %4d' % \
-                     (sum(len(i.ships) == sum(i.slot_cap) for i in optimal_ind.values() if i.id != 'RemainShipsContainer'),
+        logger.info('OptimalIndividual   GoneTrailer: %4d    GoneShips: %4d    RemainShips: %4d' % \
+                    (sum(len(i.ships) == sum(i.slot_cap) for i in optimal_ind.values() if i.id != 'RemainShipsContainer'),
                       sum(len(i.ships) for i in optimal_ind.values() if i.id != 'RemainShipsContainer'),
                       len(optimal_ind['RemainShipsContainer'].ships)
                       ))
