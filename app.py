@@ -34,6 +34,7 @@ CeleryConfigs = CeleryConfig.todict()
 
 celery=Celery(CeleryConfigs["main_name"],
               broker=CeleryConfigs["broker_address"],
+              loglevel = "info",
               backend = "rpc://",
               task_serializer=CeleryConfigs["celery_task_serializer"])
 
@@ -44,8 +45,7 @@ logging.debug("service starts")
 
 
 if __name__ == '__main__':
-    event = Events(state)
-    event.setDaemon(True)
-    event.start()
-    flask.logger.setLevel(logging.INFO)
+    tasks_event = Events(state)
+    tasks_event.setDaemon(True)
+    tasks_event.run()
     flask.run()
