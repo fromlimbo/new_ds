@@ -39,8 +39,9 @@ def optimization(data):
     flag, matrix, route = convert_ind_to_matrix(ind1)
     if not flag:
         print("report result")
-        r = requests.post("http://192.168.204.169:28109/ids/engine/dealPlan", data=json.dumps(retval),
-                          headers=headers)
+        url="http://192.168.204.169:28109/ids/engine/dealPlan"
+        url="http://10.108.11.40:28060/ids/engine/dealPlan"
+        r = requests.post(url=url, data=json.dumps(retval),headers=headers)
         print r
         print 'empty plan'
         return 0
