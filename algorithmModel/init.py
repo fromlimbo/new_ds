@@ -35,7 +35,7 @@ def initialization(ppl_size, data, misc, flag_crossover=False, print_switch=0, o
                 trailer_list.sort(key=operator.attrgetter('capacity_for_xl_car'), reverse=True)
                 trailer_list.sort(key=operator.attrgetter('capacity_for_l_car'), reverse=True)
                 trailer_list.sort(key=operator.attrgetter('capacity_all'), reverse=False)
-                trailer_list.sort(key=operator.attrgetter('priority'), reverse=False)
+                #trailer_list.sort(key=operator.attrgetter('priority'), reverse=False)
             except KeyError:
                 print "The input trailer data is ineffective!"
                 logging.error("The input trailer data is ineffective!")

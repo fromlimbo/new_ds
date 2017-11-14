@@ -68,7 +68,8 @@ def find_nearest_id(retailer_info, k_nn=12, leaf_size=10):
         pass
     else:
         raise Exception("传入数据格式不是DataFrame")
-    now_retailer_gps.reset_index(drop=True)
+
+    now_retailer_gps = now_retailer_gps.reset_index(drop=True)
 
     now_retailer_gps['x'], now_retailer_gps['y'], now_retailer_gps['z'] = zip(
         *map(to_Cartesian, now_retailer_gps['end_loc_latitude'],
@@ -76,17 +77,27 @@ def find_nearest_id(retailer_info, k_nn=12, leaf_size=10):
     now_retailer_xyz = list(zip(now_retailer_gps['x'], now_retailer_gps['y'], now_retailer_gps['z']))
 
     RetlTree = KDTree(now_retailer_xyz, leafsize=leaf_size)
-    dist_k, ind_k = RetlTree.query(now_retailer_xyz, k=k_nn+1 )
-    B_retailer_list = now_retailer_gps.iloc[ind_k[:, 1:].flatten(), :]
+    dist_k, ind_k = RetlTree.query(now_retailer_xyz, k=k_nn + 1)
+    # B_retailer_list = now_retailer_gps.iloc[ind_k[:, 1:].flatten(), :]
     # B_retailer_dist = now_retailer_gps.iloc[dist_k[:, 1:].flatten(), :]
+    pinche_retailer = []
+    for i in now_retailer_gps.index:
+        temp = []
+        start_dealer = now_retailer_gps.loc[i,'dealer_code']
+        temp.append(start_dealer)
+        for j in range(1,k_nn+1):
+            if dist_k[i,j]>10000:
+                temp.append(None)
+            else:
+                temp.append(now_retailer_gps.loc[ind_k[i,j],'dealer_code'])
+        pinche_retailer.append(temp)
 
-    retailerAB_IDlist = pd.DataFrame(
-        data=B_retailer_list['dealer_code'].values.reshape([len(now_retailer_gps), k_nn]),
-        index=now_retailer_gps.dealer_code)
+    retailerAB_IDlist = pd.DataFrame(data=pinche_retailer)
     # 需求不明，距离不知何时返回
-    #retailerAB_dist = pd.DataFrame(data=dist_k, index=now_retailer_gps.dealer_code).drop(0, 1)
+    # retailerAB_dist = pd.DataFrame(data=dist_k, index=now_retailer_gps.dealer_code).drop(0, 1)
+    # return retailerAB_IDlist.reset_index()
 
-    return retailerAB_IDlist.reset_index()
+    return retailerAB_IDlist
 
 
 def load_rate(load_info, order_info):
