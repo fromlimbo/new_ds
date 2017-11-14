@@ -37,6 +37,10 @@ def start_task():
     res = optimization.delay(input_data)
     return jsonify({'task_id': res.id})
 
+@flask.route('/add')
+def start_add():
+    res = add.delay(1,3)
+    return jsonify({'task_id': res.id})
 
 @flask.route('/con',methods=['GET', 'POST'])
 def connect_Test():

@@ -29,7 +29,10 @@ mongoclient=MongoDBClient(config=MongoConfigs)
 CeleryConfig = ConfigBuilder("config/config_sample.ini","CeleryConfig")
 CeleryConfigs = CeleryConfig.todict()
 celery=Celery(CeleryConfigs["main_name"], broker=CeleryConfigs["broker_address"],
-              task_serializer=CeleryConfigs["celery_task_serializer"])
+              task_serializer=CeleryConfigs["celery_task_serializer"],
+              accept_content=['pickle'])
+celery.conf['CELERY_TASK_SERIALIZER'] = 'pickle'
+celery.conf['CELERY_ACCEPT_CONTENT'] = ['json', 'pickle']
 
 
 MongoConfig = ConfigBuilder("config/config_sample.ini","MongoConfig")
@@ -38,7 +41,14 @@ mongoclient=MongoDBClient(config=MongoConfigs)
 
 from app_view import *
 
+logging.basicConfig(level=logging.DEBUG,
+                format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                datefmt='%a, %d %b %Y %H:%M:%S',
+                filename='myapp.log',
+                filemode='w')
+
 logging.debug("service starts")
+
 
 if __name__ == '__main__':
     flask.run()

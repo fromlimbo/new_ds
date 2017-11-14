@@ -22,7 +22,10 @@ def GAVARP_Process_json(input_json):
 
     var_dict = {}
     required_order_keys = ['order_code', 'customer_code', 'dealer_code',
-                           'OTD', 'priority', 'start_loc', 'end_loc', 'car_type', 'effective_time']
+                           'OTD', 'priority', 'start_loc', 'end_loc', 'car_type', 'effective_time',
+                           'start_loc_longitude','start_loc_latitude',
+                           'end_loc_longitude','end_loc_latitude',
+                           'dealer_address']
 
     # key: default value
     optional_order_keys = {'VIN': -1,
@@ -53,9 +56,13 @@ def GAVARP_Process_json(input_json):
         item['effective_time'] = datetime.strptime(item['effective_time'], '%Y-%m-%d %H:%M:%S').date()
         order_dict[item["order_code"]] = order(item["order_code"], item["customer_code"], item["dealer_code"],
                                                item["OTD"], item["priority"], item["VIN"],
-                                               item["shipment_code_set"], item["start_loc"], item["end_city"],
-                                               item["end_loc"], item["created_time"], item["effective_time"],
-                                               item["car_type"], item["transport_type"])
+                                               item["shipment_code_set"],
+                                               item["start_loc"], item["start_loc_longitude"],item["start_loc_latitude"],
+                                               item["end_city"],
+                                               item["end_loc"], item["end_loc_longitude"],item["end_loc_latitude"],
+                                               item["dealer_address"],item["created_time"], item["effective_time"],
+                                               item["car_type"], item["transport_type"]
+                                               )
     var_dict["order_dict"] = order_dict
     logger.debug("order data ok")
 
@@ -64,7 +71,7 @@ def GAVARP_Process_json(input_json):
                              'capacity_for_l_car', 'capacity_for_m_car',
                              'capacity_for_s_car', 'capacity_for_xs_car',
                              'preferred_direction', 'availability',
-                             'trailer_available_time', 'start_location']
+                             'trailer_available_time', 'start_location', 'priority']
 
     # key: default value
     optional_trailer_keys = {'supplier_code': -1,
@@ -112,7 +119,10 @@ def GAVARP_Process_json(input_json):
                                              item["actual_start_time"],
                                              item["actual_arrive_time"], item["start_location"],
                                              item["current_location"],
-                                             item["destination"], item["historic_trajectory"])
+                                             item["destination"],
+                                             item['priority'],
+                                             item["historic_trajectory"]
+                                             )
     var_dict["trailer_dict"] = trailer_dict
     logger.debug("trailer data ok.")
     var_dict['mix_city'] = input_json['mix_city']
