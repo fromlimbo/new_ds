@@ -27,10 +27,25 @@ logger=Logger(config=LoggerConfigs)
 logging.basicConfig(level=logging.DEBUG)
 
 
+<<<<<<< HEAD
+=======
+
+# logger=Logger(config=LoggerConfig)
+
+>>>>>>> master
 mongoclient=MongoDBClient(config=MongoConfigs)
 
 CeleryConfig = ConfigBuilder("config/config_sample.ini","CeleryConfig")
 CeleryConfigs = CeleryConfig.todict()
+<<<<<<< HEAD
+=======
+celery=Celery(CeleryConfigs["main_name"], broker=CeleryConfigs["broker_address"],
+              task_serializer=CeleryConfigs["celery_task_serializer"],
+              accept_content=['pickle'])
+celery.conf['CELERY_TASK_SERIALIZER'] = 'pickle'
+celery.conf['CELERY_ACCEPT_CONTENT'] = ['json', 'pickle']
+
+>>>>>>> master
 
 celery=Celery(CeleryConfigs["main_name"],
               broker=CeleryConfigs["broker_address"],
@@ -40,10 +55,23 @@ celery=Celery(CeleryConfigs["main_name"],
 
 state = State()
 from app_view import *
+<<<<<<< HEAD
 logging.debug("service starts")
 
 
 
+=======
+
+logging.basicConfig(level=logging.DEBUG,
+                format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                datefmt='%a, %d %b %Y %H:%M:%S',
+                filename='myapp.log',
+                filemode='w')
+
+logging.debug("service starts")
+
+
+>>>>>>> master
 if __name__ == '__main__':
     tasks_event = Events(state)
     tasks_event.setDaemon(True)

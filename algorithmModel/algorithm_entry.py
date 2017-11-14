@@ -13,11 +13,13 @@ Output: the output of this program, solution, is printed in the end of the code.
 import main
 from packaging import *
 from main import *
-from app import celery#for transporting parameters
+from app import celery #for transporting parameters
 import pickle
 import json
 import requests
+import  logging
 
+Logger = logging.getLogger(__name__)
 weight = [0.0, 0.5, 0.0, 0.5]
 
 # ---------------------------To carry out optimization and record results in result_record.pkl--------------------------#
@@ -29,18 +31,19 @@ def optimization(data):
               "trailerOrders": []}
     headers = {'content-type': 'application/json'}
     try:
-        logging.info("The algorithm starts")
+        Logger.info("The algorithm starts")
         ind1 = main.ga_vrp(data, weight, 5, 0.0001)
     except ValueError:
         print "Ineffective input data!"
-        logging.error("Ineffective input data!")
+        Logger.error("Ineffective input data!")
     #solution = xmatrix_to_solution(convert_ind_to_matrix(ind1))
 
     flag, matrix, route = convert_ind_to_matrix(ind1)
     if not flag:
         print("report result")
-        r = requests.post("http://192.168.204.169:28109/ids/engine/dealPlan", data=json.dumps(retval),
-                          headers=headers)
+        url="http://192.168.204.169:28109/ids/engine/dealPlan"
+        url="http://10.108.11.40:28060/ids/engine/dealPlan"
+        r = requests.post(url=url, data=json.dumps(retval),headers=headers)
         print r
         print 'empty plan'
         return 0
