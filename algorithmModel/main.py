@@ -15,11 +15,12 @@ import logging
 import pinche
 import pandas as pd
 
-logging.basicConfig(level=logging.DEBUG,
-                format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
-                datefmt='%a, %d %b %Y %H:%M:%S',
-                filename='myapp.log',
-                filemode='w')
+Logger = logging.getLogger(__name__)
+# logging.basicConfig(level=logging.DEBUG,
+#                 format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+#                 datefmt='%a, %d %b %Y %H:%M:%S',
+#                 filename='myapp.log',
+#                 filemode='w')
 
 max_step_para = 10  # The maximum of iteretion
 converge_gap_para = 0.0001  # The converge gap between two continuous iterations when the algorithm stops
@@ -98,7 +99,7 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
         misc = gen_misc(cost_weight, _data)
     except KeyError:
         print "Ineffective input data!"
-        logging.error("Ineffective input data!")
+        Logger.error("Ineffective input data!")
     data = Data(misc.ship_dict, misc.trailer_dict)  # build a new variant of Data class, containing shipment dictionary and trailer dictionary
     co_par = CrossoverParameters(mutant_rate_para, fit_threshold_para, crossover_ratio_para)  # set a variant containing crossover ratio, fitness threshold and mutant rate
 
@@ -128,7 +129,7 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
         ave_goal_pre = ave_goal
         ppl = co.co_pro(ppl, co_par, data, misc, print_switch)
         ave_goal, optimal_goal, optimal_ind = ppl_cost(ppl, misc, with_optimal_goal=True)
-        logging.info('OptimalIndividual   GoneTrailer: %4d    GoneShips: %4d    RemainShips: %4d' % \
+        Logger.info('OptimalIndividual   GoneTrailer: %4d    GoneShips: %4d    RemainShips: %4d' % \
                      (sum(len(i.ships) == sum(i.slot_cap) for i in optimal_ind.values() if i.id != 'RemainShipsContainer'),
                       sum(len(i.ships) for i in optimal_ind.values() if i.id != 'RemainShipsContainer'),
                       len(optimal_ind['RemainShipsContainer'].ships)

@@ -4,6 +4,7 @@ This file computes all the optimization targets when the solution is described w
 """
 from packaging import *
 import pinche
+from app import Logger
 ####################################################################################################################
 #----------------------------------------------- 已有ind词典情况下，封装所有目标为一个函数-------------------------------------#
 ############################################################################################################3##########
@@ -42,19 +43,19 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
                 order_info[ship.order_code]=ship
 
     if num_trailer == 0:
-        logging.info("num_trailer is zero.")
+        Logger.info("num_trailer is zero.")
     if num_of_loaded_shipments == 0:
-        logging.info("num_of_loaded_shipments is zero.")
+        Logger.info("num_of_loaded_shipments is zero.")
     if num_of_high_priority == 0:
-        logging.info("num_of_high_priority is zero.")
+        Logger.info("num_of_high_priority is zero.")
     if num_of_big_car == 0:
-        logging.info("num_of_big_car is zero.")
+        Logger.info("num_of_big_car is zero.")
     if num_of_mix_city == 0:
-        logging.info("num_of_mix_city is zero.")
+        Logger.info("num_of_mix_city is zero.")
     if num_of_mix_dealer == 0:
-        logging.info("num_of_mix_dealer is zero.")
+        Logger.info("num_of_mix_dealer is zero.")
     if num_of_mix_warehouse == 0:
-        logging.info("num_of_mix_warehouse is zero.")
+        Logger.info("num_of_mix_warehouse is zero.")
 
     # ------------------------------------------- 测试目标1:最大化装载数 --------------------------------------------------#
     if GeneEvaluate:

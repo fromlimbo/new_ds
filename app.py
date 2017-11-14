@@ -23,7 +23,8 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 
-logger=Logger(config=LoggerConfig)
+# logger=Logger(config=LoggerConfig)
+
 mongoclient=MongoDBClient(config=MongoConfigs)
 
 CeleryConfig = ConfigBuilder("config/config_sample.ini","CeleryConfig")
