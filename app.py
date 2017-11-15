@@ -14,14 +14,14 @@ from events import *
 flask = Flask(__name__)
 configfile='config/config_sample.ini'
 
-AppConfig = ConfigBuilder("config/config_sample.ini","AppConfig")
+AppConfig = ConfigBuilder("config/local_config_liangliang.ini","AppConfig")
 AppConfigs = AppConfig.todict()
 flask.config.from_object(AppConfigs)
 
-LoggerConfig = ConfigBuilder("config/config_sample.ini","LoggerConfig")
+LoggerConfig = ConfigBuilder("config/local_config_liangliang","LoggerConfig")
 LoggerConfigs = LoggerConfig.todict()
 
-MongoConfig = ConfigBuilder("config/config_sample.ini","MongoConfig")
+MongoConfig = ConfigBuilder("config/local_config_liangliang","MongoConfig")
 MongoConfigs = MongoConfig.todict()
 
 logging.basicConfig(level=logging.DEBUG,
@@ -31,8 +31,6 @@ logging.basicConfig(level=logging.DEBUG,
                 filemode='a')
 
 
-
-mongoclient=MongoDBClient(config=MongoConfigs)
 
 CeleryConfig = ConfigBuilder("config/config_sample.ini","CeleryConfig")
 CeleryConfigs = CeleryConfig.todict()
