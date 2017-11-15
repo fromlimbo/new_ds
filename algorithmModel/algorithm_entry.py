@@ -32,11 +32,18 @@ def optimization(data):
     retval = {"taskId": optimization.request.id,
               "trailerOrders": []}
     headers = {'content-type': 'application/json'}
+    ind1=None
     try:
         logger.info("The algorithm starts")
         ind1 = main.ga_vrp(data, weight, 5, 0.0001)
     except ValueError:
         logger.error("Ineffective input data!")
+        print("report result")
+        url = "http://192.168.204.169:28109/ids/engine/dealPlan"
+        url = "http://10.108.11.40:28060/ids/engine/dealPlan"
+        r = requests.post(url=url, data=json.dumps(retval), headers=headers)
+        print 'empty plan'
+        return 0
     #solution = xmatrix_to_solution(convert_ind_to_matrix(ind1))
 
     flag, matrix, route = convert_ind_to_matrix(ind1)
@@ -82,7 +89,10 @@ def optimization(data):
         retval["trailerOrders"].append(row)
 
     headers = {'content-type': 'application/json'}
-    r = requests.post("http://192.168.204.169:28109/ids/engine/dealPlan", data=json.dumps(retval),
+    url = "http://10.108.11.40:28060/ids/engine/dealPlan"
+    # url="http://192.168.204.103:28109/ids/engine/dealPlan"
+    r = requests.post(url=url, data=json.dumps(retval),
                       headers=headers)
+    print(r.text)
     return 0
 

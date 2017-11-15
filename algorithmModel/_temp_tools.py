@@ -13,7 +13,7 @@ def preferred_direction_check(new_shipment, trailer):
     :param new_shipment: input shipment
     :return: True or False
     """
-    return new_shipment.end_loc in trailer.preferred_direction
+    return new_shipment.end_city in trailer.preferred_direction
 
 # Constraint 3:
 # def mix_city_number_check(shipment_set, new_shipment, max_mix_city_number):

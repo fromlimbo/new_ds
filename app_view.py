@@ -10,7 +10,8 @@ from celery.app.control import Inspect
 
 import json
 from celeflow import tasks
-
+import time
+import os
 
 
 
@@ -26,8 +27,12 @@ def test_revoke():
 @flask.route('/start',methods=['POST'])
 def start_task():
     data = request.get_json()
+    t=time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime(time.time()))
     with open('input_data.json', 'w') as f:
         json.dump(data,f)
+    print(os.path.abspath(os.path.join('querydata',t+'.json')))
+    with open(os.path.join('querydata',t+'.json'),'w') as f:
+        json.dump(data, f)
     input_data = GAVARP_Process_json(data)
     if not input_data == -1:
         print 'parsing successfully'

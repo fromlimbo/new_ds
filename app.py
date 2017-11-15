@@ -12,6 +12,7 @@ import time
 from events import *
 
 flask = Flask(__name__)
+configfile='config/config_sample.ini'
 
 AppConfig = ConfigBuilder("config/config_sample.ini","AppConfig")
 AppConfigs = AppConfig.todict()
