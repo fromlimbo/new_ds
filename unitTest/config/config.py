@@ -10,7 +10,7 @@ class ConfigBuilder:
     '''
     def __init__(self, filename, section):
         self.cf = ConfigParser.ConfigParser()
-        # print filename
+        print filename
         self.cf.read(filename)
 
         self.filename = filename

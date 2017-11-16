@@ -10,18 +10,19 @@ from celery.events import EventReceiver
 from celery.events.state import State
 import time
 from events import *
+import os
 
 flask = Flask(__name__)
-configfile='config/config_sample.ini'
+configfile=os.path.abspath("config/local_config_liangliang.ini")
 
-AppConfig = ConfigBuilder("config/local_config_liangliang.ini","AppConfig")
+AppConfig = ConfigBuilder(configfile,"AppConfig")
 AppConfigs = AppConfig.todict()
 flask.config.from_object(AppConfigs)
 
-LoggerConfig = ConfigBuilder("config/local_config_liangliang","LoggerConfig")
+LoggerConfig = ConfigBuilder(configfile,"LoggerConfig")
 LoggerConfigs = LoggerConfig.todict()
 
-MongoConfig = ConfigBuilder("config/local_config_liangliang","MongoConfig")
+MongoConfig = ConfigBuilder(configfile,"MongoConfig")
 MongoConfigs = MongoConfig.todict()
 
 logging.basicConfig(level=logging.DEBUG,
@@ -32,7 +33,7 @@ logging.basicConfig(level=logging.DEBUG,
 
 
 
-CeleryConfig = ConfigBuilder("config/config_sample.ini","CeleryConfig")
+CeleryConfig = ConfigBuilder(configfile,"CeleryConfig")
 CeleryConfigs = CeleryConfig.todict()
 
 celery=Celery(CeleryConfigs["main_name"], broker=CeleryConfigs["broker_address"],
@@ -43,9 +44,10 @@ celery.conf['CELERY_ACCEPT_CONTENT'] = ['json', 'pickle']
 celery.conf['CELERYD_HIJACK_ROOT_LOGGER'] = False
 
 
-from app_view import *
+# from app_view import *
 
 if __name__ == '__main__':
+    from app_view import *
     logger = logging.getLogger(__name__)
     logger.info("service starts.")
     flask.run()

@@ -17,7 +17,7 @@ from app import celery #for transporting parameters
 import pickle
 import json
 import requests
-import  logging
+import logging
 
 
 
@@ -83,7 +83,7 @@ def optimization(data):
             row["sequenceCitys"].append(row_data['city1'])
         if not row_data['city2']==0:
             row["sequenceCitys"].append(row_data['city2'])
-        a=row_data.iloc[2:-1]
+        a=row_data.iloc[2:]
         row["orderCodes"]=a[a!="-1"].tolist()
 
         retval["trailerOrders"].append(row)
