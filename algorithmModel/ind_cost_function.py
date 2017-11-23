@@ -34,19 +34,19 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
         if i.id != 'RemainShipsContainer' and len(i.ships) == sum(i.slot_cap):
             num_trailer += 1
             num_of_loaded_shipments += len(i.ships)
-            num_of_high_priority += len([x_ship for x_ship in i.ships.values() if x_ship.OTD > 2])
+            num_of_high_priority += len([x_ship for x_ship in i.ships.values() if x_ship.OTD > 5])
             num_of_big_car += len([x_ship for x_ship in i.ships.values() if x_ship.car_type in ['L', 'XL']])
             num_of_mix_city += len(set([x_ship.end_loc for x_ship in i.ships.values()]))
             num_of_mix_dealer += len(set([x_ship.dealer_code for x_ship in i.ships.values()]))
             num_of_mix_warehouse += len(set([x_ship.start_loc for x_ship in i.ships.values()]))
-            load_info[i.id] = [j for j in i.ships.keys()]
-            for ship in i.ships.values():
-                order_info[ship.order_code]=ship
+
 
     if num_trailer == 0:
         logger.info("num_trailer is zero.")
+        return 0.0
     if num_of_loaded_shipments == 0:
         logger.info("num_of_loaded_shipments is zero.")
+        return 0.0
     if num_of_high_priority == 0:
         logger.info("num_of_high_priority is zero.")
     if num_of_big_car == 0:
@@ -70,7 +70,7 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
     if GeneEvaluate:
         normalized_cost_result.append(float(num_of_high_priority) / (0.00001+float(num_of_loaded_shipments)))
     else:
-        num_of_urgent_shipment = len([i.order_code for i in shipment_dict.values() if i.OTD > 2])
+        num_of_urgent_shipment = len([i.order_code for i in shipment_dict.values() if i.OTD > 5])
         # To plus a small number in denominator to avoid zero denominator.
         normalized_cost_result.append(float(num_of_high_priority) / (0.00001+float(min(num_of_loading_capacity, num_of_urgent_shipment))))
     #------------------------------------------------------------------------------------------------------------------#
@@ -99,7 +99,8 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
         average_load_rate = 0.000001
         load_route = None
     else:
-        load_route, load_rate = pinche.load_rate(load_info, order_info)
+        load_info,order_info=ind_info(ind)
+        load_rate = pinche.load_rate(load_info, order_info)
         average_load_rate = np.mean(load_rate)
     # ------------------------------------------------------------------------------------------------------------------#
 
@@ -109,4 +110,14 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
     #------------------------------------------------------------------------------------------------------------------#
 
     normalized_cost_result.append(float(6+3) / (0.00001+float(6*average_load_rate + 3*average_mix_warehouse)))
-    return float(np.dot(np.array(weight_set), (np.array(normalized_cost_result).T))), load_route
+    return float(np.dot(np.array(weight_set), (np.array(normalized_cost_result).T)))
+
+def ind_info(ind):
+    load_info = {}
+    order_info = {}
+    for i in ind.values():
+        if i.id != 'RemainShipsContainer' and len(i.ships) == sum(i.slot_cap):
+            load_info[i.id] = [j for j in i.ships.keys()]
+            for ship in i.ships.values():
+                order_info[ship.order_code] = ship
+    return load_info, order_info

@@ -35,26 +35,26 @@ def optimization(data):
     ind1=None
     try:
         logger.info("The algorithm starts")
-        ind1 = main.ga_vrp(data, weight, 5, 0.0001)
+        ind1 ,route= main.ga_vrp(data, weight, 5, 0.0001)
     except ValueError:
         logger.error("Ineffective input data!")
         print("report result")
         url = "http://192.168.204.169:28109/ids/engine/dealPlan"
-        url = "http://10.108.11.40:28060/ids/engine/dealPlan"
+        url = "http://10.108.11.50:28060/ids/engine/dealPlan"
         r = requests.post(url=url, data=json.dumps(retval), headers=headers)
         print 'empty plan'
         return 0
     #solution = xmatrix_to_solution(convert_ind_to_matrix(ind1))
 
-    flag, matrix = convert_ind_to_matrix(ind1,route)
+    flag, matrix = convert_ind_to_matrix(ind1)
     if not flag:
         print("report result")
         url="http://192.168.204.169:28109/ids/engine/dealPlan"
-        url="http://10.108.11.40:28060/ids/engine/dealPlan"
+        url="http://10.108.11.50:28060/ids/engine/dealPlan"
         r = requests.post(url=url, data=json.dumps(retval),headers=headers)
         print 'empty plan'
         return 0
-    solution = xmatrix_to_solution(matrix)
+    solution, length= xmatrix_to_solution(matrix,route)
     # print solution
 
     # TODO:
@@ -79,20 +79,18 @@ def optimization(data):
         row={}
         row["code"]=index
         row["sequenceCitys"]=[]
-        if not row_data['city1']==0:
-            row["sequenceCitys"].append(row_data['city1'])
-        if not row_data['city2']==0:
-            row["sequenceCitys"].append(row_data['city2'])
-        a=row_data.iloc[2:]
-        row["orderCodes"]=a[a!="-1"].tolist()
-
+        a=row_data.iloc[0:length]
+        row["sequenceCitys"]=a[a!=0].tolist()
+        b=row_data.iloc[length:]
+        row["orderCodes"]=b[b!=-1].tolist()
         retval["trailerOrders"].append(row)
 
     headers = {'content-type': 'application/json'}
-    url = "http://10.108.11.40:28060/ids/engine/dealPlan"
+    url = "http://10.108.11.50:28060/ids/engine/dealPlan"
     # url="http://192.168.204.103:28109/ids/engine/dealPlan"
     r = requests.post(url=url, data=json.dumps(retval),
                       headers=headers)
     print(r.text)
+    print("GounTrailer:",solution.shape[0])
     return 0
 

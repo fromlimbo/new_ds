@@ -47,25 +47,20 @@ def xmatrix_to_solution(x_matrix,route):
         temp_dict[x_matrix.columns[i]] = i_trailer_list
     output_column_quantity = max([len(temp_dict[trailer_index[x]]) for x in range(len(trailer_index))])
     ####----------step3----------####
-    shipment_index = ['city1']+['city2']+['space_'+str(i + 1) for i in xrange(output_column_quantity)]
+    shipment_index = ['space_'+str(i + 1) for i in xrange(output_column_quantity)]
     ####----------step4----------####
     matrix_gen = [ None ] *len(trailer_index)
     ####----------step5----------####
-    city1 = []
-    city2 = []
-    for city in route:
-        city1.append(city[0])
-        city2.append(city[1])
     for i in range(len(trailer_index)):
         ####----------step6----------####
         lst=temp_dict[trailer_index[i]]
         l=len(temp_dict[trailer_index[i]])
-        matrix_gen[i] = lst + [-1]*(output_column_quantity-l)
+        matrix_gen[i] = lst+[-1]*(output_column_quantity-l)
         matrix_gen[i].sort(reverse=True)
-        matrix_gen[i].insert(0,city2[i])
-        matrix_gen[i].insert(0, city1[i])
+        #matrix_gen[i].insert(0,route[trailer_index[i]])
+
     ####----------step7----------####
     solution = pd.DataFrame(matrix_gen, index=trailer_index,
                           columns=shipment_index)
-
-    return solution
+    solution=pd.concat([route,solution],axis=1)
+    return solution,route.shape[1]

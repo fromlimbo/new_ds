@@ -26,6 +26,7 @@ class order:
         self.end_loc_longitude = end_loc_longitude
         self.end_loc_latitude = end_loc_latitude
         self.dealer_address = dealer_address
+        self.dealer_str=self.dealer_code+self.dealer_address
         self.created_time = created_time
         self.effective_time = effective_time
         self.car_type = car_type
@@ -68,6 +69,7 @@ class shipment:
         self.end_loc_longitude = end_loc_longitude
         self.end_loc_latitude = end_loc_latitude
         self.dealer_address = dealer_address
+        self.dealer_str = self.dealer_code + self.dealer_address
         self.effective_time = effective_time
         self.car_type = car_type
         self.transport_type = transport_type

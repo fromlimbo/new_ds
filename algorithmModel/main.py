@@ -9,6 +9,7 @@ Output: the best individual during evolution.
 """
 import init
 import crossover as co
+import ind_cost_function as icf
 import copy
 from basic_class_GA import *
 import logging
@@ -53,14 +54,13 @@ def gen_misc(cost_weight, _data):
     :return: a variable of class Misc
     """
 
-    import ind_cost_function as pk
     misc = Misc(cost_weight)
     misc.mix_city = _data['mix_city']
     misc.OTD_pinche = _data['OTD_pinche']
     misc.ship_dict = copy.deepcopy(_data['order_dict'])
     misc.trailer_dict = copy.deepcopy(_data['trailer_dict'])
     misc.mix_dealer_rule1, misc.mix_dealer_rule2 = gen_mix_dealer_rule(misc)
-    misc.cost_computation = pk.ind_cost_computation
+    misc.cost_computation = icf.ind_cost_computation
 
     return misc
 
@@ -110,11 +110,11 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
     # To generate the initial solution population
     ppl = init.initialization(ppl_size, data, misc, False, print_switch)
     # To calculate the best individual in the initial population
-    ave_goal, optimal_goal, optimal_ind,route = ppl_cost(ppl, misc, with_optimal_goal=True)
+    ave_goal, optimal_goal, optimal_ind= ppl_cost(ppl, misc, with_optimal_goal=True)
     ave_goal_pre = float('-Inf')
     best_value = optimal_goal
     best_ind = optimal_ind
-    best_route=route
+
     # The iteration stops when the gap bwteen the previous goal value and the present goal is small enough or algorithm iterates for enough times
     stop_count = 3  # To record how many continuous times the algorithm stops get better we can determin to quit optimization.
     stay_flag = False  # To record whehther the algorithm stays and doesn't achieve better objects.
@@ -131,7 +131,7 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
             stay_flag = False
         ave_goal_pre = ave_goal
         ppl = co.co_pro(ppl, co_par, data, misc, print_switch)
-        ave_goal, optimal_goal, optimal_ind, route = ppl_cost(ppl, misc, with_optimal_goal=True)
+        ave_goal, optimal_goal, optimal_ind = ppl_cost(ppl, misc, with_optimal_goal=True)
         logger.info('OptimalIndividual   GoneTrailer: %4d    GoneShips: %4d    RemainShips: %4d' % \
                     (sum(len(i.ships) == sum(i.slot_cap) for i in optimal_ind.values() if i.id != 'RemainShipsContainer'),
                       sum(len(i.ships) for i in optimal_ind.values() if i.id != 'RemainShipsContainer'),
@@ -140,8 +140,10 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
         if optimal_goal > best_value:
             best_ind = optimal_ind
             best_value = optimal_goal
-            best_route = route
+
         step += 1
+    load_info, order_info=icf.ind_info(best_ind)
+    best_route=pinche.trailer_route(load_info,order_info)
 
     return best_ind, best_route
 

@@ -216,20 +216,14 @@ def ppl_cost(ppl, misc, with_optimal_goal=False):
     if not with_optimal_goal:
         return float(sum(ind_cost(ind, misc) for ind in ppl)) / len(ppl)
     else:
-        result_list = [ind_cost(ind, misc) for ind in ppl]
-        cost_list = []
-        route_list = []
-        for i in xrange(len(result_list)):
-            cost_list.append(result_list[i][0])
-            route_list.append(result_list[i][1])
+        cost_list = [ind_cost(ind, misc) for ind in ppl]
         optimal_ind_cost = max(i for i in cost_list)
         for i in xrange(len(cost_list)):
             if cost_list[i] == optimal_ind_cost:
                 optimal_ind_loc=i
         # To select the best individual whose cost is the biggest
         best_ind = ppl[optimal_ind_loc]
-        route = route_list[optimal_ind_loc]
-        return sum(cost_list)/len(cost_list), max(cost_list), best_ind, route
+        return sum(cost_list)/len(cost_list), max(cost_list), best_ind
 
 
 def convert_ind_to_matrix(ind):

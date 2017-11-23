@@ -26,6 +26,7 @@ class order:
         self.end_loc_longitude = end_loc_longitude
         self.end_loc_latitude = end_loc_latitude
         self.dealer_address = dealer_address
+        self.dealer_str=self.dealer_code+self.dealer_address
         self.created_time = created_time
         self.effective_time = effective_time
         self.car_type = car_type
@@ -68,6 +69,7 @@ class shipment:
         self.end_loc_longitude = end_loc_longitude
         self.end_loc_latitude = end_loc_latitude
         self.dealer_address = dealer_address
+        self.dealer_str = self.dealer_code + self.dealer_address
         self.effective_time = effective_time
         self.car_type = car_type
         self.transport_type = transport_type
@@ -98,7 +100,7 @@ class trailer:
                  trailer_available_time,
                  shipments_set, loading_time, planed_start_time, planed_arrive_time, actual_start_time,
                  actual_arrive_time, start_location,
-                 current_location, destination, priority, historic_trajectory=None):
+                 current_location, destination, priority,historic_trajectory=None):
         self.code = code
         self.supplier_code = supplier_code
         self.capacity_all = capacity_all
