@@ -186,7 +186,7 @@ def constraints_tier_1(as_ships, ship, misc, full_check=False):
             check_list[0] = False
 
     # Constraint: 6
-    if not tt.mix_dealer_set_check(as_ships, ship, misc.mix_dealer_rule):
+    if not tt.mix_dealer_set_check(as_ships, ship, misc):
         if not full_check:
             return False
         else:
@@ -216,10 +216,20 @@ def ppl_cost(ppl, misc, with_optimal_goal=False):
     if not with_optimal_goal:
         return float(sum(ind_cost(ind, misc) for ind in ppl)) / len(ppl)
     else:
-        cost_list = [ind_cost(ind, misc) for ind in ppl]
-        optimal_ind_loc = max((ind_cost(ppl[x], misc), x) for x in xrange(len(ppl)))[1]  # To select the best individual whose cost is the biggest
+        result_list = [ind_cost(ind, misc) for ind in ppl]
+        cost_list = []
+        route_list = []
+        for i in xrange(len(result_list)):
+            cost_list.append(result_list[i][0])
+            route_list.append(result_list[i][1])
+        optimal_ind_cost = max(i for i in cost_list)
+        for i in xrange(len(cost_list)):
+            if cost_list[i] == optimal_ind_cost:
+                optimal_ind_loc=i
+        # To select the best individual whose cost is the biggest
         best_ind = ppl[optimal_ind_loc]
-        return sum(cost_list)/len(cost_list), max(cost_list), best_ind
+        route = route_list[optimal_ind_loc]
+        return sum(cost_list)/len(cost_list), max(cost_list), best_ind, route
 
 
 def convert_ind_to_matrix(ind):
@@ -238,23 +248,11 @@ def convert_ind_to_matrix(ind):
                 gene.slot_cap):  # To select the trailer whose total number of shipments achieves the capacity volume.
             count += 1
             matrix = matrix.append(gene.to_matrix())
-            city_set = set()
-            for id, ship in gene.ships.iteritems():
-                city_set.add(ship.end_loc)
-            route = list(city_set)
-            if len(route) == 1:
-                route.append(0)
-            elif len(route) == 2:
-                pass
-            else:
-                logger.info("route error!")
-            Route.append(route)
-    # mixroute=np.array(Route,dtype=int)
     matrix = matrix.fillna(0)
     if count == 0:
         logger.info("none of trailer has been fully loaded!")
-        return False,matrix,Route
-    return True,matrix, Route
+        return False,matrix
+    return True,matrix
 
 
 def ind_cost(ind, misc):
@@ -264,7 +262,7 @@ def ind_cost(ind, misc):
     :param misc: parameter set
     :return: the cost of the input individual
     """
-    return misc.cost_computation(ind,misc.cost_weight, misc.trailer_dict, misc.ship_dict)
+    return misc.cost_computation(ind, misc.cost_weight, misc.trailer_dict, misc.ship_dict)
 
 def cal_fit(gene, misc):
     """

@@ -19,7 +19,7 @@ def find_path_DP(city_coord):
     """
     n_city = len(city_coord)
     dist_mat = euclidean_distances(city_coord)
-    dist_mat[dist_mat == 0] = -1
+    dist_mat = dist_mat - np.diag(np.diag(dist_mat)+1)
 
     # initialize the dp_table
     dp_table = np.zeros([n_city, 1 << (n_city - 1)])
@@ -56,6 +56,3 @@ def find_path_DP(city_coord):
         j_ind = j_ind_
 
     return route_dist
-
-
-

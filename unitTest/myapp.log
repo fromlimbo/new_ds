@@ -4277,3 +4277,1572 @@ Wed, 25 Oct 2017 14:36:56 connectionpool.py[line:395] DEBUG http://192.168.204.1
 2017-11-16 18:04:30 main.py[line:136] INFO OptimalIndividual   GoneTrailer:    7    GoneShips:   84    RemainShips:    8
 2017-11-16 18:04:30 connectionpool.py[line:208] DEBUG Starting new HTTP connection (1): 10.108.11.40
 2017-11-16 18:04:30 connectionpool.py[line:396] DEBUG http://10.108.11.40:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-11-21 16:41:26 processing.py[line:67] DEBUG order data ok
+2017-11-21 16:41:26 processing.py[line:127] DEBUG trailer data ok.
+2017-11-21 16:41:26 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-21 16:41:26 algorithm_entry.py[line:40] ERROR Ineffective input data!
+2017-11-21 16:41:26 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.50
+2017-11-21 16:41:26 connectionpool.py[line:395] DEBUG http://10.108.11.50:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-11-21 16:42:15 processing.py[line:67] DEBUG order data ok
+2017-11-21 16:42:15 processing.py[line:127] DEBUG trailer data ok.
+2017-11-21 16:42:15 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-21 16:42:15 init.py[line:105] INFO Individual:    1    GoneTrailer:    2    GoneShips:   24    RemainShips:  199
+2017-11-21 16:42:15 init.py[line:105] INFO Individual:    2    GoneTrailer:    2    GoneShips:   24    RemainShips:  199
+2017-11-21 16:42:16 init.py[line:105] INFO Individual:    3    GoneTrailer:    2    GoneShips:   24    RemainShips:  199
+2017-11-21 16:42:16 init.py[line:105] INFO Individual:    4    GoneTrailer:    2    GoneShips:   24    RemainShips:  199
+2017-11-21 16:42:16 init.py[line:105] INFO Individual:    5    GoneTrailer:    2    GoneShips:   24    RemainShips:  199
+2017-11-21 16:42:17 main.py[line:136] INFO OptimalIndividual   GoneTrailer:    2    GoneShips:   24    RemainShips:  199
+2017-11-21 16:42:18 main.py[line:136] INFO OptimalIndividual   GoneTrailer:    2    GoneShips:   24    RemainShips:  199
+2017-11-21 16:42:18 main.py[line:136] INFO OptimalIndividual   GoneTrailer:    2    GoneShips:   24    RemainShips:  199
+2017-11-21 16:42:20 main.py[line:136] INFO OptimalIndividual   GoneTrailer:    2    GoneShips:   24    RemainShips:  199
+2017-11-21 16:42:20 basic_class_GA.py[line:250] INFO route error!
+2017-11-21 16:42:20 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.50
+2017-11-21 16:42:20 connectionpool.py[line:395] DEBUG http://10.108.11.50:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-11-22 15:30:44 processing.py[line:67] DEBUG order data ok
+2017-11-22 15:30:44 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 15:30:44 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 15:31:43 processing.py[line:67] DEBUG order data ok
+2017-11-22 15:31:43 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 15:31:43 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 15:32:49 processing.py[line:67] DEBUG order data ok
+2017-11-22 15:32:49 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 15:32:49 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 15:35:11 processing.py[line:67] DEBUG order data ok
+2017-11-22 15:35:11 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 15:35:11 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 15:40:43 processing.py[line:67] DEBUG order data ok
+2017-11-22 15:40:43 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 15:40:43 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 15:41:20 processing.py[line:67] DEBUG order data ok
+2017-11-22 15:41:20 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 15:41:20 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 15:41:26 processing.py[line:67] DEBUG order data ok
+2017-11-22 15:41:26 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 15:41:26 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 15:41:26 init.py[line:105] INFO Individual:    1    GoneTrailer:    2    GoneShips:   24    RemainShips:  199
+2017-11-22 15:41:26 init.py[line:105] INFO Individual:    2    GoneTrailer:    2    GoneShips:   24    RemainShips:  199
+2017-11-22 15:41:26 init.py[line:105] INFO Individual:    3    GoneTrailer:    2    GoneShips:   24    RemainShips:  199
+2017-11-22 15:41:27 init.py[line:105] INFO Individual:    4    GoneTrailer:    2    GoneShips:   24    RemainShips:  199
+2017-11-22 15:41:27 init.py[line:105] INFO Individual:    5    GoneTrailer:    2    GoneShips:   24    RemainShips:  199
+2017-11-22 15:41:27 algorithm_entry.py[line:40] ERROR Ineffective input data!
+2017-11-22 15:41:27 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.40
+2017-11-22 15:41:27 connectionpool.py[line:395] DEBUG http://10.108.11.40:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-11-22 15:46:36 processing.py[line:67] DEBUG order data ok
+2017-11-22 15:46:36 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 15:46:36 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 15:47:22 processing.py[line:67] DEBUG order data ok
+2017-11-22 15:47:22 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 15:47:22 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 15:48:51 processing.py[line:67] DEBUG order data ok
+2017-11-22 15:48:51 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 15:48:51 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 15:48:51 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 15:48:51 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 15:48:51 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 15:48:51 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 15:48:51 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 15:56:36 processing.py[line:67] DEBUG order data ok
+2017-11-22 15:56:36 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 15:56:36 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 15:58:11 processing.py[line:67] DEBUG order data ok
+2017-11-22 15:58:11 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 15:58:11 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:01:43 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:01:43 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:01:43 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:01:43 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:01:43 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:01:43 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:01:43 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:01:43 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:04:37 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:04:37 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:04:37 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:06:22 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:06:22 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:06:22 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:06:22 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:06:22 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:07:21 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:07:21 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:07:21 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:07:32 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:07:32 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:07:32 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:07:32 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:07:32 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:08:46 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:08:46 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:08:46 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:08:46 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:08:46 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:08:46 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:08:46 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:08:46 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:10:34 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:10:34 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:10:34 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:10:34 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:10:34 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:10:34 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:10:34 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:10:34 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:23:33 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:23:33 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:23:33 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:23:34 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:23:34 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:23:34 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:23:34 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:23:34 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:24:22 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:24:22 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:24:22 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:24:22 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:24:23 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:24:23 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:24:23 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:24:23 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:25:03 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:25:03 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:25:03 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:25:03 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:25:03 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:25:03 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:25:03 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:25:03 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:25:34 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:25:34 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:25:34 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:25:34 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:25:34 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:25:34 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:25:34 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:25:34 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:30:05 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:30:05 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:30:05 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:30:05 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:30:05 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:30:05 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:30:05 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:30:05 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:31:11 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:31:11 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:31:11 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:31:12 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:31:12 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:31:12 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:31:12 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:31:12 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:31:36 algorithm_entry.py[line:40] ERROR Ineffective input data!
+2017-11-22 16:31:36 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.40
+2017-11-22 16:31:36 connectionpool.py[line:395] DEBUG http://10.108.11.40:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-11-22 16:33:10 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:33:10 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:33:10 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:33:10 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:33:10 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:33:10 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:33:10 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:33:10 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:33:10 algorithm_entry.py[line:40] ERROR Ineffective input data!
+2017-11-22 16:33:10 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.40
+2017-11-22 16:33:10 connectionpool.py[line:395] DEBUG http://10.108.11.40:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-11-22 16:35:03 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:35:03 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:35:03 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:35:03 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:35:03 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:35:03 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:35:03 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:35:03 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:35:04 algorithm_entry.py[line:40] ERROR Ineffective input data!
+2017-11-22 16:35:04 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.40
+2017-11-22 16:35:04 connectionpool.py[line:395] DEBUG http://10.108.11.40:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-11-22 16:35:19 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:35:19 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:35:19 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:35:19 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:35:19 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:35:19 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:35:19 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:35:19 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:37:46 algorithm_entry.py[line:40] ERROR Ineffective input data!
+2017-11-22 16:37:46 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.40
+2017-11-22 16:37:46 connectionpool.py[line:395] DEBUG http://10.108.11.40:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-11-22 16:39:17 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:39:17 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:39:17 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:39:17 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:39:17 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:39:17 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:39:18 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:39:18 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:39:23 algorithm_entry.py[line:40] ERROR Ineffective input data!
+2017-11-22 16:39:23 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.40
+2017-11-22 16:39:23 connectionpool.py[line:395] DEBUG http://10.108.11.40:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-11-22 16:39:48 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:39:48 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:39:48 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:39:48 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:39:48 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:39:49 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:39:49 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:39:49 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:41:00 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:41:00 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:41:00 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:41:00 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:41:00 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:41:00 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:41:00 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:41:00 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:42:27 algorithm_entry.py[line:40] ERROR Ineffective input data!
+2017-11-22 16:42:27 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.40
+2017-11-22 16:42:27 connectionpool.py[line:395] DEBUG http://10.108.11.40:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-11-22 16:43:22 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:43:22 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:43:22 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:43:22 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:43:22 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:43:22 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:43:22 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:43:23 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:48:57 algorithm_entry.py[line:40] ERROR Ineffective input data!
+2017-11-22 16:48:57 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.40
+2017-11-22 16:48:57 connectionpool.py[line:395] DEBUG http://10.108.11.40:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-11-22 16:49:06 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:49:06 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:49:06 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:49:06 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:49:06 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:49:06 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:49:07 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:49:07 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:49:47 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:49:47 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:49:47 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:49:48 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:49:48 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:49:48 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:49:48 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:49:48 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:53:36 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:53:36 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:53:36 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:53:37 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:53:37 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:53:37 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:53:37 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:53:37 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:53:39 algorithm_entry.py[line:40] ERROR Ineffective input data!
+2017-11-22 16:53:39 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.40
+2017-11-22 16:53:39 connectionpool.py[line:395] DEBUG http://10.108.11.40:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-11-22 16:55:54 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:55:54 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:55:54 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:55:55 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:55:55 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:55:55 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:55:55 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:55:55 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:56:03 algorithm_entry.py[line:40] ERROR Ineffective input data!
+2017-11-22 16:56:03 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.40
+2017-11-22 16:56:03 connectionpool.py[line:395] DEBUG http://10.108.11.40:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-11-22 16:57:59 processing.py[line:67] DEBUG order data ok
+2017-11-22 16:57:59 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 16:57:59 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 16:58:00 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:58:00 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:58:00 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:58:00 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 16:58:00 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:00:47 processing.py[line:67] DEBUG order data ok
+2017-11-22 17:00:47 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 17:00:47 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 17:00:47 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:00:47 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:00:47 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:00:47 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:00:48 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:03:48 processing.py[line:67] DEBUG order data ok
+2017-11-22 17:03:48 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 17:03:48 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 17:03:48 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:03:48 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:03:48 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:03:48 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:03:48 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:10:12 processing.py[line:67] DEBUG order data ok
+2017-11-22 17:10:12 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 17:10:12 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 17:10:13 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:10:13 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:10:13 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:10:13 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:10:13 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:27:02 processing.py[line:67] DEBUG order data ok
+2017-11-22 17:27:02 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 17:27:02 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 17:27:03 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:27:03 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:27:03 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:27:03 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:27:03 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:27:59 processing.py[line:67] DEBUG order data ok
+2017-11-22 17:27:59 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 17:27:59 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 17:27:59 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:27:59 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:27:59 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:27:59 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:28:00 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:28:27 processing.py[line:67] DEBUG order data ok
+2017-11-22 17:28:27 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 17:28:27 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 17:28:28 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:28:28 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:28:28 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:28:28 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:28:28 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:29:50 processing.py[line:67] DEBUG order data ok
+2017-11-22 17:29:50 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 17:29:50 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 17:29:50 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:29:50 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:29:50 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:29:50 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:29:50 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:32:18 processing.py[line:67] DEBUG order data ok
+2017-11-22 17:32:18 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 17:32:18 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 17:32:18 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:32:18 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:32:18 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:32:18 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:32:19 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:50:46 processing.py[line:67] DEBUG order data ok
+2017-11-22 17:50:46 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 17:50:47 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 17:50:47 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:50:47 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:50:47 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:50:47 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 17:50:47 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:09:24 processing.py[line:67] DEBUG order data ok
+2017-11-22 18:09:24 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 18:09:24 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 18:09:24 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:09:24 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:09:24 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:09:25 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:09:25 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:10:11 processing.py[line:67] DEBUG order data ok
+2017-11-22 18:10:11 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 18:10:11 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 18:10:12 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:10:12 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:10:12 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:10:12 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:10:12 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:22:25 processing.py[line:67] DEBUG order data ok
+2017-11-22 18:22:25 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 18:22:25 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 18:22:25 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:22:25 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:22:25 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:22:25 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:22:25 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:23:10 processing.py[line:67] DEBUG order data ok
+2017-11-22 18:23:10 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 18:23:10 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 18:23:11 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:23:11 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:23:11 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:23:11 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:23:11 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:23:47 processing.py[line:67] DEBUG order data ok
+2017-11-22 18:23:47 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 18:23:47 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 18:23:47 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:23:47 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:23:47 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:23:47 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:23:48 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:26:50 processing.py[line:67] DEBUG order data ok
+2017-11-22 18:26:50 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 18:26:50 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 18:26:51 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:26:51 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:26:51 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:26:51 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:26:51 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:28:24 processing.py[line:67] DEBUG order data ok
+2017-11-22 18:28:24 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 18:28:24 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 18:28:25 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:28:25 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:28:25 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:28:25 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:28:25 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:39:04 processing.py[line:67] DEBUG order data ok
+2017-11-22 18:39:04 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 18:39:04 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 18:39:04 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:39:04 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:39:04 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:39:04 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:39:04 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:43:52 processing.py[line:67] DEBUG order data ok
+2017-11-22 18:43:52 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 18:43:52 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 18:43:52 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:43:52 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:43:52 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:43:52 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:43:52 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:49:08 processing.py[line:67] DEBUG order data ok
+2017-11-22 18:49:08 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 18:49:08 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 18:49:08 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:49:08 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:49:08 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:49:09 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:49:09 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:53:14 processing.py[line:67] DEBUG order data ok
+2017-11-22 18:53:14 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 18:53:14 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 18:53:15 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:53:15 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:53:15 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:53:15 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:53:15 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:54:47 processing.py[line:67] DEBUG order data ok
+2017-11-22 18:54:47 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 18:54:47 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 18:54:47 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:54:47 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:54:47 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:54:47 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 18:54:47 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 19:03:40 processing.py[line:67] DEBUG order data ok
+2017-11-22 19:03:40 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 19:03:40 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 19:03:41 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 19:03:41 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 19:03:41 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 19:03:41 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 19:03:41 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 19:04:48 processing.py[line:67] DEBUG order data ok
+2017-11-22 19:04:48 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 19:04:48 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 19:04:48 init.py[line:105] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 19:04:48 init.py[line:105] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 19:04:48 init.py[line:105] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 19:04:49 init.py[line:105] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 19:04:49 init.py[line:105] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:  211
+2017-11-22 19:08:49 processing.py[line:67] DEBUG order data ok
+2017-11-22 19:08:49 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 19:08:49 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 19:08:49 init.py[line:105] INFO Individual:    1    GoneTrailer:    2    GoneShips:   24    RemainShips:   57
+2017-11-22 19:08:49 init.py[line:105] INFO Individual:    2    GoneTrailer:    2    GoneShips:   24    RemainShips:   57
+2017-11-22 19:08:49 init.py[line:105] INFO Individual:    3    GoneTrailer:    2    GoneShips:   24    RemainShips:   57
+2017-11-22 19:08:49 init.py[line:105] INFO Individual:    4    GoneTrailer:    2    GoneShips:   24    RemainShips:   57
+2017-11-22 19:08:49 init.py[line:105] INFO Individual:    5    GoneTrailer:    2    GoneShips:   24    RemainShips:   57
+2017-11-22 19:12:14 processing.py[line:67] DEBUG order data ok
+2017-11-22 19:12:14 processing.py[line:127] DEBUG trailer data ok.
+2017-11-22 19:12:14 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-22 19:12:15 init.py[line:105] INFO Individual:    1    GoneTrailer:   13    GoneShips:  156    RemainShips:  187
+2017-11-22 19:12:16 init.py[line:105] INFO Individual:    2    GoneTrailer:   13    GoneShips:  156    RemainShips:  187
+2017-11-22 19:12:18 init.py[line:105] INFO Individual:    3    GoneTrailer:   13    GoneShips:  156    RemainShips:  187
+2017-11-22 19:12:19 init.py[line:105] INFO Individual:    4    GoneTrailer:   13    GoneShips:  156    RemainShips:  187
+2017-11-22 19:12:21 init.py[line:105] INFO Individual:    5    GoneTrailer:   15    GoneShips:  180    RemainShips:  163
+2017-11-22 19:12:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:23 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:23 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:24 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:24 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:24 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:24 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:24 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:24 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:24 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:26 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:26 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:27 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:27 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:28 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:28 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:28 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:28 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:29 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:29 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:29 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:29 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:30 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   13    GoneShips:  156    RemainShips:  187
+2017-11-22 19:12:31 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:31 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:31 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:31 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:32 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:32 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:32 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:32 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:32 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:32 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:32 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:32 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:32 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:32 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:32 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:32 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:33 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:34 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:34 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:34 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:34 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:35 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:35 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:36 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:36 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:37 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:37 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:39 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   15    GoneShips:  180    RemainShips:  163
+2017-11-22 19:12:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:40 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:40 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:40 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:40 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:40 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:41 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:41 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:41 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:41 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:41 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:41 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:41 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:42 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:42 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:42 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:42 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:42 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:44 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:44 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:44 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:44 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:44 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:44 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:44 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:44 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:44 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:44 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:44 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:44 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:46 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:46 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:46 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:46 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:46 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:46 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:46 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:46 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:46 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:46 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:46 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:46 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:46 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:46 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:48 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   15    GoneShips:  180    RemainShips:  163
+2017-11-22 19:12:49 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:49 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:49 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:49 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:49 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:49 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:50 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:51 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:51 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:51 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:51 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:52 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:52 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:53 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:53 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:53 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:53 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:53 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:53 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:53 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:53 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:53 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:53 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:53 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:53 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:53 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:53 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:54 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:55 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:55 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:55 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:55 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:55 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:55 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:55 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:55 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:55 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:55 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:57 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   15    GoneShips:  180    RemainShips:  163
+2017-11-22 19:12:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:58 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:58 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:58 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:58 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:59 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:59 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:59 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:59 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:59 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:12:59 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:59 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:59 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:59 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:12:59 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:00 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:00 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:00 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:00 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:01 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:01 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:01 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:01 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:01 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:01 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:02 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:02 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:02 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:02 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:02 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:02 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:02 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:02 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:02 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:02 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:02 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:02 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:04 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:04 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:04 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:04 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:05 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   13    GoneShips:  156    RemainShips:  187
+2017-11-22 19:13:06 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:06 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:06 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:06 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:06 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:06 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:06 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:08 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:08 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:08 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:08 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:08 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:08 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:09 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:09 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:10 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:10 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:10 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:10 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:10 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:10 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:11 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:11 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:11 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:11 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:12 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   13    GoneShips:  156    RemainShips:  187
+2017-11-22 19:13:13 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:13 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:13 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:13 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:14 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:14 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:15 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:15 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:15 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:15 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:16 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:16 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:17 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:17 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:18 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:18 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:18 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:18 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:18 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:18 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:18 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:18 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:20 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   13    GoneShips:  156    RemainShips:  187
+2017-11-22 19:13:21 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:21 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:21 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:21 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:21 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:22 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:22 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:22 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:23 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:23 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:23 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:23 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:25 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:25 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:25 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:25 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:26 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:26 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:26 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:27 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:29 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   13    GoneShips:  156    RemainShips:  187
+2017-11-22 19:13:30 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:30 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:30 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:30 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:30 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:30 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:31 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:31 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:31 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:31 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:31 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:32 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:32 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:32 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:32 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:34 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:34 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:34 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:34 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:34 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:34 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:34 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:34 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:34 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:34 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:35 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:35 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-22 19:13:38 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   15    GoneShips:  180    RemainShips:  163
+2017-11-23 09:23:38 processing.py[line:67] DEBUG order data ok
+2017-11-23 09:23:38 processing.py[line:127] DEBUG trailer data ok.
+2017-11-23 09:23:38 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-23 09:23:40 init.py[line:105] INFO Individual:    1    GoneTrailer:   13    GoneShips:  156    RemainShips:  187
+2017-11-23 09:23:42 init.py[line:105] INFO Individual:    2    GoneTrailer:   13    GoneShips:  156    RemainShips:  187
+2017-11-23 09:23:44 init.py[line:105] INFO Individual:    3    GoneTrailer:   15    GoneShips:  180    RemainShips:  163
+2017-11-23 09:23:46 init.py[line:105] INFO Individual:    4    GoneTrailer:   13    GoneShips:  156    RemainShips:  187
+2017-11-23 09:23:48 init.py[line:105] INFO Individual:    5    GoneTrailer:   13    GoneShips:  156    RemainShips:  187
+2017-11-23 09:24:11 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:11 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:11 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:12 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:13 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:13 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:13 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:13 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:14 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:15 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:15 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:15 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:15 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:16 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:16 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:17 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:18 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:18 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:18 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:18 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:18 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:18 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:20 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:20 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:20 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:20 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:20 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:20 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:20 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:20 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:24 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   13    GoneShips:  156    RemainShips:  187
+2017-11-23 09:24:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:26 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:26 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:26 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:27 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:27 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:28 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:28 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:28 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:28 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:28 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:28 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:30 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:30 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:30 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:30 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:33 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:33 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:33 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:33 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:35 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:35 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:35 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:41 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   15    GoneShips:  180    RemainShips:  163
+2017-11-23 09:24:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:43 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:43 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:44 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:44 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:44 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:44 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:44 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:44 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:44 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:46 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:46 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:46 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:46 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:46 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:46 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:46 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:46 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:47 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:47 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:47 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:47 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:47 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:47 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:47 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:47 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:49 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:49 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:49 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:49 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:49 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:51 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:52 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:52 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:52 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:52 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:52 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:52 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:52 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:52 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:52 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:52 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:52 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:54 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:54 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:54 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:54 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:55 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:55 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:24:55 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:24:59 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   15    GoneShips:  180    RemainShips:  163
+2017-11-23 09:25:01 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:01 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:01 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:02 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:02 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:02 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:02 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:02 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:02 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:02 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:02 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:02 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:04 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:04 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:04 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:04 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:04 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:06 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:06 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:06 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:06 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:06 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:08 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:08 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:08 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:08 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:08 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:09 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:09 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:10 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:10 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:11 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:11 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:11 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:15 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   14    GoneShips:  168    RemainShips:  175
+2017-11-23 09:25:17 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:17 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:17 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:17 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:18 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:19 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:19 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:19 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:19 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:19 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:19 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:19 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:19 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:19 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:20 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:20 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:20 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:22 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:22 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:22 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:22 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:24 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:24 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:24 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:25 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:25 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:25 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:27 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:27 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:28 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:28 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:28 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:28 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:28 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:28 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:28 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:33 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   15    GoneShips:  180    RemainShips:  163
+2017-11-23 09:25:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:35 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:35 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:36 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:36 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:36 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:36 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:38 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:38 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:38 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:38 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:38 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:38 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:38 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:38 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:38 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:38 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:38 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:38 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:39 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:40 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:40 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:40 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:40 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:42 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:42 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:42 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:42 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:42 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:42 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:42 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:42 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:42 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:43 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:43 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:44 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:44 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:44 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:45 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:45 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:45 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:45 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:45 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:45 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:45 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:45 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:45 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:49 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   14    GoneShips:  168    RemainShips:  175
+2017-11-23 09:25:51 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:51 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:51 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:51 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:51 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:51 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:52 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:52 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:52 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:53 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:53 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:53 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:53 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:54 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:54 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:54 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:54 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:54 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:56 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:56 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:56 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:56 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:56 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:56 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:56 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:56 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:56 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:56 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:56 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:56 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:58 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:58 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:58 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:58 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:25:58 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:25:58 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:00 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:00 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:00 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:00 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:00 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:00 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:00 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:00 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:01 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:01 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:01 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:01 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:01 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:01 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:04 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   15    GoneShips:  180    RemainShips:  163
+2017-11-23 09:26:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:07 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:08 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:08 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:09 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:09 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:09 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:09 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:10 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:10 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:10 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:10 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:10 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:10 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:11 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:12 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:12 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:12 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:12 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:12 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:12 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:12 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:12 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:12 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:12 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:12 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:12 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:12 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:14 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:14 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:14 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:14 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:14 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:14 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:16 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:16 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:16 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:16 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:17 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:17 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:17 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:20 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   14    GoneShips:  168    RemainShips:  175
+2017-11-23 09:26:22 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:22 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:22 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:22 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:22 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:23 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:23 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:24 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:24 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:24 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:24 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:24 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:24 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:24 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:24 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:24 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:24 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:25 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:25 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:26 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:26 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:26 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:27 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:27 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:27 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:28 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:28 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:28 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:29 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:29 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:29 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:29 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:29 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:29 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:29 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:29 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:29 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:29 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:29 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:31 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:31 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:31 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:31 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:32 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-23 09:26:32 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:32 ind_cost_function.py[line:53] INFO num_of_big_car is zero.
+2017-11-23 09:26:35 main.py[line:138] INFO OptimalIndividual   GoneTrailer:   14    GoneShips:  168    RemainShips:  175

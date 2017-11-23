@@ -61,7 +61,7 @@ def availability_check(shipment_set, new_shipment):
 #             return True
 #     return False
 
-def mix_dealer_set_check(shipment_set, new_shipment, mix_dealer_rule_matrix):
+def mix_dealer_set_check(shipment_set, new_shipment, misc):
     destination_temp = [i.dealer_code for i in shipment_set]
     destination_temp.append(new_shipment.dealer_code)
     destination_set = list(set(destination_temp))
@@ -70,11 +70,12 @@ def mix_dealer_set_check(shipment_set, new_shipment, mix_dealer_rule_matrix):
         return True
     #在拼经销商规则mix_dealer_rule中查找
 
-    for i in range(len(mix_dealer_rule_matrix[0])):
-        mix_dealer_rule = mix_dealer_rule_matrix[i]
+    for i in range(len(misc.mix_dealer_rule1[0])):
+        mix_dealer_rule = misc.mix_dealer_rule1[i]
         # If all the end cities are in this list of mix city table, the requirement is satisfied.
         if len([x for x in destination_set if x not in mix_dealer_rule]) == 0:
             return True
+
     return False
 
 # Constraint 9:

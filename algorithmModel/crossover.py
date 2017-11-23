@@ -32,7 +32,7 @@ def co_pro(ppl, par, data, misc, print_switch, parallel=False):
     accumulated_cost.append(0.0) # The first element is zero
     # To calculate accumulate_cost, which contains ppl_size+1 elements in the end
     for i in range(ppl_size):
-        accumulated_cost.append(accumulated_cost[i]+ind_cost(ppl[i],misc))
+        accumulated_cost.append(accumulated_cost[i]+ind_cost(ppl[i],misc)[0])
     # Normolize each element in the list to [0,1]
     accumulated_cost = [accumulated_cost[i]/accumulated_cost[ppl_size] for i in range(ppl_size+1)]
     accumulated_cost[0] = -0.0000001 # To deal with the case where temp=0

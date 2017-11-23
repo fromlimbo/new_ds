@@ -36,7 +36,9 @@ class Misc:
     def __init__(self, cost_weight):
         self.mix_city = None
         self.OTD_pinche = None
-        self.mix_dealer_rule = None
+        self.mix_dealer_rule1 = None
+        self.mix_dealer_rule2 = None
+        self.dealer_address = None
         self.ship_dict = None
         self.trailer_dict = None
         self.cost_computation = None#Cost_computation is the ind_cost_computation() in ind_cost_function.py. This reference is made in gen_misc().
@@ -57,7 +59,7 @@ def gen_misc(cost_weight, _data):
     misc.OTD_pinche = _data['OTD_pinche']
     misc.ship_dict = copy.deepcopy(_data['order_dict'])
     misc.trailer_dict = copy.deepcopy(_data['trailer_dict'])
-    misc.mix_dealer_rule = gen_mix_dealer_rule(misc)
+    misc.mix_dealer_rule1, misc.mix_dealer_rule2 = gen_mix_dealer_rule(misc)
     misc.cost_computation = pk.ind_cost_computation
 
     return misc
@@ -72,16 +74,16 @@ def gen_mix_dealer_rule(misc):
     dealer_index = ['dealer_code'] + ['end_loc_longitude'] + ['end_loc_latitude']
     i = 0
     for ship_info in misc.ship_dict.values():
-        list[i][0] = ship_info.dealer_code
+        list[i][0] = ship_info.dealer_code+ship_info.dealer_address
         list[i][1] = ship_info.end_loc_longitude
         list[i][2] = ship_info.end_loc_latitude
         i += 1
-    dealer_rule = pd.DataFrame(list, index=misc.ship_dict.keys(), columns=dealer_index)
-    dealer_rule = dealer_rule.drop_duplicates('dealer_code')
-    dealer_rule = dealer_rule.reset_index(drop=True)
-    dealer_rule = pinche.find_nearest_id(dealer_rule)
-
-    return dealer_rule.as_matrix(columns=None)
+    dealer_gps = pd.DataFrame(list, index=misc.ship_dict.keys(), columns=dealer_index)
+    dealer_gps = dealer_gps.drop_duplicates('dealer_code')
+    dealer_gps = dealer_gps.reset_index(drop=True)
+    dealer_rule = pinche.find_nearest_id(dealer_gps).as_matrix(columns=None)
+    dealer_rule_half = dealer_rule#[:, 0:(len(dealer_rule[0])-1)/2+1]
+    return dealer_rule_half, dealer_rule
 
 def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge_gap=converge_gap_para, max_steps=max_step_para, print_switch=2):
     """
@@ -108,7 +110,7 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
     # To generate the initial solution population
     ppl = init.initialization(ppl_size, data, misc, False, print_switch)
     # To calculate the best individual in the initial population
-    ave_goal, optimal_goal, optimal_ind = ppl_cost(ppl, misc, with_optimal_goal=True)
+    ave_goal, optimal_goal, optimal_ind,route = ppl_cost(ppl, misc, with_optimal_goal=True)
     ave_goal_pre = float('-Inf')
     best_value = optimal_goal
     best_ind = optimal_ind
@@ -129,7 +131,7 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
             stay_flag = False
         ave_goal_pre = ave_goal
         ppl = co.co_pro(ppl, co_par, data, misc, print_switch)
-        ave_goal, optimal_goal, optimal_ind = ppl_cost(ppl, misc, with_optimal_goal=True)
+        ave_goal, optimal_goal, optimal_ind, route = ppl_cost(ppl, misc, with_optimal_goal=True)
         logger.info('OptimalIndividual   GoneTrailer: %4d    GoneShips: %4d    RemainShips: %4d' % \
                     (sum(len(i.ships) == sum(i.slot_cap) for i in optimal_ind.values() if i.id != 'RemainShipsContainer'),
                       sum(len(i.ships) for i in optimal_ind.values() if i.id != 'RemainShipsContainer'),
@@ -138,6 +140,8 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
         if optimal_goal > best_value:
             best_ind = optimal_ind
             best_value = optimal_goal
+            best_route = route
         step += 1
 
-    return best_ind
+    return best_ind,best_route
+

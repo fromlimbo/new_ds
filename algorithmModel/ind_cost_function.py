@@ -96,10 +96,11 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
 
     # ------------------------------------------- 测试目标4&5:最大化经销商拼车装载率 --------------------------------------------#
     if num_trailer == 0 or num_of_loaded_shipments == 0:
-        average_loading_rate=0.000001
+        average_load_rate = 0.000001
+        load_route = None
     else:
-        loading_rate = pinche.load_rate(load_info, order_info)['load_rate']
-        average_loading_rate=np.mean(loading_rate)
+        load_route, load_rate = pinche.load_rate(load_info, order_info)
+        average_load_rate = np.mean(load_rate)
     # ------------------------------------------------------------------------------------------------------------------#
 
 
@@ -107,5 +108,5 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
     average_mix_warehouse = float(num_of_mix_warehouse) / (0.00001+float(num_trailer))
     #------------------------------------------------------------------------------------------------------------------#
 
-    normalized_cost_result.append(float(6+3) / (0.00001+float(6*average_loading_rate + 3*average_mix_warehouse)))
-    return float(np.dot(np.array(weight_set), (np.array(normalized_cost_result).T)))
+    normalized_cost_result.append(float(6+3) / (0.00001+float(6*average_load_rate + 3*average_mix_warehouse)))
+    return float(np.dot(np.array(weight_set), (np.array(normalized_cost_result).T))), load_route
