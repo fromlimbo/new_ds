@@ -114,7 +114,7 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
     ave_goal_pre = float('-Inf')
     best_value = optimal_goal
     best_ind = optimal_ind
-
+    best_route=route
     # The iteration stops when the gap bwteen the previous goal value and the present goal is small enough or algorithm iterates for enough times
     stop_count = 3  # To record how many continuous times the algorithm stops get better we can determin to quit optimization.
     stay_flag = False  # To record whehther the algorithm stays and doesn't achieve better objects.
@@ -143,5 +143,5 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
             best_route = route
         step += 1
 
-    return best_ind,best_route
+    return best_ind, best_route
 

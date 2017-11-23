@@ -35,7 +35,7 @@ def optimization(data):
     ind1=None
     try:
         logger.info("The algorithm starts")
-        ind1, route = main.ga_vrp(data, weight, 5, 0.0001)
+        ind1 = main.ga_vrp(data, weight, 5, 0.0001)
     except ValueError:
         logger.error("Ineffective input data!")
         print("report result")
