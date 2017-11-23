@@ -91,6 +91,6 @@ def optimization(data):
     r = requests.post(url=url, data=json.dumps(retval),
                       headers=headers)
     print(r.text)
-    print("GounTrailer:",solution.shape[0])
+    print "GoueTrailer: ",solution.shape[0]
     return 0
 
