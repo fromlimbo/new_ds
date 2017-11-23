@@ -6428,3 +6428,7 @@ KeyError: u's'
 2017-11-15 15:22:46 main.py[line:136] INFO OptimalIndividual   GoneTrailer:    1    GoneShips:   12    RemainShips:    3
 2017-11-15 15:22:46 log.py[line:235] WARNING {"success":true,"repCode":"0000","repMsg":null,"repData":null}
 2017-11-15 15:22:46 trace.py[line:123] INFO Task algorithmModel.algorithm_entry.optimization[764ba341-d74c-4166-b50d-9a0445b7e449] succeeded in 1.099946298s: 0
+2017-11-23 22:22:13 connection.py[line:22] INFO Connected to amqp://guest:**@127.0.0.1:5672//
+2017-11-23 22:22:13 mingle.py[line:41] INFO mingle: searching for neighbors
+2017-11-23 22:22:14 mingle.py[line:50] INFO mingle: all alone
+2017-11-23 22:22:14 worker.py[line:164] INFO celery@liangliang-HP-Z440-Workstation ready.
