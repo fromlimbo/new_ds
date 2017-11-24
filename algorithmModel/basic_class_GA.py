@@ -156,7 +156,8 @@ def constraints_tier_0(ship, trl):
     :return: return True if the constraint is satisfied, otherwise reture False if.
     """
     # Constraint: 2
-    return tt.preferred_direction_check(ship, trl)
+    flag_preferred_direction = tt.preferred_direction_check(ship, trl)
+    return flag_preferred_direction
 
 
 def constraints_tier_1(as_ships, ship, misc, full_check=False):

@@ -43815,3 +43815,139 @@ Wed, 25 Oct 2017 14:36:56 connectionpool.py[line:395] DEBUG http://192.168.204.1
 2017-11-24 12:13:25 processing.py[line:67] DEBUG order data ok
 2017-11-24 12:13:25 processing.py[line:127] DEBUG trailer data ok.
 2017-11-24 12:13:25 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-24 14:39:02 processing.py[line:67] DEBUG order data ok
+2017-11-24 14:39:02 processing.py[line:127] DEBUG trailer data ok.
+2017-11-24 14:39:02 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-24 14:53:41 processing.py[line:67] DEBUG order data ok
+2017-11-24 14:53:41 processing.py[line:127] DEBUG trailer data ok.
+2017-11-24 14:53:41 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-24 14:53:51 init.py[line:124] INFO population random initial failed.
+2017-11-24 14:53:51 main.py[line:113] WARNING empty plan!
+2017-11-24 14:53:51 connectionpool.py[line:208] DEBUG Starting new HTTP connection (1): 10.108.11.50
+2017-11-24 14:53:51 connectionpool.py[line:396] DEBUG http://10.108.11.50:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-11-24 14:54:06 processing.py[line:67] DEBUG order data ok
+2017-11-24 14:54:06 processing.py[line:127] DEBUG trailer data ok.
+2017-11-24 14:54:06 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-24 14:55:37 processing.py[line:67] DEBUG order data ok
+2017-11-24 14:55:37 processing.py[line:127] DEBUG trailer data ok.
+2017-11-24 14:55:37 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-24 14:55:37 init.py[line:124] INFO population random initial failed.
+2017-11-24 14:55:37 main.py[line:113] WARNING empty plan!
+2017-11-24 14:55:37 connectionpool.py[line:208] DEBUG Starting new HTTP connection (1): 10.108.11.50
+2017-11-24 14:55:37 connectionpool.py[line:396] DEBUG http://10.108.11.50:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-11-24 14:56:28 processing.py[line:67] DEBUG order data ok
+2017-11-24 14:56:28 processing.py[line:127] DEBUG trailer data ok.
+2017-11-24 14:56:28 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-24 14:56:28 init.py[line:124] INFO population random initial failed.
+2017-11-24 14:57:16 processing.py[line:67] DEBUG order data ok
+2017-11-24 14:57:16 processing.py[line:127] DEBUG trailer data ok.
+2017-11-24 14:57:16 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-24 14:57:16 init.py[line:124] INFO population random initial failed.
+2017-11-24 15:06:16 processing.py[line:67] DEBUG order data ok
+2017-11-24 15:06:16 processing.py[line:127] DEBUG trailer data ok.
+2017-11-24 15:06:16 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-24 15:31:07 processing.py[line:67] DEBUG order data ok
+2017-11-24 15:31:07 processing.py[line:127] DEBUG trailer data ok.
+2017-11-24 15:31:07 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-24 15:45:52 processing.py[line:67] DEBUG order data ok
+2017-11-24 15:45:52 processing.py[line:127] DEBUG trailer data ok.
+2017-11-24 15:45:52 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-24 15:54:06 processing.py[line:67] DEBUG order data ok
+2017-11-24 15:54:06 processing.py[line:127] DEBUG trailer data ok.
+2017-11-24 15:54:06 algorithm_entry.py[line:37] INFO The algorithm starts
+2017-11-24 15:54:06 init.py[line:121] INFO Individual:    1    GoneTrailer:    1    GoneShips:   12    RemainShips:    0
+2017-11-24 15:54:06 init.py[line:121] INFO Individual:    2    GoneTrailer:    1    GoneShips:   12    RemainShips:    0
+2017-11-24 15:54:06 init.py[line:121] INFO Individual:    3    GoneTrailer:    1    GoneShips:   12    RemainShips:    0
+2017-11-24 15:54:06 init.py[line:121] INFO Individual:    4    GoneTrailer:    1    GoneShips:   12    RemainShips:    0
+2017-11-24 15:54:06 init.py[line:121] INFO Individual:    5    GoneTrailer:    1    GoneShips:   12    RemainShips:    0
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 main.py[line:141] INFO OptimalIndividual   GoneTrailer:    1    GoneShips:   12    RemainShips:    0
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:06 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 main.py[line:141] INFO OptimalIndividual   GoneTrailer:    1    GoneShips:   12    RemainShips:    0
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 main.py[line:141] INFO OptimalIndividual   GoneTrailer:    1    GoneShips:   12    RemainShips:    0
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 ind_cost_function.py[line:51] INFO num_of_high_priority is zero.
+2017-11-24 15:54:07 main.py[line:141] INFO OptimalIndividual   GoneTrailer:    1    GoneShips:   12    RemainShips:    0
+2017-11-24 15:54:07 connectionpool.py[line:208] DEBUG Starting new HTTP connection (1): 10.108.11.50
+2017-11-24 15:54:08 connectionpool.py[line:396] DEBUG http://10.108.11.50:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None

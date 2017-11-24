@@ -37,7 +37,7 @@ def mix_dealer_check(shipment_set, new_shipment, misc):
         max_mix_dealer_number = misc.OTD_pinche[idx]['cOtherVendor']
 
     dealer_set = {i.dealer_code for i in shipment_set}
-    dealer_set.add(new_shipment.dealer_code)
+    dealer_set.add(new_shipment.dealer_str)
     return len(dealer_set) <= max_mix_dealer_number
 
 # Constraint 5:
@@ -62,8 +62,8 @@ def availability_check(shipment_set, new_shipment):
 #     return False
 
 def mix_dealer_set_check(shipment_set, new_shipment, misc):
-    destination_temp = [i.dealer_code for i in shipment_set]
-    destination_temp.append(new_shipment.dealer_code)
+    destination_temp = [i.dealer_str for i in shipment_set]
+    destination_temp.append(new_shipment.dealer_str)
     destination_set = list(set(destination_temp))
 
     if len(destination_set) < 2:

@@ -99,7 +99,7 @@ def initialization(ppl_size, data, misc, flag_crossover=False, print_switch=0, o
         if sum(len(i.ships) == sum(i.slot_cap) for i in ind.values() if i.id != 'RemainShipsContainer') == 0:
             num_empty_solution += 1
             # if there is no effective solution after so many trials
-            if num_empty_solution == 20:
+            if num_empty_solution == 40:
                 if flag_crossover:
                     return [ind]
                 break
