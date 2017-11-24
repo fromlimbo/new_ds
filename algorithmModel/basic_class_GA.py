@@ -232,6 +232,8 @@ def convert_ind_to_matrix(ind):
     :param ind: the input individual
     :return: solution matrix
     """
+    if not ind:
+        return False, None
     logger = logging.getLogger(__name__)
 
     matrix = pd.DataFrame()

@@ -109,6 +109,9 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
 
     # To generate the initial solution population
     ppl = init.initialization(ppl_size, data, misc, False, print_switch)
+    if not ppl:
+        logger.warning("empty plan!")
+        return None, None
     # To calculate the best individual in the initial population
     ave_goal, optimal_goal, optimal_ind= ppl_cost(ppl, misc, with_optimal_goal=True)
     ave_goal_pre = float('-Inf')

@@ -13,7 +13,7 @@ from events import *
 import os
 
 flask = Flask(__name__)
-configfile=os.path.abspath("config/server_config.ini")
+configfile=os.path.abspath("config/local_config_liangliang.ini")
 
 AppConfig = ConfigBuilder(configfile,"AppConfig")
 AppConfigs = AppConfig.todict()

@@ -42,9 +42,10 @@ def optimization(data):
         url = "http://192.168.204.169:28109/ids/engine/dealPlan"
         url = "http://10.108.11.50:28060/ids/engine/dealPlan"
         r = requests.post(url=url, data=json.dumps(retval), headers=headers)
-        print 'empty plan'
+        print 'Ineffective input data!'
         return 0
     #solution = xmatrix_to_solution(convert_ind_to_matrix(ind1))
+
 
     flag, matrix = convert_ind_to_matrix(ind1)
     if not flag:
