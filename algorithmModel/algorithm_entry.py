@@ -18,7 +18,7 @@ import pickle
 import json
 import requests
 import logging
-
+import bayes_pareto
 
 
 weight = [0.0, 0.5, 0.0, 0.5]
@@ -35,7 +35,9 @@ def optimization(data):
     ind1=None
     try:
         logger.info("The algorithm starts")
-        ind1 ,route= main.ga_vrp(data, weight, 5, 0.0001)
+        #ind1, route= main.ga_vrp(data, weight, 5, 0.0001)
+        ind1=bayes_pareto.run(data)
+        return 0
     except ValueError:
         logger.error("Ineffective input data!")
         print("report result")

@@ -109,7 +109,7 @@ def ind_cost_computation(ind, weight_set, trailer_dict=None, shipment_dict=None,
     average_mix_warehouse = float(num_of_mix_warehouse) / (0.00001+float(num_trailer))
     #------------------------------------------------------------------------------------------------------------------#
 
-    normalized_cost_result.append(float(6+3) / (0.00001+float(6*average_load_rate + 3*average_mix_warehouse)))
+    normalized_cost_result.append(average_load_rate)
     return float(np.dot(np.array(weight_set), (np.array(normalized_cost_result).T)))
 
 def ind_info(ind):
@@ -121,3 +121,4 @@ def ind_info(ind):
             for ship in i.ships.values():
                 order_info[ship.order_code] = ship
     return load_info, order_info
+
