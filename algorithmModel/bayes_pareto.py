@@ -108,7 +108,7 @@ def val_mix_warehouse_num(solution_x):
             trailer_number+=1
         mix_warehouse_number += len({shipment_j.start_loc for shipment_j in trailer_i.shipments_set})
     # return float(mix_warehouse_number) / float(max(OTD_pinche['cSameWarehouse']) * len(solution_x))
-git
+
     return (float(trailer_number)/float(mix_warehouse_number))
 
 def mix_city_num(solution_x):
