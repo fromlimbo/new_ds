@@ -46,7 +46,6 @@ def optimization(data):
         r = requests.post(url=url, data=json.dumps(retval), headers=headers)
         print 'Ineffective input data!'
         return 0
-    #solution = xmatrix_to_solution(convert_ind_to_matrix(ind1))
 
 
     flag, matrix = convert_ind_to_matrix(ind1)
@@ -94,6 +93,6 @@ def optimization(data):
     r = requests.post(url=url, data=json.dumps(retval),
                       headers=headers)
     print(r.text)
-    print "GoueTrailer: ",solution.shape[0]
+    print "GoneTrailer: ",solution.shape[0]
     return 0
 
