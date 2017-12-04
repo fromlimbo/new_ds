@@ -1,6 +1,6 @@
 # coding:utf-8
 
-
+import logging
 import pandas as pd
 import random
 import cPickle as pickle
@@ -16,44 +16,83 @@ import _temp_tools as tt
 # parameters
 mix_city_limit = 2
 EPISODE = 1
+def dealer_cluster(shipment_list, priority='dealer', OTD_emergent = 5):
+    # 1. dealer code cluster 2. OTD rank
+    if priority == 'dealer':
+        dealer_code_list = list(set([shipment.end_loc for shipment in shipment_list]))
+        cluster_len = np.zeros(len(dealer_code_list))
+        for ii in xrange(len(cluster_len)):
+            cluster_len[ii] = len([shipment for shipment in shipment_list
+                                   if shipment.end_loc == dealer_code_list[ii]])
 
+        sorted_ind = list(np.argsort(-cluster_len))
+        sorted_shipment_list = []
+        for ii in sorted_ind:
+            temp_list = [shipment for shipment in shipment_list if shipment.end_loc == dealer_code_list[ii]]
+            temp_list.sort(key=operator.attrgetter('OTD'), reverse=True)
+            sorted_shipment_list.extend(temp_list)
+            # print([shipment.end_loc for shipment in temp_list])
+            # print([shipment.OTD for shipment in temp_list])
+        aa = 1
+    # 1. OTD cluster 2. dealer cluster
+    else:
+        sorted_shipment_list = []
+        for ii in xrange(2):
+            if ii == 0:
+                shipments_temp = [shipment for shipment in shipment_list if shipment.OTD > OTD_emergent]
+            else:
+                shipments_temp = [shipment for shipment in shipment_list if shipment.OTD <= OTD_emergent]
+            dealer_code_list = list(set([shipment.end_loc for shipment in shipments_temp]))
+            cluster_len = np.zeros(len(dealer_code_list))
+            for ii in xrange(len(cluster_len)):
+                cluster_len[ii] = len([shipment for shipment in shipments_temp
+                                       if shipment.end_loc == dealer_code_list[ii]])
+
+            sorted_ind = list(np.argsort(-cluster_len))
+            sorted_temp = []
+            for ii in sorted_ind:
+                temp_list = [shipment for shipment in shipments_temp if shipment.end_loc == dealer_code_list[ii]]
+                sorted_temp.extend(temp_list)
+
+            sorted_shipment_list.extend(sorted_temp)
+
+    return sorted_shipment_list
 
 # Convert mix-city table into mix-city set
 def packaging(shipment_dict, trailer_dict,misc):
     shipment_list = shipment_dict.values()
     trailer_list = trailer_dict.values()
 
-    np.random.shuffle(shipment_list)
 
-    weight = [0.6,random.uniform(0,1)]
 
-    if weight[0] > 0.5 or weight[1] > 0.5 or weight[2] > 0.5:
-        trailer_list.sort(key=operator.attrgetter('capacity_for_xl_car'), reverse=True)
-        trailer_list.sort(key=operator.attrgetter('capacity_for_l_car'), reverse=True)
-        trailer_list.sort(key=operator.attrgetter('capacity_all'), reverse=True)
-    if weight[1] > 0.5:
-        shipment_list.sort(key=operator.attrgetter( 'dealer_code','OTD'), reverse=True)
-    else:
-        shipment_list.sort(key=operator.attrgetter('start_loc','OTD'), reverse=True)
+
+
+    trailer_list.sort(key=operator.attrgetter('capacity_for_xl_car'), reverse=True)
+    trailer_list.sort(key=operator.attrgetter('capacity_for_l_car'), reverse=True)
+    trailer_list.sort(key=operator.attrgetter('capacity_all'), reverse=True)
+
 
     total_assigned_shipments = 0
     for i in xrange(len(trailer_list)):
-        print (i)
-        o = random.uniform(0, 1)
-
-        if o > 0.5:
-            shipment_list.sort(key=operator.attrgetter( 'dealer_code','OTD'), reverse=True)
-        else:
-            shipment_list.sort(key=operator.attrgetter('start_loc','OTD'), reverse=True)
+        # print (i)
+        shipment_list = dealer_cluster(shipment_list)
+        # o = random.uniform(0, 1)
+        #
+        # if o > 0.5:
+        #     shipment_list.sort(key=operator.attrgetter( 'dealer_code'), reverse=True)
+        # else:
+        #     shipment_list.sort(key=operator.attrgetter('OTD'), reverse=True)
         assigned_shipments = []
 
         type_num_list = [trailer_list[i].capacity_for_xl_car, trailer_list[i].capacity_for_l_car,
                          trailer_list[i].capacity_for_m_car, trailer_list[i].capacity_for_s_car,
                          trailer_list[i].capacity_for_xs_car]
         w = 0
-        while w <10:
+        while w <len(shipment_list):
             j = 0
             while j < len(shipment_list):
+                # try:
+                #     if shipment_list[j].
                 # Constraint: 2
                 if tt.preferred_direction_check(shipment_list[j], trailer_list[i]) == False:
                     j+=1
@@ -143,18 +182,18 @@ def packaging(shipment_dict, trailer_dict,misc):
                 j+=1
             trailer_list[i].shipments_set = assigned_shipments
 
-            if len(trailer_list[i].shipments_set) == trailer_list[i].capacity_all and len({shipment_j.dealer_code for shipment_j in trailer_list[i].shipments_set})<5 and  len({shipment_j.start_loc for shipment_j in trailer_list[i].shipments_set})<5:
+            if len(trailer_list[i].shipments_set) == trailer_list[i].capacity_all:
                 total_assigned_shipments += trailer_list[i].capacity_all
                 break
             else:
 
                 shipment_list.extend(trailer_list[i].shipments_set)
-                random.shuffle(shipment_list)
-                if w%2==0:
-
-                    shipment_list.sort(key=operator.attrgetter('OTD','start_loc'), reverse=True)
-                else:
-                    shipment_list.sort(key=operator.attrgetter('OTD','dealer_code'), reverse=True)
+                # random.shuffle(shipment_list)
+                # if w%2==0:
+                #
+                #     shipment_list.sort(key=operator.attrgetter('OTD','start_loc'), reverse=True)
+                # else:
+                #     shipment_list.sort(key=operator.attrgetter('OTD','dealer_code'), reverse=True)
 
                 # shipment_list.sort(key=operator.attrgetter('car_type'), reverse=True)
                 trailer_list[i].shipments_set = []
@@ -163,6 +202,9 @@ def packaging(shipment_dict, trailer_dict,misc):
                                  trailer_list[i].capacity_for_m_car, trailer_list[i].capacity_for_s_car,
                                  trailer_list[i].capacity_for_xs_car]
                 w+=1
+                shipment_list = dealer_cluster(shipment_list)
+                shipment_list = shipment_list[w:len(shipment_list)] + shipment_list[0:w]
+
 
     trailer_index = [i.code for i in trailer_list]
     output_column_quantity = max([len(i.shipments_set) for i in trailer_list])
@@ -189,13 +231,3 @@ def xmatrix_generation(trailer_list, shipment_list):
     return x_matrix
 
 
-def packaging_mc(shipment_dict, trailer_dict, EPISODE):
-    max_assigned_shipment_number = 0
-    solution_output = []
-    for i in xrange(EPISODE):
-        total_assigned_shipments, solution, trailer_list = packaging(shipment_dict, trailer_dict)
-        if total_assigned_shipments >= max_assigned_shipment_number:
-            print total_assigned_shipments
-            max_assigned_shipment_number = total_assigned_shipments
-            solution_output = solution
-    return solution_output
