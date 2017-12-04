@@ -14,9 +14,9 @@ import pinche
 
 # parameters
 mix_city_limit = 2
-EPISODE = 2
-population_size = 10
-sub_population_size =5
+EPISODE = 1
+population_size = 1
+sub_population_size =1
 # ------------------------ Cost / Value Functions ------------------
 
 
@@ -45,7 +45,7 @@ def value_priority(solution, separated_mode=False):
         # print 'len(trailer_sol.shipments_set) = ', len(trailer_sol.shipments_set)
         # total_loaded_priority += sum([shipment_sol.priority for shipment_sol in trailer_sol.shipments_set])
         for shipment_sol in trailer_sol.shipments_set:
-            if shipment_sol.OTD >=3:
+            if shipment_sol.OTD >=6:
                 total_loaded_priority+=1
         # total_loaded_priority += sum([shipment_sol.OTD for shipment_sol in trailer_sol.shipments_set])
 
@@ -111,6 +111,13 @@ def val_mix_warehouse_num(solution_x):
 
     return (float(trailer_number)/float(mix_warehouse_number))
 
+# 目标：最大化拼车装载量
+def max_load_rate(solution_x):
+    load_info, order_info = ind_info(ind)
+    load_rate = pinche.load_rate(load_info, order_info)
+    average_load_rate = np.mean(load_rate)
+    return average_load_rate
+
 def mix_city_num(solution_x):
     mix_city_number = 0
     trailer_number = 0
@@ -164,15 +171,15 @@ def population_gen(population_size,data,misc):
 
 # Population Sort by Rank ()
 def non_domination_sort_by_rank(population, misc, present=False):
-    population_tuple = [[i, value_obj_level1(i),value_obj_level2(i), value_obj_level3(i,misc), value_obj_level5(i)+value_obj_level6(i)] for i in population]
+    population_tuple = [[i, value_obj_level1(i),value_obj_level2(i), value_obj_level3(i,misc), value_obj_level5(i)] for i in population]
     for i in xrange(len(population_tuple)):
         dominated_num = 0
         for j in xrange(len(population_tuple)):
-            if population_tuple[j][4] <population_tuple[i][4] and population_tuple[j][2] <population_tuple[i][2] and population_tuple[j][1] <population_tuple[i][1]:
+            if population_tuple[j][1] <population_tuple[i][1]:
                 dominated_num += 1
         population_tuple[i].append(dominated_num)
 
-    population_tuple_sorted = sorted(population_tuple, key=itemgetter(5, 1,2,3, 4), reverse=True)
+    population_tuple_sorted = sorted(population_tuple, key=itemgetter(5), reverse=True)
     population_sorted = [k[0] for k in population_tuple_sorted]
 
     if not present:
@@ -232,7 +239,7 @@ def non_domination_sort_by_rank(population, misc, present=False):
                 if len(trailer_j.shipments_set) == trailer_j.capacity_all:
                     assigned_trailer_number += 1
                 for order_z in trailer_j.shipments_set:
-                    if order_z.OTD >= 3:
+                    if order_z.OTD >= 6:
                         emergent_order_number += 1
                     if order_z.car_type in ['L', 'XL']:
                         large_medium_order_number += 1
@@ -280,7 +287,22 @@ def non_domination_sort_by_rank(population, misc, present=False):
         pickle.dump(population_matrix, solutions_pickle)
         solutions_pickle.close()
 
-        return population_sorted, summary
+
+        # solution to matrix
+        solution = population[0]
+        space_list = population_matrix_columns
+        solution_matrix = pd.DataFrame(index=[trailer.code for trailer in solution], columns=space_list)
+
+        for trailer in solution:
+            shipment_code_list = [shipment.order_code for shipment in trailer.shipments_set]
+            for ii in xrange(len(space_list)):
+                if ii <= len(shipment_code_list):
+                    solution_matrix.loc[trailer.code, space_list[ii]] = shipment_code_list[ii]
+                else:
+                    solution_matrix.loc[trailer.code, space_list[ii]] = -1
+
+        print(solution_matrix)
+        return population_sorted, summary,solution_matrix
 
 
 # Update the population
@@ -321,10 +343,10 @@ def run(input_data):
     print '\n -------------------------- Result Report ----------------------------- \n'
 
     print '\n The statistics of the result information : \n'
-    population, summary_matrix = non_domination_sort_by_rank(population,misc, present=True)
+    population, summary_matrix,solution_matrix = non_domination_sort_by_rank(population,misc, present=True)
     summary_reader = pickle.load(open('../output_data/summary.pkl', 'rb'))
     print 'summary_reader = \n', summary_reader
 
     end = time.clock()
     print '\n The total time cost by the Pareto MC algorithm (by second) is: ', end - start
-    return population
+    return solution_matrix
