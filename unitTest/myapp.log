@@ -49154,3 +49154,25 @@ Wed, 25 Oct 2017 14:36:56 connectionpool.py[line:395] DEBUG http://192.168.204.1
 2017-12-04 23:41:13 algorithm_entry.py[line:35] INFO The algorithm starts
 2017-12-04 23:41:15 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.50
 2017-12-04 23:45:20 processing.py[line:67] DEBUG order data ok
+2017-12-05 09:33:50 processing.py[line:69] DEBUG order data ok
+2017-12-05 09:33:50 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 09:33:50 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 09:34:52 processing.py[line:69] DEBUG order data ok
+2017-12-05 09:34:54 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 09:34:54 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 09:41:14 processing.py[line:69] DEBUG order data ok
+2017-12-05 09:41:14 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 09:41:14 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 09:41:15 processing.py[line:69] DEBUG order data ok
+2017-12-05 09:41:15 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 09:41:15 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 09:41:39 processing.py[line:69] DEBUG order data ok
+2017-12-05 09:41:39 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 09:41:39 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 09:41:39 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.50
+2017-12-05 09:41:39 connectionpool.py[line:395] DEBUG http://10.108.11.50:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-12-05 09:41:40 processing.py[line:69] DEBUG order data ok
+2017-12-05 09:41:40 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 09:41:40 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 09:41:40 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.50
+2017-12-05 09:41:41 connectionpool.py[line:395] DEBUG http://10.108.11.50:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None

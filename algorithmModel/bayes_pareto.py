@@ -294,7 +294,7 @@ def non_domination_sort_by_rank(population, misc, present=False):
         for trailer in solution:
             shipment_code_list = [shipment.order_code for shipment in trailer.shipments_set]
             for ii in xrange(len(space_list)):
-                if ii <= len(shipment_code_list):
+                if ii < len(shipment_code_list):
                     solution_matrix.loc[trailer.code, space_list[ii]] = shipment_code_list[ii]
                 else:
                     solution_matrix.loc[trailer.code, space_list[ii]] = -1
