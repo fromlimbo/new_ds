@@ -155,7 +155,10 @@ def population_gen(population_size,data,misc):
     population = []
     for i in range(population_size):
         total_assigned_shipments, solution_matrix, solution_output = packaging(data.ship_dict, data.trailer_dict,misc)
-        population.append(copy.deepcopy(solution_output))
+        solution_output1 = copy.deepcopy(solution_output)
+        solution_output2 = [i for i in solution_output1 if i.shipments_set != []]
+        if solution_output2 != []:
+            population.append(solution_output2)
     population_stat(population)
     return population
 
@@ -177,132 +180,135 @@ def non_domination_sort_by_rank(population, misc, present=False):
         return population_sorted
 
     if present:
-        population_matrix_index = ['+']
+        if population_sorted ==[]:
+            return [],[],0
+        else:
+            population_matrix_index = ['+']
 
-        # assigned_order_number:
-        assigned_order_number_vector = []
-        # assigned_trailer_number:
-        assigned_trailer_number_vector = []
-        # emergent_order_number:
-        emergent_order_number_vector = []
-        # large_medium_order_number：
-        large_medium_order_number_vector = []
-        assigned_mix_city_vector = []
-        assigned_mix_dealer_vector = []
-        assigned_mix_warehouse_vector = []
+            # assigned_order_number:
+            assigned_order_number_vector = []
+            # assigned_trailer_number:
+            assigned_trailer_number_vector = []
+            # emergent_order_number:
+            emergent_order_number_vector = []
+            # large_medium_order_number：
+            large_medium_order_number_vector = []
+            assigned_mix_city_vector = []
+            assigned_mix_dealer_vector = []
+            assigned_mix_warehouse_vector = []
 
-        # one_city_one_dealer_number:
-        one_city_one_dealer_number_vector = []
-        # one_city_two_dealer_number:
-        one_city_two_dealer_number_vector = []
-        # one_city_three_dealer_number:
-        one_city_three_dealer_number_vector = []
-        # two_city_two_dealer_number:
-        two_city_two_dealer_number_vector = []
-        # two_city_three_dealer_number:
-        two_city_three_dealer_number_vector = []
-        # population_matrix
-        solution_seq = 0
-        # pareto_set_size = population_sorted_rank.count(0)
-        # print 'pareto_set_size = ', pareto_set_size
-        max_space_num = max([max([len(trailer_j.shipments_set) for trailer_j in solution_i]) for solution_i in population_sorted])
-        population_matrix_data = array(['*'] * max_space_num)
-        load_info = {}
-        order_info = {}
-
-
-        for solution_i in population:
-            load_info, order_info = ind_info(solution_i)
-            route = pinche.trailer_route(load_info, order_info)
-            assigned_order_number = 0
-            assigned_trailer_number = 0
-            emergent_order_number = 0
-            large_medium_order_number = 0
-            mix_city_number_list = []
-            mix_dealer_number_list = []
-            one_city_one_dealer_number = 0
-            one_city_two_dealer_number = 0
-            one_city_three_dealer_number = 0
-            two_city_two_dealer_number = 0
-            two_city_three_dealer_number = 0
-            for trailer_j in solution_i:
-                assigned_order_number += len(trailer_j.shipments_set)
-                population_matrix_index.append(trailer_j.code)
-                population_matrix_data = vstack((population_matrix_data, array([order_j.order_code for order_j in trailer_j.shipments_set]
-                + [' '] * (max_space_num - len(trailer_j.shipments_set)))))
-                mix_city_number_list.append(len({order_j.end_city for order_j in trailer_j.shipments_set}))
-                mix_dealer_number_list.append(len({order_j.dealer_code for order_j in trailer_j.shipments_set}))
-                if len(trailer_j.shipments_set) == trailer_j.capacity_all:
-                    assigned_trailer_number += 1
-                for order_z in trailer_j.shipments_set:
-                    if order_z.OTD >= 6:
-                        emergent_order_number += 1
-                    if order_z.car_type in ['L', 'XL']:
-                        large_medium_order_number += 1
-            assigned_mix_city_vector.append(mix_city_num(solution_i))
-            assigned_mix_dealer_vector.append(mix_dealer_num(solution_i))
-            assigned_mix_warehouse_vector.append(mix_warehouse_num(solution_i))
-            assigned_order_number_vector.append(assigned_order_number)
-            assigned_trailer_number_vector.append(assigned_trailer_number)
-            emergent_order_number_vector.append(emergent_order_number)
-            large_medium_order_number_vector.append(large_medium_order_number)
-
-            one_city_one_dealer_number_vector.append(one_city_one_dealer_number)
-            one_city_two_dealer_number_vector.append(one_city_two_dealer_number)
-            one_city_three_dealer_number_vector.append(one_city_three_dealer_number)
-            two_city_two_dealer_number_vector.append(two_city_two_dealer_number)
-            two_city_three_dealer_number_vector.append(two_city_three_dealer_number)
-
-            solution_split_line = array(['Solution: ' + str(solution_seq)] + ['*'] * (max_space_num-1))
-            population_matrix_index.append('+')
-            population_matrix_data = vstack((population_matrix_data, solution_split_line))
-            solution_seq += 1
-
-        # output the summary and the population_sorted
+            # one_city_one_dealer_number:
+            one_city_one_dealer_number_vector = []
+            # one_city_two_dealer_number:
+            one_city_two_dealer_number_vector = []
+            # one_city_three_dealer_number:
+            one_city_three_dealer_number_vector = []
+            # two_city_two_dealer_number:
+            two_city_two_dealer_number_vector = []
+            # two_city_three_dealer_number:
+            two_city_three_dealer_number_vector = []
+            # population_matrix
+            solution_seq = 0
+            # pareto_set_size = population_sorted_rank.count(0)
+            # print 'pareto_set_size = ', pareto_set_size
+            max_space_num = max([max([len(trailer_j.shipments_set) for trailer_j in solution_i]) for solution_i in population_sorted])
+            population_matrix_data = array(['*'] * max_space_num)
+            load_info = {}
+            order_info = {}
 
 
-        summary_columns = ['带走运单数', '轿运车使用数量', '运走紧急订单数量', '带走大中型商品车数量', '拼城市数量', '拼经销商数量',
-                           '拼库数量']
-        summary_index = ['Solution'+str(i+1) for i in xrange(len(population_sorted))]
-        summary_data = transpose(array([assigned_order_number_vector, assigned_trailer_number_vector, emergent_order_number_vector,
-                        large_medium_order_number_vector, assigned_mix_city_vector,assigned_mix_dealer_vector,assigned_mix_warehouse_vector]))
-        summary = pd.DataFrame(summary_data, index=summary_index, columns=summary_columns)
-        print summary
-        #summary.to_csv('../output_data/summary.csv')
-        #print '\n The summary of the solutions has been saved to "output_data/summary.csv" '
+            for solution_i in population:
+                load_info, order_info = ind_info(solution_i)
+                route = pinche.trailer_route(load_info, order_info)
+                assigned_order_number = 0
+                assigned_trailer_number = 0
+                emergent_order_number = 0
+                large_medium_order_number = 0
+                mix_city_number_list = []
+                mix_dealer_number_list = []
+                one_city_one_dealer_number = 0
+                one_city_two_dealer_number = 0
+                one_city_three_dealer_number = 0
+                two_city_two_dealer_number = 0
+                two_city_three_dealer_number = 0
+                for trailer_j in solution_i:
+                    assigned_order_number += len(trailer_j.shipments_set)
+                    population_matrix_index.append(trailer_j.code)
+                    population_matrix_data = vstack((population_matrix_data, array([order_j.order_code for order_j in trailer_j.shipments_set]
+                    + [' '] * (max_space_num - len(trailer_j.shipments_set)))))
+                    mix_city_number_list.append(len({order_j.end_city for order_j in trailer_j.shipments_set}))
+                    mix_dealer_number_list.append(len({order_j.dealer_code for order_j in trailer_j.shipments_set}))
+                    if len(trailer_j.shipments_set) == trailer_j.capacity_all:
+                        assigned_trailer_number += 1
+                    for order_z in trailer_j.shipments_set:
+                        if order_z.OTD >= 6:
+                            emergent_order_number += 1
+                        if order_z.car_type in ['L', 'XL']:
+                            large_medium_order_number += 1
+                assigned_mix_city_vector.append(mix_city_num(solution_i))
+                assigned_mix_dealer_vector.append(mix_dealer_num(solution_i))
+                assigned_mix_warehouse_vector.append(mix_warehouse_num(solution_i))
+                assigned_order_number_vector.append(assigned_order_number)
+                assigned_trailer_number_vector.append(assigned_trailer_number)
+                emergent_order_number_vector.append(emergent_order_number)
+                large_medium_order_number_vector.append(large_medium_order_number)
 
-        # Generate the solution matrix
+                one_city_one_dealer_number_vector.append(one_city_one_dealer_number)
+                one_city_two_dealer_number_vector.append(one_city_two_dealer_number)
+                one_city_three_dealer_number_vector.append(one_city_three_dealer_number)
+                two_city_two_dealer_number_vector.append(two_city_two_dealer_number)
+                two_city_three_dealer_number_vector.append(two_city_three_dealer_number)
 
-        population_matrix_columns = ['space_' + str(i + 1) for i in xrange(max_space_num)]
-        population_matrix = pd.DataFrame(population_matrix_data, index=population_matrix_index, columns=population_matrix_columns)
-        # population_matrix.to_csv('../output_data/solutions.csv')
-        #
-        # summary_pickle = open('../output_data/summary.pkl', 'wb')
-        # pickle.dump(summary, summary_pickle)
-        # summary_pickle.close()
-        #
-        # solutions_pickle = open('../output_data/solutions.pkl', 'wb')
-        # pickle.dump(population_matrix, solutions_pickle)
-        # solutions_pickle.close()
+                solution_split_line = array(['Solution: ' + str(solution_seq)] + ['*'] * (max_space_num-1))
+                population_matrix_index.append('+')
+                population_matrix_data = vstack((population_matrix_data, solution_split_line))
+                solution_seq += 1
+
+            # output the summary and the population_sorted
 
 
-        # solution to matrix
-        solution = population[0]
-        assert (len(population[0]) != 0)
-        space_list = population_matrix_columns
-        solution_matrix = pd.DataFrame(index=[trailer.code for trailer in solution], columns=space_list)
+            summary_columns = ['带走运单数', '轿运车使用数量', '运走紧急订单数量', '带走大中型商品车数量', '拼城市数量', '拼经销商数量',
+                               '拼库数量']
+            summary_index = ['Solution'+str(i+1) for i in xrange(len(population_sorted))]
+            summary_data = transpose(array([assigned_order_number_vector, assigned_trailer_number_vector, emergent_order_number_vector,
+                            large_medium_order_number_vector, assigned_mix_city_vector,assigned_mix_dealer_vector,assigned_mix_warehouse_vector]))
+            summary = pd.DataFrame(summary_data, index=summary_index, columns=summary_columns)
+            print summary
+            #summary.to_csv('../output_data/summary.csv')
+            #print '\n The summary of the solutions has been saved to "output_data/summary.csv" '
 
-        for trailer in solution:
-            shipment_code_list = [shipment.order_code for shipment in trailer.shipments_set]
-            for ii in xrange(len(space_list)):
-                if ii < len(shipment_code_list):
-                    solution_matrix.loc[trailer.code, space_list[ii]] = shipment_code_list[ii]
-                else:
-                    solution_matrix.loc[trailer.code, space_list[ii]] = -1
+            # Generate the solution matrix
 
-        solution_matrix = pd.concat([route, solution_matrix], axis=1)
-        #print(solution_matrix)
-        return population_sorted, summary,solution_matrix,route.shape[1]
+            population_matrix_columns = ['space_' + str(i + 1) for i in xrange(max_space_num)]
+            population_matrix = pd.DataFrame(population_matrix_data, index=population_matrix_index, columns=population_matrix_columns)
+            # population_matrix.to_csv('../output_data/solutions.csv')
+            #
+            # summary_pickle = open('../output_data/summary.pkl', 'wb')
+            # pickle.dump(summary, summary_pickle)
+            # summary_pickle.close()
+            #
+            # solutions_pickle = open('../output_data/solutions.pkl', 'wb')
+            # pickle.dump(population_matrix, solutions_pickle)
+            # solutions_pickle.close()
+
+
+            # solution to matrix
+            solution = population[0]
+            assert (len(population[0]) != 0)
+            space_list = population_matrix_columns
+            solution_matrix = pd.DataFrame(index=[trailer.code for trailer in solution], columns=space_list)
+
+            for trailer in solution:
+                shipment_code_list = [shipment.order_code for shipment in trailer.shipments_set]
+                for ii in xrange(len(space_list)):
+                    if ii < len(shipment_code_list):
+                        solution_matrix.loc[trailer.code, space_list[ii]] = shipment_code_list[ii]
+                    else:
+                        solution_matrix.loc[trailer.code, space_list[ii]] = -1
+
+            solution_matrix = pd.concat([route, solution_matrix], axis=1)
+            #print(solution_matrix)
+            return population_sorted,solution_matrix,route.shape[1]
 
 
 # Update the population
@@ -351,7 +357,7 @@ def run(input_data):
 
     #print '\n -------------------------- Result Report ----------------------------- \n'
     #print '\n The statistics of the result information : \n'
-    population, summary_matrix,solution_matrix,length = non_domination_sort_by_rank(population,misc, present=True)
+    population,solution_matrix,length = non_domination_sort_by_rank(population,misc, present=True)
     #summary_reader = pickle.load(open('../output_data/summary.pkl', 'rb'))
     #print 'summary_reader = \n', summary_reader
     if (len(population)==0):
