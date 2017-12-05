@@ -3,4 +3,6 @@
 .DS_Store
 myapp.log
 input_data.json
-querydata
+querydata/*.json
+unitTest/testData/*.json
+output_data/*
