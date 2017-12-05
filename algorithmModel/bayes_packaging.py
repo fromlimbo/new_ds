@@ -202,7 +202,6 @@ def packaging(shipment_dict, trailer_dict,misc):
                 shipment_list = dealer_cluster(shipment_list)
                 shipment_list = shipment_list[w:len(shipment_list)] + shipment_list[0:w]
 
-
     trailer_index = [i.code for i in trailer_list]
     output_column_quantity = max([len(i.shipments_set) for i in trailer_list])
     shipment_index = ['space_'+str(i + 1) for i in xrange(output_column_quantity)]
