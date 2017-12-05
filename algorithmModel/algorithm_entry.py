@@ -18,7 +18,7 @@ import json
 import requests
 import logging
 import bayes_pareto
-
+import pickle
 
 weight = [0.0, 0.5, 0.0, 0.5]
 
@@ -73,8 +73,8 @@ def optimization(data):
     #         ]
     # }
 
-    #retval={"taskId":optimization.request.id,
-    #        "trailerOrders":[]}
+    retval={"taskId":optimization.request.id,
+            "trailerOrders":[]}
     for index, row_data in solution.iterrows():
         row={}
         row["code"]=index
@@ -85,7 +85,7 @@ def optimization(data):
         row["orderCodes"]=b[b!=-1].tolist()
         retval["trailerOrders"].append(row)
 
-    #headers = {'content-type': 'application/json'}
+    headers = {'content-type': 'application/json'}
     url = "http://10.108.11.50:28060/ids/engine/dealPlan"
     #url="http://192.168.204.103:28109/ids/engine/dealPlan"
     r = requests.post(url=url, data=json.dumps(retval),

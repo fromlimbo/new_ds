@@ -267,27 +267,28 @@ def non_domination_sort_by_rank(population, misc, present=False):
         summary_data = transpose(array([assigned_order_number_vector, assigned_trailer_number_vector, emergent_order_number_vector,
                         large_medium_order_number_vector, assigned_mix_city_vector,assigned_mix_dealer_vector,assigned_mix_warehouse_vector]))
         summary = pd.DataFrame(summary_data, index=summary_index, columns=summary_columns)
-
-        summary.to_csv('../output_data/summary.csv')
-        print '\n The summary of the solutions has been saved to "output_data/summary.csv" '
+        print summary
+        #summary.to_csv('../output_data/summary.csv')
+        #print '\n The summary of the solutions has been saved to "output_data/summary.csv" '
 
         # Generate the solution matrix
 
         population_matrix_columns = ['space_' + str(i + 1) for i in xrange(max_space_num)]
         population_matrix = pd.DataFrame(population_matrix_data, index=population_matrix_index, columns=population_matrix_columns)
-        population_matrix.to_csv('../output_data/solutions.csv')
-
-        summary_pickle = open('../output_data/summary.pkl', 'wb')
-        pickle.dump(summary, summary_pickle)
-        summary_pickle.close()
-
-        solutions_pickle = open('../output_data/solutions.pkl', 'wb')
-        pickle.dump(population_matrix, solutions_pickle)
-        solutions_pickle.close()
+        # population_matrix.to_csv('../output_data/solutions.csv')
+        #
+        # summary_pickle = open('../output_data/summary.pkl', 'wb')
+        # pickle.dump(summary, summary_pickle)
+        # summary_pickle.close()
+        #
+        # solutions_pickle = open('../output_data/solutions.pkl', 'wb')
+        # pickle.dump(population_matrix, solutions_pickle)
+        # solutions_pickle.close()
 
 
         # solution to matrix
         solution = population[0]
+        assert (len(population[0]) != 0)
         space_list = population_matrix_columns
         solution_matrix = pd.DataFrame(index=[trailer.code for trailer in solution], columns=space_list)
 

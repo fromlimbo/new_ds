@@ -49176,3 +49176,56 @@ Wed, 25 Oct 2017 14:36:56 connectionpool.py[line:395] DEBUG http://192.168.204.1
 2017-12-05 09:41:40 algorithm_entry.py[line:35] INFO The algorithm starts
 2017-12-05 09:41:40 connectionpool.py[line:207] DEBUG Starting new HTTP connection (1): 10.108.11.50
 2017-12-05 09:41:41 connectionpool.py[line:395] DEBUG http://10.108.11.50:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-12-05 13:00:59 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:00:59 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:00:59 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:01:13 algorithm_entry.py[line:41] ERROR Ineffective input data!
+2017-12-05 13:01:13 connectionpool.py[line:208] DEBUG Starting new HTTP connection (1): 10.108.11.50
+2017-12-05 13:01:13 connectionpool.py[line:396] DEBUG http://10.108.11.50:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-12-05 13:02:05 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:02:05 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:02:05 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:04:20 algorithm_entry.py[line:41] ERROR Ineffective input data!
+2017-12-05 13:04:20 connectionpool.py[line:208] DEBUG Starting new HTTP connection (1): 10.108.11.50
+2017-12-05 13:04:20 connectionpool.py[line:396] DEBUG http://10.108.11.50:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-12-05 13:04:52 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:04:52 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:04:52 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:06:03 algorithm_entry.py[line:41] ERROR Ineffective input data!
+2017-12-05 13:06:03 connectionpool.py[line:208] DEBUG Starting new HTTP connection (1): 10.108.11.50
+2017-12-05 13:06:03 connectionpool.py[line:396] DEBUG http://10.108.11.50:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-12-05 13:06:22 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:06:22 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:06:22 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:08:09 algorithm_entry.py[line:41] ERROR Ineffective input data!
+2017-12-05 13:08:09 connectionpool.py[line:208] DEBUG Starting new HTTP connection (1): 10.108.11.50
+2017-12-05 13:08:09 connectionpool.py[line:396] DEBUG http://10.108.11.50:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-12-05 13:08:35 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:08:35 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:08:35 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:10:28 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:10:28 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:10:29 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:16:26 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:16:26 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:16:26 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:16:40 algorithm_entry.py[line:41] ERROR Ineffective input data!
+2017-12-05 13:16:40 connectionpool.py[line:208] DEBUG Starting new HTTP connection (1): 10.108.11.50
+2017-12-05 13:16:41 connectionpool.py[line:396] DEBUG http://10.108.11.50:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
+2017-12-05 13:17:24 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:17:24 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:17:24 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:23:18 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:23:18 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:23:18 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:23:28 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:23:28 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:23:28 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:32:23 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:32:23 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:32:23 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:37:21 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:37:21 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:37:21 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:37:22 connectionpool.py[line:208] DEBUG Starting new HTTP connection (1): 10.108.11.50
+2017-12-05 13:37:22 connectionpool.py[line:396] DEBUG http://10.108.11.50:28060 "POST /ids/engine/dealPlan HTTP/1.1" 200 None
