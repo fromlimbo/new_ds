@@ -65,10 +65,6 @@ def packaging(shipment_dict, trailer_dict,misc):
     for i in trailer_list:
         i.shipments_set = []
 
-
-
-
-
     trailer_list.sort(key=operator.attrgetter('capacity_for_xl_car'), reverse=True)
     trailer_list.sort(key=operator.attrgetter('capacity_for_l_car'), reverse=True)
     trailer_list.sort(key=operator.attrgetter('capacity_all'), reverse=True)
