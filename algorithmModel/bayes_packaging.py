@@ -62,6 +62,8 @@ def dealer_cluster(shipment_list, priority='dealer', OTD_emergent = 5):
 def packaging(shipment_dict, trailer_dict,misc):
     shipment_list = shipment_dict.values()
     trailer_list = trailer_dict.values()
+    for i in trailer_list:
+        i.shipments_set = []
 
 
 
