@@ -5,5 +5,4 @@ myapp.log
 input_data.json
 querydata/*.json
 unitTest/testData/*.json
-unitTest/test.py
 output_data/*
