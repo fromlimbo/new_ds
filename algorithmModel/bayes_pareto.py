@@ -90,15 +90,6 @@ def val_mix_dealer_num(solution_x):
     return average_load_rate
 
 
-def ind_info(solution):
-    load_info = {}
-    order_info = {}
-    for i in solution:
-        if len(i.shipments_set)==i.capacity_all:
-            load_info[i.code]=[j.order_code for j in i.shipments_set]
-            for ship in i.shipments_set:
-                order_info[ship.order_code]=ship
-    return load_info, order_info
 #  目标8:最小化可拼库区数量
 def val_mix_warehouse_num(solution_x):
     mix_warehouse_number = 0
@@ -216,8 +207,13 @@ def non_domination_sort_by_rank(population, misc, present=False):
         # print 'pareto_set_size = ', pareto_set_size
         max_space_num = max([max([len(trailer_j.shipments_set) for trailer_j in solution_i]) for solution_i in population_sorted])
         population_matrix_data = array(['*'] * max_space_num)
+        load_info = {}
+        order_info = {}
+
 
         for solution_i in population:
+            load_info, order_info = ind_info(solution_i)
+            route = pinche.trailer_route(load_info, order_info)
             assigned_order_number = 0
             assigned_trailer_number = 0
             emergent_order_number = 0
@@ -263,6 +259,8 @@ def non_domination_sort_by_rank(population, misc, present=False):
             solution_seq += 1
 
         # output the summary and the population_sorted
+
+
         summary_columns = ['带走运单数', '轿运车使用数量', '运走紧急订单数量', '带走大中型商品车数量', '拼城市数量', '拼经销商数量',
                            '拼库数量']
         summary_index = ['Solution'+str(i+1) for i in xrange(len(population_sorted))]
@@ -301,8 +299,9 @@ def non_domination_sort_by_rank(population, misc, present=False):
                 else:
                     solution_matrix.loc[trailer.code, space_list[ii]] = -1
 
-        print(solution_matrix)
-        return population_sorted, summary,solution_matrix
+        solution_matrix = pd.concat([route, solution_matrix], axis=1)
+        #print(solution_matrix)
+        return population_sorted, summary,solution_matrix,route.shape[1]
 
 
 # Update the population
@@ -320,10 +319,19 @@ def population_stat(population_tested):
         print 'Solution order number is: ', solution_order_num
 
 
-def run(input_data):
-    start=time.clock()
-    logger = logging.getLogger(__name__)
+def ind_info(solution):
+    load_info = {}
+    order_info = {}
+    for i in solution:
+        if len(i.shipments_set)==i.capacity_all:
+            load_info[i.code]=[j.order_code for j in i.shipments_set]
+            for ship in i.shipments_set:
+                order_info[ship.order_code]=ship
+    return load_info, order_info
 
+def run(input_data):
+    #start=time.clock()
+    logger = logging.getLogger(__name__)
     try:
         misc = gen_misc(None, input_data)
     except KeyError:
@@ -331,8 +339,8 @@ def run(input_data):
         logger.error("Ineffective input data!")
     data = Data(misc.ship_dict, misc.trailer_dict)
 
-    print '\n -------------------------- Parallel Computing ----------------------------- \n'
-    print '\n ---------- Version I  Serial Computing----------------------------- \n'
+    #print '\n -------------------------- Parallel Computing ----------------------------- \n'
+    #print '\n ---------- Version I  Serial Computing----------------------------- \n'
     population = population_gen(population_size,data,misc)
     for i in xrange(EPISODE):
         print 'Episode: ' + str(i+1)
@@ -340,13 +348,13 @@ def run(input_data):
         sup_population = population_gen(sub_population_size,data,misc)
         population = population_update(population, sup_population)
 
-    print '\n -------------------------- Result Report ----------------------------- \n'
-
-    print '\n The statistics of the result information : \n'
-    population, summary_matrix,solution_matrix = non_domination_sort_by_rank(population,misc, present=True)
-    summary_reader = pickle.load(open('../output_data/summary.pkl', 'rb'))
-    print 'summary_reader = \n', summary_reader
-
-    end = time.clock()
-    print '\n The total time cost by the Pareto MC algorithm (by second) is: ', end - start
-    return solution_matrix
+    #print '\n -------------------------- Result Report ----------------------------- \n'
+    #print '\n The statistics of the result information : \n'
+    population, summary_matrix,solution_matrix,length = non_domination_sort_by_rank(population,misc, present=True)
+    #summary_reader = pickle.load(open('../output_data/summary.pkl', 'rb'))
+    #print 'summary_reader = \n', summary_reader
+    if (len(population)==0):
+        return False,solution_matrix,0
+    #end = time.clock()
+    #print '\n The total time cost by the Pareto MC algorithm (by second) is: ', end - start
+    return True,solution_matrix,length

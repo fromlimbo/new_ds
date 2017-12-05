@@ -14,7 +14,6 @@ import main
 from packaging import *
 from main import *
 from app import celery #for transporting parameters
-import pickle
 import json
 import requests
 import logging
@@ -32,12 +31,12 @@ def optimization(data):
     retval = {"taskId": optimization.request.id,
               "trailerOrders": []}
     headers = {'content-type': 'application/json'}
-    ind1=None
     try:
         logger.info("The algorithm starts")
-        # ind1, route= main.ga_vrp(data, weight, 5, 0.0001)
-        ind1=bayes_pareto.run(data)
-        return 0
+        #has_solution, matrix, route = main.ga_vrp(data, weight, 5, 0.0001)
+
+        has_solution,solution,length=bayes_pareto.run(data)
+
     except ValueError:
         logger.error("Ineffective input data!")
         print("report result")
@@ -47,17 +46,16 @@ def optimization(data):
         print 'Ineffective input data!'
         return 0
 
-
-    flag, matrix = convert_ind_to_matrix(ind1)
-    if not flag:
-        print("report result")
-        url="http://192.168.204.169:28109/ids/engine/dealPlan"
+    if not has_solution:
+        logger.info("empty solution")
+        #url="http://192.168.204.169:28109/ids/engine/dealPlan"
         url="http://10.108.11.50:28060/ids/engine/dealPlan"
         r = requests.post(url=url, data=json.dumps(retval),headers=headers)
-        print 'empty plan'
+        print 'empty solution'
         return 0
-    solution, length= xmatrix_to_solution(matrix,route)
-    # print solution
+
+    #solution, length = xmatrix_to_solution(matrix, route)
+    print solution
 
     # TODO:
     # {
@@ -75,8 +73,8 @@ def optimization(data):
     #         ]
     # }
 
-    retval={"taskId":optimization.request.id,
-            "trailerOrders":[]}
+    #retval={"taskId":optimization.request.id,
+    #        "trailerOrders":[]}
     for index, row_data in solution.iterrows():
         row={}
         row["code"]=index
@@ -87,9 +85,9 @@ def optimization(data):
         row["orderCodes"]=b[b!=-1].tolist()
         retval["trailerOrders"].append(row)
 
-    headers = {'content-type': 'application/json'}
+    #headers = {'content-type': 'application/json'}
     url = "http://10.108.11.50:28060/ids/engine/dealPlan"
-    # url="http://192.168.204.103:28109/ids/engine/dealPlan"
+    #url="http://192.168.204.103:28109/ids/engine/dealPlan"
     r = requests.post(url=url, data=json.dumps(retval),
                       headers=headers)
     print(r.text)
