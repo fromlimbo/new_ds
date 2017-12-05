@@ -9804,3 +9804,252 @@ IndexError: list index out of range
 2017-11-24 15:57:22 log.py[line:235] WARNING GoueTrailer:
 2017-11-24 15:57:22 log.py[line:235] WARNING 1
 2017-11-24 15:57:22 trace.py[line:123] INFO Task algorithmModel.algorithm_entry.optimization[df779471-d8f4-4849-a79a-576c2f16a8eb] succeeded in 2.15191880008s: 0
+2017-12-05 09:28:30 connection.py[line:22] INFO Connected to amqp://guest:**@127.0.0.1:5672//
+2017-12-05 09:28:30 mingle.py[line:41] INFO mingle: searching for neighbors
+2017-12-05 09:28:31 mingle.py[line:50] INFO mingle: all alone
+2017-12-05 09:28:31 worker.py[line:164] INFO celery@liangliang-HP-Z440-Workstation ready.
+2017-12-05 09:46:11 connection.py[line:22] INFO Connected to amqp://guest:**@127.0.0.1:5672//
+2017-12-05 09:46:12 mingle.py[line:41] INFO mingle: searching for neighbors
+2017-12-05 09:46:13 mingle.py[line:50] INFO mingle: all alone
+2017-12-05 09:46:13 worker.py[line:164] INFO celery@liangliang-HP-Z440-Workstation ready.
+2017-12-05 11:17:18 connection.py[line:22] INFO Connected to amqp://guest:**@127.0.0.1:5672//
+2017-12-05 11:17:18 mingle.py[line:41] INFO mingle: searching for neighbors
+2017-12-05 11:17:19 mingle.py[line:50] INFO mingle: all alone
+2017-12-05 11:17:19 worker.py[line:164] INFO celery@liangliang-HP-Z440-Workstation ready.
+2017-12-05 11:34:32 connection.py[line:22] INFO Connected to amqp://guest:**@127.0.0.1:5672//
+2017-12-05 11:34:43 mingle.py[line:41] INFO mingle: searching for neighbors
+2017-12-05 11:34:44 mingle.py[line:50] INFO mingle: all alone
+2017-12-05 11:34:44 worker.py[line:164] INFO celery@liangliang-HP-Z440-Workstation ready.
+2017-12-05 11:43:41 processing.py[line:69] DEBUG order data ok
+2017-12-05 11:43:41 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 11:43:41 connection.py[line:340] DEBUG Start from server, version: 0.9, properties: {'information': 'Licensed under the MPL.  See http://www.rabbitmq.com/', 'product': 'RabbitMQ', 'copyright': 'Copyright (C) 2007-2015 Pivotal Software, Inc.', 'capabilities': {'exchange_exchange_bindings': True, 'connection.blocked': True, 'authentication_failure_close': True, 'basic.nack': True, 'per_consumer_qos': True, 'consumer_priorities': True, 'consumer_cancel_notify': True, 'publisher_confirms': True}, 'cluster_name': 'rabbit@liangliang-HP-Z440-Workstation', 'platform': 'Erlang/OTP', 'version': '3.5.7'}, mechanisms: ['PLAIN', 'AMQPLAIN'], locales: [u'en_US']
+2017-12-05 11:43:41 channel.py[line:108] DEBUG using channel_id: 1
+2017-12-05 11:43:41 channel.py[line:445] DEBUG Channel open
+2017-12-05 11:43:41 strategy.py[line:109] INFO Received task: algorithmModel.algorithm_entry.optimization[45b2060a-0788-4f24-8b3c-f67aebc5faa0]  
+2017-12-05 11:43:41 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 11:43:41 log.py[line:235] WARNING Solution order number is:
+2017-12-05 11:43:41 log.py[line:235] WARNING 0
+2017-12-05 11:43:41 log.py[line:235] WARNING Episode: 1
+2017-12-05 11:43:41 log.py[line:235] WARNING /home/liangliang/anaconda2/lib/python2.7/site-packages/numpy/core/fromnumeric.py:2909: RuntimeWarning: Mean of empty slice.
+  out=out, **kwargs)
+2017-12-05 11:43:41 log.py[line:235] WARNING /home/liangliang/anaconda2/lib/python2.7/site-packages/numpy/core/_methods.py:80: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+2017-12-05 11:43:41 log.py[line:235] WARNING Solution order number is:
+2017-12-05 11:43:41 log.py[line:235] WARNING 0
+2017-12-05 11:43:41 algorithm_entry.py[line:41] ERROR Ineffective input data!
+2017-12-05 11:43:41 log.py[line:235] WARNING report result
+2017-12-05 11:43:41 log.py[line:235] WARNING Ineffective input data!
+2017-12-05 11:43:41 trace.py[line:123] INFO Task algorithmModel.algorithm_entry.optimization[45b2060a-0788-4f24-8b3c-f67aebc5faa0] succeeded in 0.21683095023s: 0
+2017-12-05 11:47:14 processing.py[line:69] DEBUG order data ok
+2017-12-05 11:47:14 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 11:47:14 strategy.py[line:109] INFO Received task: algorithmModel.algorithm_entry.optimization[3927b80c-b2d1-43db-a276-a50952274ddb]  
+2017-12-05 11:47:14 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 11:47:21 log.py[line:235] WARNING Solution order number is:
+2017-12-05 11:47:21 log.py[line:235] WARNING 0
+2017-12-05 11:47:21 log.py[line:235] WARNING Episode: 1
+2017-12-05 11:47:21 log.py[line:235] WARNING /home/liangliang/anaconda2/lib/python2.7/site-packages/numpy/core/fromnumeric.py:2909: RuntimeWarning: Mean of empty slice.
+  out=out, **kwargs)
+2017-12-05 11:47:21 log.py[line:235] WARNING /home/liangliang/anaconda2/lib/python2.7/site-packages/numpy/core/_methods.py:80: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+2017-12-05 11:47:27 log.py[line:235] WARNING Solution order number is:
+2017-12-05 11:47:27 log.py[line:235] WARNING 0
+2017-12-05 11:47:27 algorithm_entry.py[line:41] ERROR Ineffective input data!
+2017-12-05 11:47:27 log.py[line:235] WARNING report result
+2017-12-05 11:47:27 log.py[line:235] WARNING Ineffective input data!
+2017-12-05 11:47:27 trace.py[line:123] INFO Task algorithmModel.algorithm_entry.optimization[3927b80c-b2d1-43db-a276-a50952274ddb] succeeded in 12.904203183s: 0
+2017-12-05 11:55:14 processing.py[line:69] DEBUG order data ok
+2017-12-05 11:55:14 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 11:55:14 strategy.py[line:109] INFO Received task: algorithmModel.algorithm_entry.optimization[b85c1a62-25a4-4dba-935d-fdab86d6a345]  
+2017-12-05 11:55:14 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 11:55:20 log.py[line:235] WARNING Solution order number is:
+2017-12-05 11:55:20 log.py[line:235] WARNING 0
+2017-12-05 11:55:20 log.py[line:235] WARNING Episode: 1
+2017-12-05 11:55:20 log.py[line:235] WARNING /home/liangliang/anaconda2/lib/python2.7/site-packages/numpy/core/fromnumeric.py:2909: RuntimeWarning: Mean of empty slice.
+  out=out, **kwargs)
+2017-12-05 11:55:20 log.py[line:235] WARNING /home/liangliang/anaconda2/lib/python2.7/site-packages/numpy/core/_methods.py:80: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+2017-12-05 11:55:26 log.py[line:235] WARNING Solution order number is:
+2017-12-05 11:55:26 log.py[line:235] WARNING 0
+2017-12-05 11:55:26 algorithm_entry.py[line:41] ERROR Ineffective input data!
+2017-12-05 11:55:26 log.py[line:235] WARNING report result
+2017-12-05 11:55:26 log.py[line:235] WARNING Ineffective input data!
+2017-12-05 11:55:26 trace.py[line:123] INFO Task algorithmModel.algorithm_entry.optimization[b85c1a62-25a4-4dba-935d-fdab86d6a345] succeeded in 12.3598830989s: 0
+2017-12-05 11:59:12 processing.py[line:69] DEBUG order data ok
+2017-12-05 11:59:12 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 11:59:12 strategy.py[line:109] INFO Received task: algorithmModel.algorithm_entry.optimization[e05e2705-13cb-4ddd-ba53-2aef37d1267d]  
+2017-12-05 11:59:12 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 11:59:12 log.py[line:235] WARNING Solution order number is:
+2017-12-05 11:59:12 log.py[line:235] WARNING 9
+2017-12-05 11:59:12 log.py[line:235] WARNING Episode: 1
+2017-12-05 11:59:12 log.py[line:235] WARNING Solution order number is:
+2017-12-05 11:59:12 log.py[line:235] WARNING 9
+2017-12-05 11:59:12 trace.py[line:248] ERROR Task algorithmModel.algorithm_entry.optimization[e05e2705-13cb-4ddd-ba53-2aef37d1267d] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/home/liangliang/anaconda2/lib/python2.7/site-packages/celery/app/trace.py", line 374, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/liangliang/anaconda2/lib/python2.7/site-packages/celery/app/trace.py", line 629, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/liangliang/PycharmProjects/new_ds/algorithmModel/algorithm_entry.py", line 38, in optimization
+    has_solution,solution,length=bayes_pareto.run(data)
+  File "/home/liangliang/PycharmProjects/new_ds/algorithmModel/bayes_pareto.py", line 353, in run
+    population, summary_matrix,solution_matrix,length = non_domination_sort_by_rank(population,misc, present=True)
+  File "/home/liangliang/PycharmProjects/new_ds/algorithmModel/bayes_pareto.py", line 271, in non_domination_sort_by_rank
+    summary.to_csv('../output_data/summary.csv')
+  File "/home/liangliang/anaconda2/lib/python2.7/site-packages/pandas/core/frame.py", line 1524, in to_csv
+    formatter.save()
+  File "/home/liangliang/anaconda2/lib/python2.7/site-packages/pandas/io/formats/format.py", line 1629, in save
+    compression=self.compression)
+  File "/home/liangliang/anaconda2/lib/python2.7/site-packages/pandas/io/common.py", line 387, in _get_handle
+    f = open(path_or_buf, mode)
+IOError: [Errno 2] No such file or directory: '../output_data/summary.csv'
+2017-12-05 12:27:46 processing.py[line:69] DEBUG order data ok
+2017-12-05 12:27:46 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 12:27:46 strategy.py[line:109] INFO Received task: algorithmModel.algorithm_entry.optimization[b037afa4-a199-4e77-98bd-d1fd60e5a962]  
+2017-12-05 12:27:46 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 12:27:53 log.py[line:235] WARNING Solution order number is:
+2017-12-05 12:27:53 log.py[line:235] WARNING 0
+2017-12-05 12:27:53 log.py[line:235] WARNING Episode: 1
+2017-12-05 12:27:59 log.py[line:235] WARNING Solution order number is:
+2017-12-05 12:27:59 log.py[line:235] WARNING 0
+2017-12-05 12:27:59 algorithm_entry.py[line:41] ERROR Ineffective input data!
+2017-12-05 12:27:59 log.py[line:235] WARNING report result
+2017-12-05 12:27:59 log.py[line:235] WARNING Ineffective input data!
+2017-12-05 12:27:59 trace.py[line:123] INFO Task algorithmModel.algorithm_entry.optimization[b037afa4-a199-4e77-98bd-d1fd60e5a962] succeeded in 12.9873456135s: 0
+2017-12-05 12:37:56 connection.py[line:22] INFO Connected to amqp://guest:**@127.0.0.1:5672//
+2017-12-05 12:37:56 mingle.py[line:41] INFO mingle: searching for neighbors
+2017-12-05 12:37:57 mingle.py[line:50] INFO mingle: all alone
+2017-12-05 12:37:57 worker.py[line:164] INFO celery@liangliang-HP-Z440-Workstation ready.
+2017-12-05 12:44:35 processing.py[line:69] DEBUG order data ok
+2017-12-05 12:44:35 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 12:44:35 connection.py[line:340] DEBUG Start from server, version: 0.9, properties: {'information': 'Licensed under the MPL.  See http://www.rabbitmq.com/', 'product': 'RabbitMQ', 'copyright': 'Copyright (C) 2007-2015 Pivotal Software, Inc.', 'capabilities': {'exchange_exchange_bindings': True, 'connection.blocked': True, 'authentication_failure_close': True, 'basic.nack': True, 'per_consumer_qos': True, 'consumer_priorities': True, 'consumer_cancel_notify': True, 'publisher_confirms': True}, 'cluster_name': 'rabbit@liangliang-HP-Z440-Workstation', 'platform': 'Erlang/OTP', 'version': '3.5.7'}, mechanisms: ['PLAIN', 'AMQPLAIN'], locales: [u'en_US']
+2017-12-05 12:44:35 channel.py[line:108] DEBUG using channel_id: 1
+2017-12-05 12:44:35 channel.py[line:445] DEBUG Channel open
+2017-12-05 12:44:35 strategy.py[line:109] INFO Received task: algorithmModel.algorithm_entry.optimization[2c319fc8-bd55-4098-bf0b-51b99068aa51]  
+2017-12-05 12:44:35 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 12:44:43 log.py[line:235] WARNING Solution order number is:
+2017-12-05 12:44:43 log.py[line:235] WARNING 0
+2017-12-05 12:44:43 log.py[line:235] WARNING Episode: 1
+2017-12-05 12:44:43 log.py[line:235] WARNING /home/liangliang/anaconda2/lib/python2.7/site-packages/numpy/core/fromnumeric.py:2909: RuntimeWarning: Mean of empty slice.
+  out=out, **kwargs)
+2017-12-05 12:44:43 log.py[line:235] WARNING /home/liangliang/anaconda2/lib/python2.7/site-packages/numpy/core/_methods.py:80: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+2017-12-05 12:44:50 log.py[line:235] WARNING Solution order number is:
+2017-12-05 12:44:50 log.py[line:235] WARNING 0
+2017-12-05 12:44:50 algorithm_entry.py[line:41] ERROR Ineffective input data!
+2017-12-05 12:44:50 log.py[line:235] WARNING report result
+2017-12-05 12:44:50 log.py[line:235] WARNING Ineffective input data!
+2017-12-05 12:44:50 trace.py[line:123] INFO Task algorithmModel.algorithm_entry.optimization[2c319fc8-bd55-4098-bf0b-51b99068aa51] succeeded in 14.2075239047s: 0
+2017-12-05 13:02:15 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:02:15 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:02:15 strategy.py[line:109] INFO Received task: algorithmModel.algorithm_entry.optimization[3bc84096-5e6c-45fa-be58-9a51e07274a1]  
+2017-12-05 13:02:15 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:02:15 log.py[line:235] WARNING Solution order number is:
+2017-12-05 13:02:15 log.py[line:235] WARNING 0
+2017-12-05 13:02:15 log.py[line:235] WARNING Episode: 1
+2017-12-05 13:02:15 log.py[line:235] WARNING /home/liangliang/anaconda2/lib/python2.7/site-packages/numpy/core/fromnumeric.py:2909: RuntimeWarning: Mean of empty slice.
+  out=out, **kwargs)
+2017-12-05 13:02:15 log.py[line:235] WARNING /home/liangliang/anaconda2/lib/python2.7/site-packages/numpy/core/_methods.py:80: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+2017-12-05 13:02:15 log.py[line:235] WARNING Solution order number is:
+2017-12-05 13:02:15 log.py[line:235] WARNING 0
+2017-12-05 13:02:15 algorithm_entry.py[line:41] ERROR Ineffective input data!
+2017-12-05 13:02:15 log.py[line:235] WARNING report result
+2017-12-05 13:02:15 log.py[line:235] WARNING Ineffective input data!
+2017-12-05 13:02:15 trace.py[line:123] INFO Task algorithmModel.algorithm_entry.optimization[3bc84096-5e6c-45fa-be58-9a51e07274a1] succeeded in 0.130775046535s: 0
+2017-12-05 13:02:44 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:02:44 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:02:44 strategy.py[line:109] INFO Received task: algorithmModel.algorithm_entry.optimization[16a14c2d-496e-4ed5-ae30-3c2b9104d2e6]  
+2017-12-05 13:02:44 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:02:51 log.py[line:235] WARNING Solution order number is:
+2017-12-05 13:02:51 log.py[line:235] WARNING 0
+2017-12-05 13:02:51 log.py[line:235] WARNING Episode: 1
+2017-12-05 13:02:51 log.py[line:235] WARNING /home/liangliang/anaconda2/lib/python2.7/site-packages/numpy/core/fromnumeric.py:2909: RuntimeWarning: Mean of empty slice.
+  out=out, **kwargs)
+2017-12-05 13:02:51 log.py[line:235] WARNING /home/liangliang/anaconda2/lib/python2.7/site-packages/numpy/core/_methods.py:80: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+2017-12-05 13:02:59 log.py[line:235] WARNING Solution order number is:
+2017-12-05 13:02:59 log.py[line:235] WARNING 0
+2017-12-05 13:02:59 algorithm_entry.py[line:41] ERROR Ineffective input data!
+2017-12-05 13:02:59 log.py[line:235] WARNING report result
+2017-12-05 13:02:59 log.py[line:235] WARNING Ineffective input data!
+2017-12-05 13:02:59 trace.py[line:123] INFO Task algorithmModel.algorithm_entry.optimization[16a14c2d-496e-4ed5-ae30-3c2b9104d2e6] succeeded in 14.9661635291s: 0
+2017-12-05 13:12:55 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:12:55 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:12:55 strategy.py[line:109] INFO Received task: algorithmModel.algorithm_entry.optimization[f7019ee1-87c1-4d11-a8dc-3bd06d4dcacf]  
+2017-12-05 13:12:55 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:13:02 log.py[line:235] WARNING Solution order number is:
+2017-12-05 13:13:02 log.py[line:235] WARNING 0
+2017-12-05 13:13:02 log.py[line:235] WARNING Episode: 1
+2017-12-05 13:13:02 log.py[line:235] WARNING /home/liangliang/anaconda2/lib/python2.7/site-packages/numpy/core/fromnumeric.py:2909: RuntimeWarning: Mean of empty slice.
+  out=out, **kwargs)
+2017-12-05 13:13:02 log.py[line:235] WARNING /home/liangliang/anaconda2/lib/python2.7/site-packages/numpy/core/_methods.py:80: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+2017-12-05 13:13:08 log.py[line:235] WARNING Solution order number is:
+2017-12-05 13:13:08 log.py[line:235] WARNING 0
+2017-12-05 13:13:08 algorithm_entry.py[line:41] ERROR Ineffective input data!
+2017-12-05 13:13:08 log.py[line:235] WARNING report result
+2017-12-05 13:13:08 log.py[line:235] WARNING Ineffective input data!
+2017-12-05 13:13:08 trace.py[line:123] INFO Task algorithmModel.algorithm_entry.optimization[f7019ee1-87c1-4d11-a8dc-3bd06d4dcacf] succeeded in 13.1625688737s: 0
+2017-12-05 13:35:40 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:35:40 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:35:40 strategy.py[line:109] INFO Received task: algorithmModel.algorithm_entry.optimization[14320e57-f46b-4554-b657-3c00ac573424]  
+2017-12-05 13:35:42 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:35:42 log.py[line:235] WARNING Solution order number is:
+2017-12-05 13:35:42 log.py[line:235] WARNING 6
+2017-12-05 13:35:42 log.py[line:235] WARNING Episode: 1
+2017-12-05 13:35:42 log.py[line:235] WARNING Solution order number is:
+2017-12-05 13:35:42 log.py[line:235] WARNING 6
+2017-12-05 13:35:42 log.py[line:235] WARNING 带走运单数  轿运车使用数量  运走紧急订单数量  带走大中型商品车数量  拼城市数量  拼经销商数量  拼库数量
+Solution1      6        1         6           0      1       3     1
+2017-12-05 13:35:42 log.py[line:235] WARNING route1    space_1    space_2    space_3    space_4    space_5  \
+4318541  05000  121402487  121397730  121441225  121448046  121447880   
+
+           space_6  
+4318541  121447881
+2017-12-05 13:35:42 log.py[line:235] WARNING {"success":true,"repCode":"0000","repMsg":null,"repData":null}
+2017-12-05 13:35:42 log.py[line:235] WARNING GoneTrailer:
+2017-12-05 13:35:42 log.py[line:235] WARNING 1
+2017-12-05 13:35:42 trace.py[line:123] INFO Task algorithmModel.algorithm_entry.optimization[14320e57-f46b-4554-b657-3c00ac573424] succeeded in 0.138289105147s: 0
+2017-12-05 13:36:20 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:36:20 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:36:20 strategy.py[line:109] INFO Received task: algorithmModel.algorithm_entry.optimization[f05969a5-553f-4d9b-abdc-097a0d5eec20]  
+2017-12-05 13:36:20 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:36:20 log.py[line:235] WARNING Solution order number is:
+2017-12-05 13:36:20 log.py[line:235] WARNING 5
+2017-12-05 13:36:20 log.py[line:235] WARNING Episode: 1
+2017-12-05 13:36:21 log.py[line:235] WARNING Solution order number is:
+2017-12-05 13:36:21 log.py[line:235] WARNING 5
+2017-12-05 13:36:21 log.py[line:235] WARNING 带走运单数  轿运车使用数量  运走紧急订单数量  带走大中型商品车数量  拼城市数量  拼经销商数量  拼库数量
+Solution1      5        1         5           5      1       2     1
+2017-12-05 13:36:21 log.py[line:235] WARNING route1    space_1    space_2    space_3    space_4    space_5
+4318737  31120  121559933  121559930  121867117  121867115  121863999
+2017-12-05 13:36:21 log.py[line:235] WARNING {"success":true,"repCode":"0000","repMsg":null,"repData":null}
+2017-12-05 13:36:21 log.py[line:235] WARNING GoneTrailer:
+2017-12-05 13:36:21 log.py[line:235] WARNING 1
+2017-12-05 13:36:21 trace.py[line:123] INFO Task algorithmModel.algorithm_entry.optimization[f05969a5-553f-4d9b-abdc-097a0d5eec20] succeeded in 0.089938974008s: 0
+2017-12-05 13:43:16 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:43:16 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:43:16 strategy.py[line:109] INFO Received task: algorithmModel.algorithm_entry.optimization[f17d3422-730b-40c6-b38e-e1007c2ac2f8]  
+2017-12-05 13:43:16 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:43:23 log.py[line:235] WARNING Solution order number is:
+2017-12-05 13:43:23 log.py[line:235] WARNING 0
+2017-12-05 13:43:23 log.py[line:235] WARNING Episode: 1
+2017-12-05 13:43:31 log.py[line:235] WARNING Solution order number is:
+2017-12-05 13:43:31 log.py[line:235] WARNING 0
+2017-12-05 13:43:31 algorithm_entry.py[line:41] ERROR Ineffective input data!
+2017-12-05 13:43:31 log.py[line:235] WARNING report result
+2017-12-05 13:43:31 log.py[line:235] WARNING Ineffective input data!
+2017-12-05 13:43:31 trace.py[line:123] INFO Task algorithmModel.algorithm_entry.optimization[f17d3422-730b-40c6-b38e-e1007c2ac2f8] succeeded in 14.3566152276s: 0
+2017-12-05 13:51:59 processing.py[line:69] DEBUG order data ok
+2017-12-05 13:51:59 processing.py[line:129] DEBUG trailer data ok.
+2017-12-05 13:51:59 strategy.py[line:109] INFO Received task: algorithmModel.algorithm_entry.optimization[8777a223-2839-449a-bbc6-ef02d706e963]  
+2017-12-05 13:51:59 algorithm_entry.py[line:35] INFO The algorithm starts
+2017-12-05 13:52:07 log.py[line:235] WARNING Solution order number is:
+2017-12-05 13:52:07 log.py[line:235] WARNING 0
+2017-12-05 13:52:07 log.py[line:235] WARNING Episode: 1
+2017-12-05 13:52:14 log.py[line:235] WARNING Solution order number is:
+2017-12-05 13:52:14 log.py[line:235] WARNING 0
+2017-12-05 13:52:14 algorithm_entry.py[line:41] ERROR Ineffective input data!
+2017-12-05 13:52:14 log.py[line:235] WARNING report result
+2017-12-05 13:52:14 log.py[line:235] WARNING Ineffective input data!
+2017-12-05 13:52:14 trace.py[line:123] INFO Task algorithmModel.algorithm_entry.optimization[8777a223-2839-449a-bbc6-ef02d706e963] succeeded in 14.3072722275s: 0

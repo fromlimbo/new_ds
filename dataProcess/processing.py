@@ -54,6 +54,8 @@ def GAVARP_Process_json(input_json):
                 item[k] = optional_order_keys[k]
 
         item['effective_time'] = datetime.strptime(item['effective_time'], '%Y-%m-%d %H:%M:%S').date()
+        if item["start_loc_longitude"] == "" or item["start_loc_latitude"]=="" or item["end_loc_longitude"]=="" or item["end_loc_latitude"]=="":
+            continue
         order_dict[item["order_code"]] = order(item["order_code"], item["customer_code"], item["dealer_code"],
                                                item["OTD"], item["priority"], item["VIN"],
                                                item["shipment_code_set"],

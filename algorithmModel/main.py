@@ -147,6 +147,6 @@ def ga_vrp(_data, cost_weight=[0.6, 0.4, 0, 0], ppl_size=ppl_size_para, converge
         step += 1
     load_info, order_info=icf.ind_info(best_ind)
     best_route=pinche.trailer_route(load_info,order_info)
+    has_solution, matrix=convert_ind_to_matrix(best_ind)
 
-    return best_ind, best_route
-
+    return has_solution,matrix,best_route
