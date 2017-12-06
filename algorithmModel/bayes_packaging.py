@@ -39,9 +39,9 @@ def dealer_cluster(shipment_list, priority='OTD', OTD_emergent = 6):
         sorted_shipment_list = []
         for ii in xrange(2):
             if ii == 0:
-                shipments_temp = [shipment for shipment in shipment_list if shipment.OTD > OTD_emergent]
+                shipments_temp = [shipment for shipment in shipment_list if shipment.OTD > OTD_emergent or shipment.priority >0]
             else:
-                shipments_temp = [shipment for shipment in shipment_list if shipment.OTD <= OTD_emergent]
+                shipments_temp = [shipment for shipment in shipment_list if shipment.OTD <= OTD_emergent and shipment.priority ==0]
             dealer_code_list = list(set([shipment.end_loc for shipment in shipments_temp]))
             cluster_len = np.zeros(len(dealer_code_list))
             for ii in xrange(len(cluster_len)):
@@ -64,9 +64,7 @@ def packaging(shipment_dict, trailer_dict,misc):
     trailer_list = trailer_dict.values()
     for i in trailer_list:
         i.shipments_set = []
-    for i in shipment_list:
-        if i.priority > 0:
-            i.OTD = 20
+
 
     trailer_list.sort(key=operator.attrgetter('capacity_for_xl_car'), reverse=True)
     trailer_list.sort(key=operator.attrgetter('capacity_for_l_car'), reverse=True)
