@@ -16,7 +16,7 @@ import _temp_tools as tt
 # parameters
 mix_city_limit = 2
 EPISODE = 1
-def dealer_cluster(shipment_list, priority='dealer', OTD_emergent = 5):
+def dealer_cluster(shipment_list, priority='OTD', OTD_emergent = 6):
     # 1. dealer code cluster 2. OTD rank
     if priority == 'dealer':
         dealer_code_list = list(set([shipment.end_loc for shipment in shipment_list]))
@@ -64,6 +64,9 @@ def packaging(shipment_dict, trailer_dict,misc):
     trailer_list = trailer_dict.values()
     for i in trailer_list:
         i.shipments_set = []
+    for i in shipment_list:
+        if i.priority > 0:
+            i.OTD = 20
 
     trailer_list.sort(key=operator.attrgetter('capacity_for_xl_car'), reverse=True)
     trailer_list.sort(key=operator.attrgetter('capacity_for_l_car'), reverse=True)
