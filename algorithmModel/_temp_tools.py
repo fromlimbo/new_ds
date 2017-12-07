@@ -21,7 +21,6 @@ def preferred_direction_check(new_shipment, trailer):
 #     city_set.add(new_shipment.end_loc)
 #     return len(city_set) <= max_mix_city_number
 
-
 # Constraint 4:
 def mix_dealer_check(shipment_set, new_shipment, misc):
     city_list = [i.end_loc for i in shipment_set]
