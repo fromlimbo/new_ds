@@ -117,12 +117,13 @@ def mix_city_num(solution_x):
     # return float(mix_city_number)/float(mix_city_limit * len(solution_x))
     return mix_city_number
 def mix_dealer_num(solution_x):
-    mix_dealer_number = 0
+    mix_dealer_number = []
+    
     trailer_number = 0
     for trailer_i in solution_x:
-        mix_dealer_number += len({shipment_j.dealer_code for shipment_j in trailer_i.shipments_set})
+        mix_dealer_number.append( len({shipment_j.dealer_code for shipment_j in trailer_i.shipments_set}))
     # return float(mix_dealer_number)/float(max(OTD_pinche['cOtherVendor']) * len(solution_x))
-    return mix_dealer_number
+    return max(mix_dealer_number)
 def mix_warehouse_num(solution_x):
     mix_warehouse_number = 0
     trailer_number = 0
