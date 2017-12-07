@@ -35,7 +35,7 @@ def mix_dealer_check(shipment_set, new_shipment, misc):
     else:
         max_mix_dealer_number = misc.OTD_pinche[idx]['cOtherVendor']
 
-    dealer_set = {i.dealer_code for i in shipment_set}
+    dealer_set = {i.dealer_str for i in shipment_set}
     dealer_set.add(new_shipment.dealer_str)
     return len(dealer_set) <= max_mix_dealer_number
 
