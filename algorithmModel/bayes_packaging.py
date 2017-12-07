@@ -19,16 +19,16 @@ EPISODE = 1
 def dealer_cluster(shipment_list, priority='OTD', OTD_emergent = 6):
     # 1. dealer code cluster 2. OTD rank
     if priority == 'dealer':
-        dealer_code_list = list(set([shipment.end_loc for shipment in shipment_list]))
+        dealer_code_list = list(set([shipment.dealer_str for shipment in shipment_list]))
         cluster_len = np.zeros(len(dealer_code_list))
         for ii in xrange(len(cluster_len)):
             cluster_len[ii] = len([shipment for shipment in shipment_list
-                                   if shipment.end_loc == dealer_code_list[ii]])
+                                   if shipment.dealer_str == dealer_code_list[ii]])
 
         sorted_ind = list(np.argsort(-cluster_len))
         sorted_shipment_list = []
         for ii in sorted_ind:
-            temp_list = [shipment for shipment in shipment_list if shipment.end_loc == dealer_code_list[ii]]
+            temp_list = [shipment for shipment in shipment_list if shipment.dealer_str == dealer_code_list[ii]]
             temp_list.sort(key=operator.attrgetter('OTD'), reverse=True)
             sorted_shipment_list.extend(temp_list)
             # print([shipment.end_loc for shipment in temp_list])
@@ -42,16 +42,16 @@ def dealer_cluster(shipment_list, priority='OTD', OTD_emergent = 6):
                 shipments_temp = [shipment for shipment in shipment_list if shipment.OTD > OTD_emergent or shipment.priority >0]
             else:
                 shipments_temp = [shipment for shipment in shipment_list if shipment.OTD <= OTD_emergent and shipment.priority ==0]
-            dealer_code_list = list(set([shipment.end_loc for shipment in shipments_temp]))
+            dealer_code_list = list(set([shipment.dealer_str for shipment in shipments_temp]))
             cluster_len = np.zeros(len(dealer_code_list))
             for ii in xrange(len(cluster_len)):
                 cluster_len[ii] = len([shipment for shipment in shipments_temp
-                                       if shipment.end_loc == dealer_code_list[ii]])
+                                       if shipment.dealer_str == dealer_code_list[ii]])
 
             sorted_ind = list(np.argsort(-cluster_len))
             sorted_temp = []
             for ii in sorted_ind:
-                temp_list = [shipment for shipment in shipments_temp if shipment.end_loc == dealer_code_list[ii]]
+                temp_list = [shipment for shipment in shipments_temp if shipment.dealer_str == dealer_code_list[ii]]
                 sorted_temp.extend(temp_list)
 
             sorted_shipment_list.extend(sorted_temp)

@@ -43,7 +43,7 @@ celery.conf['CELERY_TASK_SERIALIZER'] = 'pickle'
 celery.conf['CELERY_ACCEPT_CONTENT'] = ['json', 'pickle']
 celery.conf['CELERYD_HIJACK_ROOT_LOGGER'] = False
 
-from app_view import *
+# from app_view import *
 
 if __name__ == '__main__':
     #from app_view import *
