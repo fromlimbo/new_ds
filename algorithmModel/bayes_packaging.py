@@ -18,22 +18,22 @@ mix_city_limit = 2
 EPISODE = 1
 def dealer_cluster(shipment_list, priority='OTD', OTD_emergent = 6):
     # 1. dealer code cluster 2. OTD rank
-    if priority == 'dealer':
-        dealer_code_list = list(set([shipment.dealer_str for shipment in shipment_list]))
+    if priority == 'start_loc':
+        sorted_shipment_list = []
+        shipments_temp = shipment_list
+        dealer_code_list = list(set([shipment.start_loc for shipment in shipments_temp]))
         cluster_len = np.zeros(len(dealer_code_list))
         for ii in xrange(len(cluster_len)):
-            cluster_len[ii] = len([shipment for shipment in shipment_list
-                                   if shipment.dealer_str == dealer_code_list[ii]])
+            cluster_len[ii] = len([shipment for shipment in shipments_temp
+                                   if shipment.start_loc == dealer_code_list[ii]])
 
         sorted_ind = list(np.argsort(-cluster_len))
-        sorted_shipment_list = []
+        sorted_temp = []
         for ii in sorted_ind:
-            temp_list = [shipment for shipment in shipment_list if shipment.dealer_str == dealer_code_list[ii]]
-            temp_list.sort(key=operator.attrgetter('OTD'), reverse=True)
-            sorted_shipment_list.extend(temp_list)
-            # print([shipment.end_loc for shipment in temp_list])
-            # print([shipment.OTD for shipment in temp_list])
-        aa = 1
+            temp_list = [shipment for shipment in shipments_temp if shipment.start_loc == dealer_code_list[ii]]
+            sorted_temp.extend(temp_list)
+
+        sorted_shipment_list.extend(sorted_temp)
     # 1. OTD cluster 2. dealer cluster
     else:
         sorted_shipment_list = []
@@ -52,6 +52,7 @@ def dealer_cluster(shipment_list, priority='OTD', OTD_emergent = 6):
             sorted_temp = []
             for ii in sorted_ind:
                 temp_list = [shipment for shipment in shipments_temp if shipment.dealer_str == dealer_code_list[ii]]
+                temp_list = dealer_cluster(temp_list,priority='start_loc')
                 sorted_temp.extend(temp_list)
 
             sorted_shipment_list.extend(sorted_temp)
@@ -65,10 +66,10 @@ def packaging(shipment_dict, trailer_dict,misc):
     for i in trailer_list:
         i.shipments_set = []
 
-
-    trailer_list.sort(key=operator.attrgetter('capacity_for_xl_car'), reverse=True)
-    trailer_list.sort(key=operator.attrgetter('capacity_for_l_car'), reverse=True)
-    trailer_list.sort(key=operator.attrgetter('capacity_all'), reverse=True)
+    trailer_list.sort(key=operator.attrgetter('capacity_all'))
+    # trailer_list.sort(key=operator.attrgetter('capacity_for_xl_car'), reverse=True)
+    # trailer_list.sort(key=operator.attrgetter('capacity_for_l_car'), reverse=True)
+    # shipment_list = dealer_cluster(shipment_list)
 
     total_assigned_shipments = 0
     for i in xrange(len(trailer_list)):

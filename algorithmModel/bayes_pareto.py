@@ -118,7 +118,7 @@ def mix_city_num(solution_x):
     return mix_city_number
 def mix_dealer_num(solution_x):
     mix_dealer_number = []
-    
+
     trailer_number = 0
     for trailer_i in solution_x:
         mix_dealer_number.append( len({shipment_j.dealer_code for shipment_j in trailer_i.shipments_set}))
