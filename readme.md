@@ -1,7 +1,2 @@
-## Dependency
-
-- Celery
-- Flask
-- pyMongo
-- requests
-
+# new_ds
+This is a open project of dynamic scheduling
